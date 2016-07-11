@@ -1,3 +1,8 @@
+<div style="width: 1000px; text-align: center; margin: auto; padding-top: 30px;">
+	<div style="float: left; text-transform: uppercase;">Formas de pagamento:</div><br>
+	<img src="/image/pagseguro-line.png" style="width: 100%;" width="100%">
+</div>
+
 <footer>
 	<?php if ($footer_top) { ?>
 	<div class="footer">
@@ -8,7 +13,7 @@
 	<?php } ?>
   <div class="container">
 	<div class="row">
-		<div class="col-sm-3">			
+		<div class="col-sm-3">
 			<?php if ($logo) { ?>
 			<div class="logo">
 			<a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
@@ -16,12 +21,12 @@
 			<?php } ?>
 			<div class="footer_box">
 				<ul class="list-unstyled social">
-					<li><a data-toggle="tooltip" title="<?php echo $text_fb; ?>" href="https://www.facebook.com/login/"><i class="fa fa-facebook"></i></a></li>	
+					<li><a data-toggle="tooltip" title="<?php echo $text_fb; ?>" href="https://www.facebook.com/login/"><i class="fa fa-facebook"></i></a></li>
 					<li><a data-toggle="tooltip" title="<?php echo $text_twi; ?>" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
 					<li><a data-toggle="tooltip" title="<?php echo $text_google; ?>" href="https://accounts.google.com/"><i class="fa fa-google-plus"></i></a></li>
 				</ul>
 			</div>
-			
+
 		</div>
 		<div class="col-sm-2 cast">
 		<?php if ($informations) { ?>
@@ -68,14 +73,29 @@
 			</div>
 		</div>
 	</div>
-	
-  </div>
-	<div class="copyright">
-		<div class="container">
-			<hr>
-			<?php echo $powered; ?><!-- [[%FOOTER_LINK]] -->
-		</div> 
+</div>
+	<div style="margin-left: 15px; margin-right: 15px; margin: auto; width: 1170px;">
+				<div style="width: 55%; padding-top: 40px; float: left; padding-bottom: 40px;">
+					<?php echo $powered; ?><!-- [[%FOOTER_LINK]] -->
+				</div>
+
+				<div style="width: 40%; padding-top: 30px; float: left; text-align: right;">
+
+					<a href="https://lojavirtual.digital/" target="_blank">
+						<img style="background-color: #FFF; border: 0px; height: 40px; margin-right: 20px; padding: 5px; border: solid 1px #EFD6B3;" src="/image/LOGO-LOJAVIRTUAL-300px.png" alt="Loja Virtual .digital" height="40">
+					</a>
+
+					<a href="http://pagseguro.uol.com.br" target="_blank">
+						<img src="/image/pagseguro.png" alt="PagSeguro" height="26" style="border: 0px; margin-right: 20px; height: 26px;">
+					</a>
+
+					<a href="https://ssl.comodo.com" target="_blank">
+						<img src="https://ssl.comodo.com/images/comodo_secure_seal_76x26_transp.png" alt="SSL" width="76" height="26" style="border: 0px;">
+						<span style="font-weight:bold; font-size:7pt">SSL</span></a>
+					</div>
 	</div>
+	</div>
+
 </footer>
 <script src="catalog/view/theme/<?php echo $theme_path; ?>/js/livesearch.js" type="text/javascript"></script>
 <script src="catalog/view/theme/<?php echo $theme_path; ?>/js/script.js" type="text/javascript"></script>
