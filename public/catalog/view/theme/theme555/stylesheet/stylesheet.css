@@ -1984,7 +1984,9 @@ padding-top: 10px; }
         -o-transition: 0.3s all ease;
         -webkit-transition: 0.3s all ease;
         transition: 0.3s all ease;
-        letter-spacing: 11px; }
+        letter-spacing: 11px;
+        background: #FFF;
+        margin-top: 160px;}
     .box_html.banners .row .banner-6 a:hover .desc .tx, .box_html.banners .row .banner-6 a:active .desc .tx, .box_html.banners .row .banner-6 a:focus .desc .tx {
       color: #D1A32D; }
     .box_html.banners .row .banner-6 a:hover img, .box_html.banners .row .banner-6 a:active img, .box_html.banners .row .banner-6 a:focus img {
