@@ -23,17 +23,21 @@
 										<?php }?>
 
 										<?php if ($product['price']) { ?>
-										<div class="price">
-										<?php if (!$product['special']) { ?>
-										<?php echo $product['price']; ?>
-										<?php } else { ?>
-										<span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
-										<?php } ?>
-										<?php if ($product['tax']) { ?>
-										<span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-										<?php } ?>
-										</div>
-										<?php } ?>
+                        <div class="price">
+                            <?php if (!$product['special']) { ?>
+                                <?php echo $product['price']; ?>
+                            <?php } else { ?>
+                                <span
+                                    class="price-new"><?php echo $product['special']; ?></span>
+                                <span class="price-old"><?php echo $product['price']; ?></span>
+                            <?php } ?>
+                            <?php include $_SERVER['DOCUMENT_ROOT'] . '/catalog/view/theme/theme555/parcelamento.php'; ?>
+                            <?php if ($product['tax']) { ?>
+                                <span
+                                    class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
 									</div>
 									<div class="cart-button">
 										<button class="btn btn-icon btn-add" data-toggle="tooltip" title="<?php echo $button_cart; ?>" type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="material-design-shopping231"></i></button>
