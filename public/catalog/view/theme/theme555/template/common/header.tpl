@@ -127,7 +127,7 @@
 			<?php } ?>
 		</div>
 
-		<div class="pull-right">
+		<div class="pull-right" style="background-color: rgba(255,255,255,0.5); border-radius: 10px; margin-top: 15px;">
 
 		<div class="button-setting toggle-wrap">
 			<span class="toggle material-design-settings49"  type="button" ></span>

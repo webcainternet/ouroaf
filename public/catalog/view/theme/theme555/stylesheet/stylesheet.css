@@ -1333,7 +1333,8 @@ div.required .control-label:before {
 .nav__primary {
   margin: 21px 0 18px;
   font: 300 14px/16px "Ubuntu", sans-serif;
-  background: url(../image/menu-shadow.png) repeat-x center bottom; }
+  background: #eee;
+padding-top: 10px; }
   .nav__primary ul {
     list-style: none;
     margin: 0;
