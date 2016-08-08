@@ -481,7 +481,7 @@ div.required .control-label:before {
                       Header styles
 =========================================================*/
 .header {
-  background: url(../image/header-bg.png) repeat-x center bottom #FBCA47;
+  background: url(/image/bg.jpg) repeat-x center bottom #111;
   padding: 30px 0 0 0; }
   .header .toggle, .header .button-account > span {
     -moz-transition: 0.3s all ease;
@@ -1340,13 +1340,13 @@ div.required .control-label:before {
     padding: 0; }
   .nav__primary .menu > li {
     float: left;
-    padding: 22px 11px 29px; }
+    padding: 22px 45px 29px; }
     .nav__primary .menu > li:first-child {
       padding-left: 0; }
     .nav__primary .menu > li > a {
       display: block;
       text-transform: uppercase;
-      color: #888;
+      color: #333;
       font: 300 14px/16px "Ubuntu", sans-serif; }
     .nav__primary .menu > li.sfHover > a, .nav__primary .menu > li > a:hover, .nav__primary .menu > li > a.active {
       color: #D1A32D; }
@@ -2644,17 +2644,19 @@ aside .box .product-layout {
 =========================================================*/
 footer {
   margin-top: 27px;
-  padding-top: 40px;
-  background: url(../image/footer-shadow.png) repeat-x center top;
-  background-color: #fbca47}
+  padding-top: 70px;
+  padding-bottom: 20px;
+  background: url(/image/bg.jpg) repeat-x center bottom #111;
+}
   footer h5 {
     font-size: 18px;
     line-height: 22px;
-    margin: 4px 0 17px 0; }
+    margin: 4px 0 17px 0;
+    color: #EEE; }
   footer a {
-    color: #333; }
+    color: #EEE; }
     footer a:visited {
-      color: #888; }
+      color: #EEE; }
     footer a:hover, footer a:active, footer a:focus {
       color: #D1A32D; }
   footer ul {
@@ -2669,16 +2671,17 @@ footer {
     margin: 14px 0 44px;}
   footer .social {
     text-align: center;
-    max-width: 223px; }
+    max-width: 223px;
+      float: left;}
     footer .social li {
-      margin: 0 0 10px 30px;
+      margin: 0 10px 10px 10px;
       display: inline-block;
       width: auto;
       font: 400 16px/19px "Ubuntu", sans-serif; }
       footer .social li:first-child {
         margin-left: 0; }
       footer .social li a {
-        color: #333; }
+        color: #EEE; }
         footer .social li a:visited {
           color: #acafb2; }
         footer .social li a:hover, footer .social li a:active, footer .social li a:focus {
@@ -3439,7 +3442,7 @@ aside .box .box-product > div {
     box-shadow: none; } }
 /************** QUICKVIEW **************************/
 .quick_info {
-  display: none; }
+  display: none !important; }
 
 .fancybox-skin:hover .fancybox-nav span {
   visibility: visible; }
@@ -3985,3 +3988,15 @@ input#input-coupon {
   .delivery_page .table td,
   .delivery_page .table th {
     padding: 6px; } }
+
+.logoouroaf {
+  -webkit-filter: grayscale(1) contrast(1.5);
+  filter: grayscale(1) contrast(1.5);
+}
+.logoouroaf:hover {
+  -webkit-filter: none;
+  filter: none;
+}
+.rating {
+  display: none;
+}
