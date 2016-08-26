@@ -1,4 +1,4 @@
 <?php
 // Text
 $_['text_title']       = 'Retirada';
-$_['text_description'] = 'Retirar na loja';
+$_['text_description'] = 'Retirar com a comissão de formatura';

@@ -334,6 +334,56 @@ class ControllerProductSearch extends Controller {
 				);
 			}
 
+
+	/*sunflowerbiz start*/
+		if(isset($_SESSION['use_category_password'])){
+			$newp=array();
+			if(!isset($_SESSION['passed_category'])) $_SESSION['passed_category']=array();
+			foreach($data['products'] as $k=>$sp){
+				$newpid = $sp['product_id'];
+				$protected = true;
+				$pquery = $this->db->query("SELECT p2c.category_id,cp.password FROM " . DB_PREFIX . "product_to_category p2c left join " . DB_PREFIX . "category_password cp on cp.category_id=p2c.category_id WHERE p2c.product_id = '" . $newpid . "'");
+				
+				foreach($pquery->rows as $caterow){
+					if($caterow['password']=='' || in_array($caterow['category_id'],$_SESSION['passed_category'])){
+					$protected = false;
+					break;
+					}
+					
+				}
+				if(!$protected)
+				$newp[$k]=$sp;
+			}
+			$data['products'] = $newp;
+				
+		}
+	/*sunflowerbiz end*/
+	
+
+	/*sunflowerbiz start*/
+		if(isset($_SESSION['use_product_password'])){
+			$newp=array();
+			if(!isset($_SESSION['passed_product'])) $_SESSION['passed_product']=array();
+			foreach($data['products'] as $k=>$sp){
+				$newpid = $sp['product_id'];
+				$protected = true;
+				$pquery = $this->db->query("SELECT product_id,password FROM " . DB_PREFIX . "product_password WHERE product_id = '" . $newpid . "'");
+				
+				foreach($pquery->rows as $caterow){
+					if($caterow['password']=='' || in_array($caterow['product_id'],$_SESSION['passed_product'])){
+					$protected = false;
+					break;
+					}
+					
+				}
+				if(!$protected)
+				$newp[$k]=$sp;
+			}
+			$data['products'] = $newp;
+				
+		}
+	/*sunflowerbiz end*/
+	
 			$url = '';
 
 			if (isset($this->request->get['search'])) {

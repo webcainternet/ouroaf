@@ -38,6 +38,8 @@ class ControllerCommonHeader extends Controller {
 			$data['logo'] = '';
 		}
 
+		$this->load->model('catalog/information');
+
  
 			if (($data['maintenance']==0)) {
 			$data['informations'] = array();

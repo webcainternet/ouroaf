@@ -389,6 +389,68 @@ class ControllerProductCategory extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
+		$data['db'] = $this->db;	
+		$data['placeholdimage'] = $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));	
+	
+
+	
+		/*sunflowerbiz start*/
+				if(isset($_SESSION['use_category_password'])){
+			$parts = explode('_', (string)$this->request->get['path']);
+			$pquery = $this->db->query("SELECT password FROM " . DB_PREFIX . "category_password  WHERE category_id = '" . $category_id . "'");
+		if ($pquery->num_rows) {
+		$category_password = $pquery->row['password'];
+		}else
+		$category_password = '';	
+		
+		$pqueryl = $this->db->query("SELECT directory FROM " . DB_PREFIX . "language  WHERE code = '" . (isset($_SESSION['default']['language'])?$_SESSION['default']['language']:'en')  . "'");
+			$lan = $pqueryl->row['directory'];
+			require('catalog/language/'.$lan.'/module/category_password.php');
+			if(!isset($_SESSION['passed_category'])) $_SESSION['passed_category']=array();
+				
+			if(isset($this->request->post['category_pass']) && $this->request->post['category_pass']==$category_password) $_SESSION['passed_category'][]=$category_id;
+			$error_msg='';
+			if(isset($this->request->post['category_pass']) && $this->request->post['category_pass']!=$category_password) $error_msg=$_['category_password_error'];
+			
+			
+			
+			if($category_password != '' && !in_array($category_id,$_SESSION['passed_category'])){
+			$data['categories']=array();
+			$data['products'] = array();
+ 
+				$lim_last=8; 
+				 $filter_data = array(
+					'sort'  => 'p.date_added',
+					'order' => 'DESC',
+					'start' => 0,
+					'limit' => $lim_last
+				);
+				$results1 = $this->model_catalog_product->getProducts($filter_data);
+				$last_array = array();
+				foreach ($results1 as $result) {
+				$last_array[] = $result['product_id'];			
+				};
+				
+			
+			$data['thumb'] = '';
+			$data['description'] = '';
+			
+			
+			
+			$data['text_empty'] ='<div style="text-align:center">'.$_['category_password_enter'].'
+										<form  method="post">
+											<br><input type="text" name="category_pass">
+											<br><input class="btn btn-primary" type="submit" value="'.$_['category_password_submit'].'" >
+											<br>'.$error_msg.'
+											</form>
+											</div>';	
+				
+				}
+			}
+				/*sunflowerbiz end*/
+				
+	
+
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/category.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/category.tpl', $data));
 			} else {
@@ -449,6 +511,10 @@ class ControllerProductCategory extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+
+		$data['db'] = $this->db;	
+		$data['placeholdimage'] = $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));	
+	
 
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/error/not_found.tpl', $data));
