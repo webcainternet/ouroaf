@@ -120,7 +120,7 @@
 	<div style="text-transform: uppercase;
     text-align: center;
     margin-top: 79px;
-    font-size: 24px;">Comição de Formatura</div>
+    font-size: 24px;">Comissão de Formatura</div>
 </div>
 
 <div class="home-banner home-banner-4">
