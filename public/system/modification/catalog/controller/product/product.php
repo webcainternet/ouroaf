@@ -154,91 +154,9 @@ class ControllerProductProduct extends Controller {
 			$product_id = 0;
 		}
 
-
-	/*sunflowerbiz start*/
-		if(isset($_SESSION['use_category_password'])){
-			if(!isset($_SESSION['passed_category'])) $_SESSION['passed_category']=array();
-			
-				$newpid = $product_id;
-				$protected = true;
-				$pquery = $this->db->query("SELECT p2c.category_id,cp.password FROM " . DB_PREFIX . "product_to_category p2c left join " . DB_PREFIX . "category_password cp on cp.category_id=p2c.category_id WHERE p2c.product_id = '" . $newpid . "'");
-				$categ = $pquery->rows ;
-				foreach($categ as $caterow){
-					if($caterow['password']=='' || in_array($caterow['category_id'],$_SESSION['passed_category'])){
-					$protected = false;
-					break;
-					}
-					
-				}
-				if($protected){
-					foreach($categ as $caterow){
-					if($caterow['password']!='' && !in_array($caterow['category_id'],$_SESSION['passed_category'])){
-					header("Location:index.php?route=product/category&path=".$caterow['category_id']);
-					break;
-					}
-					
-					}
-				} 
-			
-		
-				
-		}
-	/*sunflowerbiz end*/
-	
 		$this->load->model('catalog/product');
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
-
-		/*sunflowerbiz start*/
-		if(isset($_SESSION['use_product_password'])){
-		
-		$newpid = $product_id;
-				$protected = true;
-				$product_password = '';	
-				$pquery3 = $this->db->query("SELECT product_id,password FROM " . DB_PREFIX . "product_password WHERE product_id = '" . $newpid . "'");
-				$categ = $pquery3->rows ;
-				if(is_array($categ) && sizeof($categ)>0){
-				foreach($categ as $caterow)
-				$product_password=$caterow['password'];
-				}
-			
-				$pqueryl = $this->db->query("SELECT directory FROM " . DB_PREFIX . "language  WHERE code = '" . (isset($_SESSION['default']['language'])?$_SESSION['default']['language']:'en') . "'");
-			$lan = $pqueryl->row['directory'];
-			require('catalog/language/'.$lan.'/module/product_password.php');
-			
-			if(!isset($_SESSION['passed_product'])) $_SESSION['passed_product']=array();
-			
-			if(isset($this->request->post['product_pass']) && $this->request->post['product_pass']==$product_password){
-			$_SESSION['passed_product'][]=$product_id;
-			header("Location:index.php?route=product/product&product_id=".$product_id);exit();
-			}
-			$error_msg='';
-			if(isset($this->request->post['product_pass']) && $this->request->post['product_pass']!=$product_password) $error_msg=$_['product_password_error'];
-			
-			
-				
-				if(is_array($categ) && sizeof($categ)>0){
-				foreach($categ as $caterow){
-				$product_password=$caterow['password'];
-					if($product_password=='' || in_array($caterow['product_id'],$_SESSION['passed_product']))
-					$protected = false;
-					
-					}
-				}else
-				$protected = false;
-				
-				
-				
-				if($protected){
-				$product_name=$product_info['name'];
-					unset($product_info);
-					$product_info =0;
-					
-				}
-					
-		}
-	/*sunflowerbiz end*/
-	
 
 		if ($product_info) {
 			$url = '';
@@ -618,25 +536,6 @@ class ControllerProductProduct extends Controller {
 
 			$data['text_error'] = $this->language->get('text_error');
 
-			/*sunflowerbiz start*/
-		if(isset($_SESSION['use_product_password'])){
-				if($protected){
-			unset($data['breadcrumbs'][sizeof($data['breadcrumbs'])-1]);
-			$data['heading_title'] = $product_name;
-			$data['text_error'] ='<div style="text-align:center">'.$_['product_password_enter'].'
-										<form  method="post">
-											<br><input type="text" name="product_pass">
-											<br><input type="submit" value="'.$_['product_password_submit'].'" >
-											<br>'.$error_msg.'
-											</form>
-											</div>';	
-		
-				
-			} 
-		}
-	/*sunflowerbiz end*/
-	
-
 			$data['button_continue'] = $this->language->get('button_continue');
 
 			$data['continue'] = $this->url->link('common/home');
@@ -726,57 +625,6 @@ class ControllerProductProduct extends Controller {
 		}
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
-
-		/*sunflowerbiz start*/
-		if(isset($_SESSION['use_product_password'])){
-		
-		$newpid = $product_id;
-				$protected = true;
-				$product_password = '';	
-				$pquery3 = $this->db->query("SELECT product_id,password FROM " . DB_PREFIX . "product_password WHERE product_id = '" . $newpid . "'");
-				$categ = $pquery3->rows ;
-				if(is_array($categ) && sizeof($categ)>0){
-				foreach($categ as $caterow)
-				$product_password=$caterow['password'];
-				}
-			
-				$pqueryl = $this->db->query("SELECT directory FROM " . DB_PREFIX . "language  WHERE code = '" . (isset($_SESSION['default']['language'])?$_SESSION['default']['language']:'en') . "'");
-			$lan = $pqueryl->row['directory'];
-			require('catalog/language/'.$lan.'/module/product_password.php');
-			
-			if(!isset($_SESSION['passed_product'])) $_SESSION['passed_product']=array();
-			
-			if(isset($this->request->post['product_pass']) && $this->request->post['product_pass']==$product_password){
-			$_SESSION['passed_product'][]=$product_id;
-			header("Location:index.php?route=product/product&product_id=".$product_id);exit();
-			}
-			$error_msg='';
-			if(isset($this->request->post['product_pass']) && $this->request->post['product_pass']!=$product_password) $error_msg=$_['product_password_error'];
-			
-			
-				
-				if(is_array($categ) && sizeof($categ)>0){
-				foreach($categ as $caterow){
-				$product_password=$caterow['password'];
-					if($product_password=='' || in_array($caterow['product_id'],$_SESSION['passed_product']))
-					$protected = false;
-					
-					}
-				}else
-				$protected = false;
-				
-				
-				
-				if($protected){
-				$product_name=$product_info['name'];
-					unset($product_info);
-					$product_info =0;
-					
-				}
-					
-		}
-	/*sunflowerbiz end*/
-	
 		$recurring_info = $this->model_catalog_product->getProfile($product_id, $recurring_id);
 
 		$json = array();

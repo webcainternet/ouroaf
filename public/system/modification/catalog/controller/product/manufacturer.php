@@ -233,27 +233,7 @@ class ControllerProductManufacturer extends Controller {
 					$rating = false;
 				}
 
-				
-	/*sunflowerbiz start*/
-	$protected=false;
-		if(isset($_SESSION['use_category_password'])){
-			$newp=array();
-			if(!isset($_SESSION['passed_category'])) $_SESSION['passed_category']=array();
-			
-				$newpid = $result['product_id'];
-				$protected = true;
-				$pquery = $this->db->query("SELECT p2c.category_id,cp.password FROM " . DB_PREFIX . "product_to_category p2c left join " . DB_PREFIX . "category_password cp on cp.category_id=p2c.category_id WHERE p2c.product_id = '" . $newpid . "'");
-				foreach($pquery->rows as $caterow){
-					if($caterow['password']=='' || in_array($caterow['category_id'],$_SESSION['passed_category'])){
-					$protected = false;
-					break;
-					}
-				}
-		}
-		if(!$protected)
-		$data['products'][] = array(
-	/*sunflowerbiz end*/
-	
+				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
  

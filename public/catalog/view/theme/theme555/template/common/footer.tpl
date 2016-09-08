@@ -1,6 +1,52 @@
+<?php /*
 <div style="width: 1000px; text-align: center; margin: auto; padding-top: 30px;">
 	<div style="float: left; text-transform: uppercase;">Formas de pagamento:</div><br>
 	<img src="/image/pagseguro-line.png" style="width: 100%;" width="100%">
+</div>
+*/ ?>
+
+
+<style>
+.header-bottom {
+	background-color: #f8f9f3;
+}
+.header-bottom-item {
+	width: 275px;
+	display: inline-block;
+	padding: 5px 15px 15px 15px;
+	color: #555;
+	height: 60px;
+}
+</style>
+<div style="background-color: #e1e2dd; margin-top: 10px;">
+
+	<div style="margin: auto; padding: 30px 30px 15px 30px; width:1170px;max-width:100%;list-style:none; transition: none;overflow:hidden;color: #444;">
+    <div class="header-bottom-item">
+  		<i style="font-size: 36px; float: left; position: absolute; margin-top: 10px;" class="fa fa-credit-card" aria-hidden="true"></i>
+  		<div style="float: left; min-height: 60px; margin-left: 50px; width: 74px; text-align: center; font-size: 44px; font-weight: bold; padding-top: 8px;">6x</div>
+  		<div style="float: left; margin-left: 10px; font-weight: bold;">Sem Juros</div>
+  		<div style="float: left; margin-left: 10px; ">No cartão</div>
+  	</div>
+  	<div class="header-bottom-item">
+  		<i style="font-size: 36px; float: left; position: absolute; margin-top: 10px;" class="fa fa-barcode" aria-hidden="true"></i>
+  		<div style="float: left; min-height: 60px; margin-left: 50px; width: 74px; text-align: center; font-size: 44px; font-weight: bold; padding-top: 8px;">5%</div>
+  		<div style="float: left; margin-left: 10px; font-weight: bold;">De Desconto</div>
+  		<div style="float: left; margin-left: 10px; ">No boleto</div>
+  	</div>
+		<div class="header-bottom-item">
+  		<i style="font-size: 36px; float: left; position: absolute; margin-top: 10px;" class="fa fa-usd" aria-hidden="true"></i>
+  		<div style="float: left; min-height: 60px; margin-left: 50px; width: 55px; text-align: center; font-weight: bold;">FRETE GRÁTIS</div>
+  		<div style="float: left; min-width: 120px; margin-left: 10px; ">Nas compras acima</div>
+  		<div style="float: left; min-width: 120px; margin-left: 10px; font-weight: bold;">de R$ 129,90</div>
+  	</div>
+  	<div class="header-bottom-item">
+  		<i style="font-size: 36px; float: left; position: absolute; margin-top: 10px;" class="fa fa-truck" aria-hidden="true"></i>
+  		<div style="float: left; min-height: 60px; margin-left: 50px; width: 55px; text-align: center; font-weight: bold;">FRETE GRÁTIS</div>
+  		<div style="float: left; min-width: 120px; margin-left: 10px; ">Nas compras acima</div>
+  		<div style="float: left; min-width: 120px; margin-left: 10px; font-weight: bold;">de R$ 129,90</div>
+  	</div>
+	</div>
+
 </div>
 
 <footer>
@@ -86,6 +132,10 @@
 						<img style="background-color: #FFF; border: 0px; height: 40px; margin-right: 20px; padding: 5px; border: solid 1px #EFD6B3;" src="/image/LOGO-LOJAVIRTUAL-300px.png" alt="Loja Virtual .digital" height="40">
 					</a>
 					*/ ?>
+
+					<a href="https://www.payu.com.br/" target="_blank">
+						<img src="/image/payu2.png" alt="PayU" height="26" style="border: 0px; margin-right: 20px; height: 26px;">
+					</a>
 
 					<a href="http://pagseguro.uol.com.br" target="_blank">
 						<img src="/image/pagseguro.png" alt="PagSeguro" height="26" style="border: 0px; margin-right: 20px; height: 26px;">

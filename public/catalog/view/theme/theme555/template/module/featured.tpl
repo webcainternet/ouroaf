@@ -1,3 +1,161 @@
+<style>
+.home-banner {
+	float: left;
+	border: solid 10px #FAFAFA;
+	width: 573px;
+	margin: 5px;
+	transition: border .2s ease-in-out;
+  -webkit-transition: border .2s ease-in-out;
+  -moz-transition: border .2s ease-in-out;
+}
+.home-banner:hover{
+  border: solid 10px #D1A32D;
+}
+.home-banner-1 {
+	height: 250px;
+	background: url('image/aliancas.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #f0efed;
+  background-position: -460px 25px;
+	opacity:0.7;
+	transition: opacity .2s ease-in-out;
+	-webkit-transition: opacity .2s ease-in-out;
+	-moz-transition: opacity .2s ease-in-out;
+}
+.home-banner-1:hover {
+	opacity:1;
+}
+.home-banner-2 {
+	height: 460px;
+	float: right;
+	background: url('/image/banner2.jpg');
+	background-size: cover;
+	opacity:0.7;
+	transition: opacity .2s ease-in-out;
+	-webkit-transition: opacity .2s ease-in-out;
+	-moz-transition: opacity .2s ease-in-out;
+}
+.home-banner-2:hover {
+	opacity:1;
+}
+
+.home-banner-3 {
+	height: 200px;
+  background: #bef2ff;
+	color: #333;
+	opacity:0.7;
+	transition: color .2s ease-in-out;
+	-webkit-transition: color .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out;
+	transition: background .2s ease-in-out;
+	-webkit-transition: background .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out;
+}
+.home-banner-3:hover {
+	background: #D1A32D;
+	color: #FFF;
+}
+.home-banner-4 {
+	height: 220px;
+	width: 379px;
+	background: url('/image/relogios.jpg');
+	background-size: cover;
+	background-position: 0px -90px;
+	opacity:0.7;
+	transition: opacity .2s ease-in-out;
+	-webkit-transition: opacity .2s ease-in-out;
+	-moz-transition: opacity .2s ease-in-out;
+}
+.home-banner-4:hover {
+	opacity:1;
+}
+.home-banner-5 {
+	height: 220px;
+	width: 379px;
+	background-color: #555;
+	transition: background-color .2s ease-in-out;
+	-webkit-transition: background-color .2s ease-in-out;
+	-moz-transition: background-color .2s ease-in-out;
+}
+.home-banner-5:hover {
+	background-color: #333;
+}
+.home-banner-6 {
+	height: 220px;
+	width: 379px;
+	background: url('/image/pingente.jpg');
+	background-size: cover;
+	background-position: 0px -160px;
+	opacity:0.7;
+	transition: opacity .2s ease-in-out;
+	-webkit-transition: opacity .2s ease-in-out;
+	-moz-transition: opacity .2s ease-in-out;
+}
+.home-banner-6:hover {
+	opacity:1;
+}
+</style>
+
+<div class="home-banner home-banner-1">
+	<div style="	color: #D1A32D;
+		text-transform: uppercase;
+		text-align: left;
+		margin-top: 20px;
+		margin-left: 20px;
+		font-size: 24px;">Aneis e Alianças</div>
+</div>
+
+<div class="home-banner home-banner-2">
+	<div style="    padding: 30px;
+    text-align: center;
+    background: #e1e2dd;
+    margin-top: 260px;
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;">Linha University</div>
+</div>
+
+<div class="home-banner home-banner-3">
+	<div style="text-transform: uppercase;
+    text-align: center;
+    margin-top: 79px;
+    font-size: 24px;">Comição de Formatura</div>
+</div>
+
+<div class="home-banner home-banner-4">
+	<div style="    color: #FFF;
+    text-transform: uppercase;
+    text-align: right;
+    margin-top: 160px;
+    margin-right: 20px;
+    font-size: 24px;">Relógios</div>
+</div>
+
+<div class="home-banner home-banner-5">
+	<div style="color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 75px;
+    font-size: 24px;"><i class="fa fa-user" style="font-size: 60px;" aria-hidden="true"></i>
+
+			<br><br>Acesso Restrito</div>
+</div>
+
+<div class="home-banner home-banner-6">
+	<div style="	color: #FFF;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 24px;">Pingentes</div>
+</div>
+
+
+<?php /*
+<hr>
+
+
 <div class="box featured">
 	<div class="box-heading"><h3><?php echo $heading_title; ?></h3></div>
 	<div class="box-content">
@@ -44,7 +202,7 @@
 										<?php /*
 										<button class="btn btn-icon" type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="material-design-favorite22"></i></button>
 										<button class="btn btn-icon" type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="material-design-shuffle24"></i></button>
-										*/ ?>
+										/ ?>
 									</div>
 									<div class="clear"></div>
 									<div class="rating">
@@ -111,7 +269,7 @@
 				<button class="product-btn" type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="material-design-favorite22"></i></button>
 				<button class="product-btn" type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="material-design-shuffle24"></i></button>
 				<a class="quickview product-btn" data-rel="details" data-toggle="tooltip" href="#quickview_<?php echo $f?>"  title="<?php echo $text_quick; ?>"><i class="material-design-tick7"></i></a>
-				</div> */ ?>
+				</div> / ?>
 
 				<div class="rating">
 				<?php for ($i = 1; $i <= 5; $i++) { ?>
@@ -130,3 +288,4 @@
 		</div>
 	</div>
 </div>
+ */ ?>

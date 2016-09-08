@@ -117,6 +117,16 @@
 	<a class="swipe-control" href="#"><i class="fa fa-align-justify"></i></a>
 </div>
 
+<style>
+.topmenu1 a {
+  color: #DDD;
+  text-transform: uppercase;
+}
+.topmenu1 {
+  margin-bottom: 5px;
+}
+</style>
+
 <header class="header">
 	<div class="container">
 		<div id="logo" class="logo">
@@ -127,7 +137,15 @@
 			<?php } ?>
 		</div>
 
-		<div class="pull-right" style="background-color: rgba(255,255,255,0.5); border-radius: 10px; margin-top: 15px;">
+    <div class="pull-right" style="min-width:700px;">
+      <div class="topmenu1">
+        <div style="float: right; text-align: right;">
+          <a href="/index.php?route=information/information&information_id=4">Quem Somos</a> | <a href="/index.php?route=account/account">Minha Conta</a> | <a href="/index.php?route=account/account">Área do Cliente</a> | <a href="/index.php?route=information/contact">Contato</a>
+        </div>
+      </div>
+    </div>
+
+		<div class="pull-right" style="background-color: rgba(255,255,255,0.5); border-radius: 0px; margin-top: 15px;">
 
 		<div class="button-setting toggle-wrap">
 			<span class="toggle material-design-settings49"  type="button" ></span>

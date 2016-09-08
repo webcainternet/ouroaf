@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 29, 2016 at 05:53 PM
+-- Generation Time: Sep 08, 2016 at 08:56 AM
 -- Server version: 5.5.38
 -- PHP Version: 5.3.29
 
@@ -39,7 +39,7 @@ CREATE TABLE `oc_address` (
   `country_id` int(11) NOT NULL DEFAULT '0',
   `zone_id` int(11) NOT NULL DEFAULT '0',
   `custom_field` text NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_address`
@@ -47,7 +47,8 @@ CREATE TABLE `oc_address` (
 
 INSERT INTO `oc_address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`, `custom_field`) VALUES
 (1, 1, 'Demo', 'Demo', 'Demo', 'Demo', '', 'Demo', '5555555555', 222, 3529, ''),
-(2, 2, 'admin', 'admin', '', '111', '', '111', '111', 218, 3423, '');
+(2, 2, 'admin', 'admin', '', '111', '', '111', '111', 218, 3423, ''),
+(3, 3, 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 30, 464, '');
 
 -- --------------------------------------------------------
 
@@ -213,39 +214,17 @@ CREATE TABLE `oc_attribute_description` (
 --
 
 INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
-(1, 2, 'Mauris a dapibus'),
-(2, 2, 'Etiam eu volutpat'),
-(4, 1, 'Attributes 5'),
-(5, 1, 'Attributes 1'),
-(6, 1, 'black'),
-(7, 1, 'Attributes 3'),
-(8, 1, 'Attributes 4'),
-(9, 1, 'Attributes 2'),
-(10, 1, 'Attributes 6'),
-(11, 1, 'Attributes 2'),
-(3, 2, ' Quisque nec'),
-(6, 2, 'black'),
-(1, 1, 'Mauris a dapibus'),
-(2, 1, 'Etiam eu volutpat'),
-(4, 2, 'Attributes 5'),
-(5, 2, 'Attributes 1'),
-(6, 3, 'black'),
-(7, 2, 'Attributes 3'),
-(8, 2, 'Attributes 4'),
-(9, 2, 'Attributes 2'),
-(10, 2, 'Attributes 6'),
-(11, 2, 'Attributes 2'),
-(3, 1, ' Quisque nec'),
-(3, 3, ' Quisque nec'),
-(1, 3, 'Mauris a dapibus'),
-(2, 3, 'Etiam eu volutpat'),
-(5, 3, 'Attributes 1'),
-(9, 3, 'Attributes 2'),
-(11, 3, 'Attributes 2'),
-(7, 3, 'Attributes 3'),
-(8, 3, 'Attributes 4'),
-(4, 3, 'Attributes 5'),
-(10, 3, 'Attributes 6');
+(4, 4, 'Attributes 5'),
+(5, 4, 'Attributes 1'),
+(6, 4, 'black'),
+(7, 4, 'Attributes 3'),
+(8, 4, 'Attributes 4'),
+(9, 4, 'Attributes 2'),
+(10, 4, 'Attributes 6'),
+(11, 4, 'Attributes 2'),
+(1, 4, 'Mauris a dapibus'),
+(2, 4, 'Etiam eu volutpat'),
+(3, 4, ' Quisque nec');
 
 -- --------------------------------------------------------
 
@@ -285,18 +264,10 @@ CREATE TABLE `oc_attribute_group_description` (
 --
 
 INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
-(3, 1, 'Phasellus'),
-(4, 2, 'Mauris a dapibus'),
-(5, 1, ' Etiam eu volutpat'),
-(6, 3, 'Lorem ipsum'),
-(6, 2, 'Lorem ipsum'),
-(3, 2, 'Phasellus'),
-(4, 1, 'Mauris a dapibus'),
-(5, 2, ' Etiam eu volutpat'),
-(6, 1, 'Lorem ipsum'),
-(4, 3, 'Mauris a dapibus'),
-(3, 3, 'Phasellus'),
-(5, 3, ' Etiam eu volutpat');
+(3, 4, 'Phasellus'),
+(5, 4, ' Etiam eu volutpat'),
+(4, 4, 'Mauris a dapibus'),
+(6, 4, 'Lorem ipsum');
 
 -- --------------------------------------------------------
 
@@ -343,15 +314,9 @@ CREATE TABLE `oc_banner_image_description` (
 --
 
 INSERT INTO `oc_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`, `description`) VALUES
-(99, 1, 9, 'slide-1', ''),
-(100, 1, 9, 'slide-2', ''),
-(101, 1, 9, 'slide-3', ''),
-(99, 2, 9, 'slide-1', ''),
-(100, 2, 9, 'slide-2', ''),
-(101, 2, 9, 'slide-3', ''),
-(99, 3, 9, 'slide-1', ''),
-(100, 3, 9, 'slide-2', ''),
-(101, 3, 9, 'slide-3', '');
+(99, 4, 9, 'slide-1', ''),
+(100, 4, 9, 'slide-2', ''),
+(101, 4, 9, 'slide-3', '');
 
 -- --------------------------------------------------------
 
@@ -369,59 +334,25 @@ CREATE TABLE `oc_category` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_category`
 --
 
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-(25, 'catalog/product-51.png', 0, 1, 1, 2, 1, '2009-01-31 01:04:25', '2015-05-05 09:57:23'),
-(20, 'catalog/product-25.png', 0, 1, 1, 3, 1, '2009-01-05 21:49:43', '2015-05-05 09:57:48'),
-(18, 'catalog/product-19.png', 0, 1, 0, 4, 1, '2009-01-05 21:49:15', '2015-05-05 09:58:21'),
-(28, 'catalog/Chalkboard_Bottle1.png', 33, 1, 0, 4, 1, '2009-02-02 13:11:12', '2015-05-07 14:14:09'),
-(29, 'catalog/Crush_Garter2.png', 32, 1, 0, 2, 1, '2009-02-02 13:11:37', '2015-05-06 11:38:39'),
-(30, 'catalog/Chalkboard_Bottle2.png', 33, 1, 0, 3, 1, '2009-02-02 13:11:59', '2015-05-07 14:13:53'),
-(31, 'catalog/Chalkboard_Bottle3.png', 33, 1, 0, 2, 1, '2009-02-03 14:17:24', '2015-05-07 14:13:36'),
-(32, 'catalog/Crush_Garter1.png', 33, 0, 0, 1, 1, '2009-02-03 14:17:34', '2015-05-07 14:13:20'),
-(33, 'catalog/product-36.png', 0, 1, 1, 1, 1, '2009-02-03 14:17:55', '2015-05-05 09:56:56'),
-(34, 'catalog/product-46.png', 0, 1, 4, 5, 1, '2009-02-03 14:18:11', '2015-05-05 09:58:47'),
-(35, 'catalog/product-25.png', 0, 1, 1, 6, 1, '2010-09-17 10:06:48', '2015-05-05 10:00:09'),
-(36, 'catalog/Hand-painted3.png', 32, 1, 0, 1, 1, '2010-09-17 10:07:13', '2015-05-06 11:46:15'),
-(37, 'catalog/Crystal_Ball2.png', 32, 1, 0, 3, 1, '2015-05-05 10:06:55', '2015-05-06 11:43:01'),
-(38, 'catalog/Flower_Basket1.png', 32, 1, 0, 4, 1, '2015-05-05 10:07:45', '2015-05-06 11:44:00'),
-(39, 'catalog/Crystal_Ball3.png', 32, 1, 0, 5, 1, '2015-05-05 10:08:20', '2015-05-06 11:43:24'),
-(40, 'catalog/Hand-painted2.png', 32, 1, 0, 6, 1, '2015-05-05 10:08:56', '2015-05-06 11:45:50'),
-(41, 'catalog/Flower_Basket2.png', 32, 1, 0, 7, 1, '2015-05-05 10:09:45', '2015-05-06 11:44:23'),
-(42, 'catalog/Flower_Basket3.png', 32, 1, 0, 8, 1, '2015-05-05 10:10:38', '2015-05-06 11:45:08'),
-(43, 'catalog/Hand-painted1.png', 32, 1, 0, 9, 1, '2015-05-05 10:11:37', '2015-05-06 11:45:28'),
-(44, 'catalog/Leaf_Copper1.png', 31, 1, 0, 1, 1, '2015-05-05 10:13:19', '2015-05-06 11:52:33'),
-(45, 'catalog/Crush_Garter3.png', 31, 1, 0, 2, 1, '2015-05-05 10:14:43', '2015-05-06 11:41:24'),
-(46, 'catalog/Heart_Wedding1.png', 31, 1, 0, 3, 1, '2015-05-05 10:15:24', '2015-05-06 11:50:35'),
-(47, 'catalog/Heart_Wedding3.png', 31, 1, 0, 4, 1, '2015-05-05 10:16:03', '2015-05-06 11:51:52'),
-(48, 'catalog/Heart_Wedding2.png', 31, 1, 0, 5, 1, '2015-05-05 10:16:49', '2015-05-06 11:51:03'),
-(49, 'catalog/Paper_Lantern1.png', 31, 1, 0, 6, 1, '2015-05-05 10:17:40', '2015-05-06 11:56:44'),
-(50, 'catalog/Leaf_Copper2.png', 31, 1, 0, 7, 1, '2015-05-05 10:18:34', '2015-05-06 11:53:15'),
-(51, 'catalog/Mini_Lantern1.png', 31, 1, 0, 8, 1, '2015-05-05 10:19:21', '2015-05-06 11:54:38'),
-(52, 'catalog/Mini_Lantern2.png', 31, 1, 0, 9, 1, '2015-05-05 10:20:07', '2015-05-06 11:55:06'),
-(53, 'catalog/Personalized_Guest1.png', 30, 1, 0, 1, 1, '2015-05-05 10:23:08', '2015-05-06 12:01:38'),
-(54, 'catalog/Crystal_Ball1.png', 30, 1, 0, 2, 1, '2015-05-05 10:23:56', '2015-05-06 11:41:32'),
-(55, 'catalog/Paper_Lantern2.png', 30, 1, 0, 3, 1, '2015-05-05 10:24:34', '2015-05-06 11:57:31'),
-(56, 'catalog/Paper_Pom2.png', 30, 1, 0, 4, 1, '2015-05-05 10:25:14', '2015-05-06 11:59:51'),
-(57, 'catalog/Paper_Pom1.png', 30, 1, 0, 5, 1, '2015-05-05 10:25:59', '2015-05-06 11:59:22'),
-(58, 'catalog/Personalized_Napkins2.png', 30, 1, 0, 6, 1, '2015-05-05 10:26:48', '2015-05-06 12:03:07'),
-(59, 'catalog/Paper_Pom3.png', 30, 1, 0, 7, 1, '2015-05-05 10:27:48', '2015-05-06 12:01:12'),
-(60, 'catalog/Personalized_Guest2.png', 30, 1, 0, 8, 1, '2015-05-05 10:28:41', '2015-05-06 12:02:00'),
-(61, 'catalog/Personalized_Napkins1.png', 30, 1, 0, 9, 1, '2015-05-05 10:30:11', '2015-05-06 12:02:23'),
-(62, 'catalog/Plantable_Card3.png', 28, 1, 0, 1, 1, '2015-05-05 10:31:23', '2015-05-06 12:04:43'),
-(63, 'catalog/Chalkboard_Bottle2.png', 28, 1, 0, 2, 1, '2015-05-05 10:32:15', '2015-05-06 12:05:23'),
-(64, 'catalog/Crush_Garter1.png', 28, 1, 0, 3, 1, '2015-05-05 10:33:10', '2015-05-06 12:06:07'),
-(65, 'catalog/Paper_Pom1.png', 28, 1, 0, 4, 1, '2015-05-05 10:34:08', '2015-05-06 11:58:14'),
-(66, 'catalog/Paper_Lantern3.png', 28, 1, 0, 5, 1, '2015-05-05 10:34:59', '2015-05-06 11:57:50'),
-(67, 'catalog/Crystal_Ball1.png', 28, 1, 0, 6, 1, '2015-05-05 10:35:42', '2015-05-06 12:07:33'),
-(68, 'catalog/Crush_Garter3.png', 28, 1, 0, 7, 1, '2015-05-05 10:36:41', '2015-05-06 12:06:29'),
-(69, 'catalog/Hand-painted3.png', 28, 1, 0, 8, 1, '2015-05-05 10:37:33', '2015-05-06 12:06:50'),
-(70, 'catalog/Hand-painted2.png', 28, 1, 0, 9, 1, '2015-05-05 10:38:21', '2015-05-06 12:07:11');
+(72, '', 0, 1, 1, 20, 1, '2016-07-22 08:55:13', '2016-08-26 10:22:22'),
+(73, '', 0, 1, 1, 30, 1, '2016-07-22 08:55:47', '2016-07-22 08:55:47'),
+(74, '', 0, 1, 1, 40, 1, '2016-07-22 08:56:36', '2016-07-22 08:56:36'),
+(75, '', 0, 1, 1, 50, 1, '2016-07-22 08:57:10', '2016-08-26 10:07:41'),
+(83, '', 72, 0, 1, 0, 1, '2016-09-08 06:36:21', '2016-09-08 06:36:21'),
+(78, '', 72, 1, 1, 0, 1, '2016-08-08 09:00:06', '2016-09-08 06:36:02'),
+(84, '', 80, 0, 1, 0, 1, '2016-09-08 06:37:17', '2016-09-08 06:37:17'),
+(80, '', 72, 0, 1, 0, 1, '2016-08-08 09:01:11', '2016-09-08 06:22:46'),
+(81, '', 80, 0, 1, 0, 1, '2016-08-08 09:01:32', '2016-09-08 06:23:10'),
+(85, '', 80, 0, 1, 0, 1, '2016-09-08 06:37:51', '2016-09-08 06:37:51'),
+(71, '', 0, 1, 1, 10, 1, '2016-07-22 08:46:09', '2016-07-22 08:46:09'),
+(86, '', 72, 0, 1, 0, 1, '2016-09-08 06:38:33', '2016-09-08 06:38:33');
 
 -- --------------------------------------------------------
 
@@ -444,146 +375,18 @@ CREATE TABLE `oc_category_description` (
 --
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(34, 3, 'Wedding Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Wedding Dresses', '', ''),
-(18, 3, 'Sale', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Sale', '', ''),
-(33, 2, 'Bridesmaid Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Bridesmaid Dresses', '', ''),
-(31, 2, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(25, 3, 'Mother Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Mother Dresses', '', ''),
-(25, 2, 'Mother Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Mother Dresses', '', ''),
-(20, 2, 'Pregnant Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Pregnant Dresses', 'Example of category description', ''),
-(34, 2, 'Wedding Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Wedding Dresses', '', ''),
-(18, 2, 'Sale', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Sale', '', ''),
-(33, 3, 'Bridesmaid Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Bridesmaid Dresses', '', ''),
-(20, 3, 'Pregnant Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Pregnant Dresses', 'Example of category description', ''),
-(35, 3, 'Wedding Jewelry', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Wedding Jewelry', '', ''),
-(35, 2, 'Wedding Jewelry', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Wedding Jewelry', '', ''),
-(35, 1, 'Wedding Jewelry', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Wedding Jewelry', '', ''),
-(36, 2, 'Lorem ipsum dolor sit amet', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet', '', ''),
-(36, 3, 'Lorem ipsum dolor sit amet', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet', '', ''),
-(28, 1, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(28, 2, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(29, 2, 'Conse ctetur adipisicing', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing', '', ''),
-(29, 3, 'Conse ctetur adipisicing', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing', '', ''),
-(30, 1, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(30, 2, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(31, 1, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(32, 3, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(32, 2, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(33, 1, 'Bridesmaid Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Bridesmaid Dresses', '', ''),
-(25, 1, 'Mother Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Mother Dresses', '', ''),
-(20, 1, 'Pregnant Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Pregnant Dresses', 'Example of category description', ''),
-(18, 1, 'Sale', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Sale', '', ''),
-(34, 1, 'Wedding Dresses', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Wedding Dresses', '', ''),
-(28, 3, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(30, 3, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(31, 3, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(32, 1, 'Tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Tempor', '', ''),
-(36, 1, 'Lorem ipsum dolor sit amet', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet', '', ''),
-(29, 1, 'Conse ctetur adipisicing', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing', '', ''),
-(37, 3, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(37, 2, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(37, 1, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(38, 3, 'Incididunt ut labore', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(38, 2, 'Incididunt ut labore', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(38, 1, 'Incididunt ut labore', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(39, 3, 'Et dolore magna aliqua', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(39, 2, 'Et dolore magna aliqua', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(39, 1, 'Et dolore magna aliqua', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(40, 3, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(40, 2, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(40, 1, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(41, 3, 'Quis nostrud exercitation', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation', '', ''),
-(41, 2, 'Quis nostrud exercitation', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation', '', ''),
-(41, 1, 'Quis nostrud exercitation', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation', '', ''),
-(42, 3, 'Ullamco laboris nisi', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi', '', ''),
-(42, 2, 'Ullamco laboris nisi', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi', '', ''),
-(42, 1, 'Ullamco laboris nisi', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi', '', '');
-INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(43, 3, 'Ut aliquip ex ea commodo', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo', '', ''),
-(43, 2, 'Ut aliquip ex ea commodo', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo', '', ''),
-(43, 1, 'Ut aliquip ex ea commodo', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo', '', ''),
-(44, 3, 'Lorem ipsum dolor sit amet', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet', '', ''),
-(44, 2, 'Lorem ipsum dolor sit amet', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet', '', ''),
-(44, 1, 'Lorem ipsum dolor sit amet', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet', '', ''),
-(45, 1, 'Conse ctetur adipisicing', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing', '', ''),
-(45, 2, 'Conse ctetur adipisicing', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing', '', ''),
-(45, 3, 'Conse ctetur adipisicing', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing', '', ''),
-(46, 3, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(46, 2, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(46, 1, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(47, 3, 'Incididunt ut labore', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(47, 2, 'Incididunt ut labore', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(47, 1, 'Incididunt ut labore', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(48, 3, 'Et dolore magna aliqua', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(48, 2, 'Et dolore magna aliqua', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(48, 1, 'Et dolore magna aliqua', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(49, 1, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(49, 2, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(49, 3, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(50, 3, 'Quis nostrud exercitation ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation ', '', ''),
-(50, 2, 'Quis nostrud exercitation ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation ', '', ''),
-(50, 1, 'Quis nostrud exercitation ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation ', '', ''),
-(51, 3, 'Ullamco laboris nisi ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi ', '', ''),
-(51, 2, 'Ullamco laboris nisi ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi ', '', ''),
-(51, 1, 'Ullamco laboris nisi ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi ', '', ''),
-(52, 3, 'Ut aliquip ex ea commodo', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo', '', ''),
-(52, 2, 'Ut aliquip ex ea commodo', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo', '', ''),
-(52, 1, 'Ut aliquip ex ea commodo', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo', '', ''),
-(53, 1, 'Lorem ipsum dolor sit amet ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet ', '', ''),
-(53, 2, 'Lorem ipsum dolor sit amet ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet ', '', ''),
-(53, 3, 'Lorem ipsum dolor sit amet ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet ', '', ''),
-(54, 1, 'Conse ctetur adipisicing ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing ', '', ''),
-(54, 2, 'Conse ctetur adipisicing ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing ', '', ''),
-(54, 3, 'Conse ctetur adipisicing ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing ', '', ''),
-(55, 3, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(55, 2, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(55, 1, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(56, 3, 'Incididunt ut labore', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(56, 2, 'Incididunt ut labore', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(56, 1, 'Incididunt ut labore', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(57, 3, 'Et dolore magna aliqua', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(57, 2, 'Et dolore magna aliqua', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(57, 1, 'Et dolore magna aliqua', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(58, 3, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(58, 2, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(58, 1, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(59, 3, 'Quis nostrud exercitation', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation', '', ''),
-(59, 2, 'Quis nostrud exercitation', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation', '', '');
-INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(59, 1, 'Quis nostrud exercitation', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation', '', ''),
-(60, 3, 'Ullamco laboris nisi ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi ', '', ''),
-(60, 2, 'Ullamco laboris nisi ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi ', '', ''),
-(60, 1, 'Ullamco laboris nisi ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi ', '', ''),
-(61, 3, 'Ut aliquip ex ea commodo ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo ', '', ''),
-(61, 2, 'Ut aliquip ex ea commodo ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo ', '', ''),
-(61, 1, 'Ut aliquip ex ea commodo ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo ', '', ''),
-(62, 3, 'Lorem ipsum dolor sit amet ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet ', '', ''),
-(62, 2, 'Lorem ipsum dolor sit amet ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet ', '', ''),
-(62, 1, 'Lorem ipsum dolor sit amet ', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Lorem ipsum dolor sit amet ', '', ''),
-(63, 3, 'Conse ctetur adipisicing', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing', '', ''),
-(63, 2, 'Conse ctetur adipisicing', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing', '', ''),
-(63, 1, 'Conse ctetur adipisicing', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Conse ctetur adipisicing', '', ''),
-(64, 3, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(64, 2, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(64, 1, 'Elit sed do eiusmod tempor', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Elit sed do eiusmod tempor', '', ''),
-(65, 3, 'Incididunt ut labore', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(65, 2, 'Incididunt ut labore', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(65, 1, 'Incididunt ut labore', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Incididunt ut labore', '', ''),
-(66, 3, 'Et dolore magna aliqua', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(66, 2, 'Et dolore magna aliqua', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(66, 1, 'Et dolore magna aliqua', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Et dolore magna aliqua', '', ''),
-(67, 3, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(67, 2, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(67, 1, 'Ut enim ad minim veniam', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut enim ad minim veniam', '', ''),
-(68, 3, 'Quis nostrud exercitation', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation', '', ''),
-(68, 2, 'Quis nostrud exercitation', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation', '', ''),
-(68, 1, 'Quis nostrud exercitation', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Quis nostrud exercitation', '', ''),
-(69, 3, 'Ullamco laboris nisi', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi', '', ''),
-(69, 2, 'Ullamco laboris nisi', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi', '', ''),
-(69, 1, 'Ullamco laboris nisi', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ullamco laboris nisi', '', ''),
-(70, 3, 'Ut aliquip ex ea commodo', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo', '', ''),
-(70, 2, 'Ut aliquip ex ea commodo', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo', '', ''),
-(70, 1, 'Ut aliquip ex ea commodo', '&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', 'Ut aliquip ex ea commodo', '', '');
+(71, 4, 'A LOJA', '&lt;p&gt;Texto &quot;A LOJA&quot; - Atelie e fabrica&lt;/p&gt;', 'A LOJA', '', ''),
+(72, 4, 'Anéis de Formatura', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Anéis de Formatura', '', ''),
+(73, 4, 'Pingentes', '', 'Pingentes', '', ''),
+(74, 4, 'Alianças', '', 'Alianças', '', ''),
+(75, 4, 'Relógios', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Relógios', '', ''),
+(84, 4, 'FAAP', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'FAAP', '', ''),
+(78, 4, 'Masculino', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Masculino', '', ''),
+(83, 4, 'Feminino', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Feminino', '', ''),
+(80, 4, 'OuroAf University', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'OuroAf University', '', ''),
+(81, 4, 'Mackenzie', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Mackenzie', '', ''),
+(85, 4, 'Direito São Bernardo', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Direito São Bernardo', '', ''),
+(86, 4, 'Exclusivos', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Exclusivos', '', '');
 
 -- --------------------------------------------------------
 
@@ -595,6 +398,28 @@ CREATE TABLE `oc_category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oc_category_password`
+--
+
+CREATE TABLE `oc_category_password` (
+`category_password_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL DEFAULT '0',
+  `password` text
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `oc_category_password`
+--
+
+INSERT INTO `oc_category_password` (`category_password_id`, `category_id`, `password`) VALUES
+(1, 75, 'ouro'),
+(2, 72, 'aaa'),
+(3, 80, 'aaa'),
+(4, 81, 'aaa');
 
 -- --------------------------------------------------------
 
@@ -613,128 +438,28 @@ CREATE TABLE `oc_category_path` (
 --
 
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
-(25, 25, 0),
-(28, 28, 1),
-(28, 33, 0),
-(35, 35, 0),
-(37, 33, 0),
-(29, 32, 1),
-(36, 36, 2),
-(36, 33, 0),
-(36, 32, 1),
-(29, 29, 2),
-(29, 33, 0),
-(30, 30, 1),
-(30, 33, 0),
-(31, 31, 1),
-(31, 33, 0),
-(32, 32, 1),
-(32, 33, 0),
-(20, 20, 0),
-(18, 18, 0),
-(33, 33, 0),
-(34, 34, 0),
-(37, 32, 1),
-(37, 37, 2),
-(38, 33, 0),
-(38, 32, 1),
-(38, 38, 2),
-(39, 33, 0),
-(39, 32, 1),
-(39, 39, 2),
-(40, 33, 0),
-(40, 32, 1),
-(40, 40, 2),
-(41, 33, 0),
-(41, 32, 1),
-(41, 41, 2),
-(42, 33, 0),
-(42, 32, 1),
-(42, 42, 2),
-(43, 33, 0),
-(43, 32, 1),
-(43, 43, 2),
-(44, 33, 0),
-(44, 31, 1),
-(44, 44, 2),
-(45, 33, 0),
-(45, 31, 1),
-(45, 45, 2),
-(46, 33, 0),
-(46, 31, 1),
-(46, 46, 2),
-(47, 33, 0),
-(47, 31, 1),
-(47, 47, 2),
-(48, 33, 0),
-(48, 31, 1),
-(48, 48, 2),
-(49, 33, 0),
-(49, 31, 1),
-(49, 49, 2),
-(50, 33, 0),
-(50, 31, 1),
-(50, 50, 2),
-(51, 33, 0),
-(51, 31, 1),
-(51, 51, 2),
-(52, 33, 0),
-(52, 31, 1),
-(52, 52, 2),
-(53, 33, 0),
-(53, 30, 1),
-(53, 53, 2),
-(54, 33, 0),
-(54, 30, 1),
-(54, 54, 2),
-(55, 33, 0),
-(55, 30, 1),
-(55, 55, 2),
-(56, 33, 0),
-(56, 30, 1),
-(56, 56, 2),
-(57, 33, 0),
-(57, 30, 1),
-(57, 57, 2),
-(58, 33, 0),
-(58, 30, 1),
-(58, 58, 2),
-(59, 33, 0),
-(59, 30, 1),
-(59, 59, 2),
-(60, 33, 0),
-(60, 30, 1),
-(60, 60, 2),
-(61, 33, 0),
-(61, 30, 1),
-(61, 61, 2),
-(62, 33, 0),
-(62, 28, 1),
-(62, 62, 2),
-(63, 33, 0),
-(63, 28, 1),
-(63, 63, 2),
-(64, 33, 0),
-(64, 28, 1),
-(64, 64, 2),
-(65, 33, 0),
-(65, 28, 1),
-(65, 65, 2),
-(66, 33, 0),
-(66, 28, 1),
-(66, 66, 2),
-(67, 33, 0),
-(67, 28, 1),
-(67, 67, 2),
-(68, 33, 0),
-(68, 28, 1),
-(68, 68, 2),
-(69, 33, 0),
-(69, 28, 1),
-(69, 69, 2),
-(70, 33, 0),
-(70, 28, 1),
-(70, 70, 2);
+(83, 72, 0),
+(72, 72, 0),
+(75, 75, 0),
+(74, 74, 0),
+(73, 73, 0),
+(85, 72, 0),
+(85, 80, 1),
+(81, 81, 2),
+(85, 85, 2),
+(81, 80, 1),
+(80, 80, 1),
+(81, 72, 0),
+(80, 72, 0),
+(84, 80, 1),
+(84, 72, 0),
+(84, 84, 2),
+(78, 72, 0),
+(78, 78, 1),
+(83, 83, 1),
+(71, 71, 0),
+(86, 72, 0),
+(86, 86, 1);
 
 -- --------------------------------------------------------
 
@@ -753,52 +478,18 @@ CREATE TABLE `oc_category_to_layout` (
 --
 
 INSERT INTO `oc_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
-(33, 0, 0),
-(25, 0, 0),
-(20, 0, 0),
-(18, 0, 0),
-(34, 0, 0),
-(35, 0, 0),
-(36, 0, 0),
-(28, 0, 0),
-(29, 0, 0),
-(30, 0, 0),
-(31, 0, 0),
-(32, 0, 0),
-(37, 0, 0),
-(38, 0, 0),
-(39, 0, 0),
-(40, 0, 0),
-(41, 0, 0),
-(42, 0, 0),
-(43, 0, 0),
-(44, 0, 0),
-(45, 0, 0),
-(46, 0, 0),
-(47, 0, 0),
-(48, 0, 0),
-(49, 0, 0),
-(50, 0, 0),
-(51, 0, 0),
-(52, 0, 0),
-(53, 0, 0),
-(54, 0, 0),
-(55, 0, 0),
-(56, 0, 0),
-(57, 0, 0),
-(58, 0, 0),
-(59, 0, 0),
-(60, 0, 0),
-(61, 0, 0),
-(62, 0, 0),
-(63, 0, 0),
-(64, 0, 0),
-(65, 0, 0),
-(66, 0, 0),
-(67, 0, 0),
-(68, 0, 0),
-(69, 0, 0),
-(70, 0, 0);
+(84, 0, 0),
+(83, 0, 0),
+(75, 0, 0),
+(74, 0, 0),
+(73, 0, 0),
+(72, 0, 0),
+(78, 0, 0),
+(86, 0, 0),
+(81, 0, 0),
+(80, 0, 0),
+(85, 0, 0),
+(71, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -816,52 +507,18 @@ CREATE TABLE `oc_category_to_store` (
 --
 
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
-(18, 0),
-(20, 0),
-(25, 0),
-(28, 0),
-(29, 0),
-(30, 0),
-(31, 0),
-(32, 0),
-(33, 0),
-(34, 0),
-(35, 0),
-(36, 0),
-(37, 0),
-(38, 0),
-(39, 0),
-(40, 0),
-(41, 0),
-(42, 0),
-(43, 0),
-(44, 0),
-(45, 0),
-(46, 0),
-(47, 0),
-(48, 0),
-(49, 0),
-(50, 0),
-(51, 0),
-(52, 0),
-(53, 0),
-(54, 0),
-(55, 0),
-(56, 0),
-(57, 0),
-(58, 0),
-(59, 0),
-(60, 0),
-(61, 0),
-(62, 0),
-(63, 0),
-(64, 0),
-(65, 0),
-(66, 0),
-(67, 0),
-(68, 0),
-(69, 0),
-(70, 0);
+(71, 0),
+(72, 0),
+(73, 0),
+(74, 0),
+(75, 0),
+(78, 0),
+(80, 0),
+(81, 0),
+(83, 0),
+(84, 0),
+(85, 0),
+(86, 0);
 
 -- --------------------------------------------------------
 
@@ -913,7 +570,7 @@ INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 (27, 'Bosnia and Herzegovina', 'BA', 'BIH', '', 0, 1),
 (28, 'Botswana', 'BW', 'BWA', '', 0, 1),
 (29, 'Bouvet Island', 'BV', 'BVT', '', 0, 1),
-(30, 'Brazil', 'BR', 'BRA', '', 0, 1),
+(30, 'Brasil', 'BR', 'BRA', '', 1, 1),
 (31, 'British Indian Ocean Territory', 'IO', 'IOT', '', 0, 1),
 (32, 'Brunei Darussalam', 'BN', 'BRN', '', 0, 1),
 (33, 'Bulgaria', 'BG', 'BGR', '', 0, 1),
@@ -1159,7 +816,7 @@ CREATE TABLE `oc_coupon` (
   `uses_customer` varchar(11) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_coupon`
@@ -1168,7 +825,8 @@ CREATE TABLE `oc_coupon` (
 INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
 (4, '-10% Discount', '2222', 'P', 10.0000, 0, 0, 0.0000, '2014-01-01', '2020-01-01', 10, '10', 0, '2009-01-27 13:55:03'),
 (5, 'Free Shipping', '3333', 'P', 0.0000, 0, 1, 100.0000, '2014-01-01', '2014-02-01', 10, '10', 0, '2009-03-14 21:13:53'),
-(6, '-10.00 Discount', '1111', 'F', 10.0000, 0, 0, 10.0000, '2014-01-01', '2020-01-01', 100000, '10000', 0, '2009-03-14 21:15:18');
+(6, '-10.00 Discount', '1111', 'F', 10.0000, 0, 0, 10.0000, '2014-01-01', '2020-01-01', 100000, '10000', 0, '2009-03-14 21:15:18'),
+(7, 'TESTE', 'TESTE', 'F', 5.0000, 0, 0, 0.0000, '2016-08-08', '2016-09-08', 1, '1', 1, '2016-08-08 13:24:53');
 
 -- --------------------------------------------------------
 
@@ -1180,6 +838,13 @@ CREATE TABLE `oc_coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_coupon_category`
+--
+
+INSERT INTO `oc_coupon_category` (`coupon_id`, `category_id`) VALUES
+(7, 79);
 
 -- --------------------------------------------------------
 
@@ -1206,7 +871,14 @@ CREATE TABLE `oc_coupon_product` (
 `coupon_product_id` int(11) NOT NULL,
   `coupon_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_coupon_product`
+--
+
+INSERT INTO `oc_coupon_product` (`coupon_product_id`, `coupon_id`, `product_id`) VALUES
+(1, 7, 28);
 
 -- --------------------------------------------------------
 
@@ -1224,16 +896,14 @@ CREATE TABLE `oc_currency` (
   `value` float(15,8) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `date_modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_currency`
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(1, 'Pound Sterling', 'GBP', '£', '', '0', 0.74339998, 1, '2016-06-29 17:52:34'),
-(2, 'US Dollar', 'USD', '$', '', '0', 1.00000000, 1, '2016-06-29 17:53:02'),
-(3, 'Euro', 'EUR', '', '€', '0', 0.89889997, 1, '2016-06-29 17:52:34');
+(4, 'Real', 'BRL', 'R$', '', '2', 1.00000000, 1, '2016-08-08 10:37:36');
 
 -- --------------------------------------------------------
 
@@ -1263,7 +933,7 @@ CREATE TABLE `oc_customer` (
   `safe` tinyint(1) NOT NULL,
   `token` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_customer`
@@ -1271,7 +941,8 @@ CREATE TABLE `oc_customer` (
 
 INSERT INTO `oc_customer` (`customer_id`, `customer_group_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `custom_field`, `ip`, `status`, `approved`, `safe`, `token`, `date_added`) VALUES
 (1, 1, 0, 'Demo', 'Demo', 'demo@demo.com', '5555555555', '', '34247e515a0925a99c78acda4e62ecfde1051cb2', '5788e96af', 'a:3:{s:104:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjQzO3M6Njoib3B0aW9uIjthOjI6e2k6MjU0O3M6MjoiOTYiO2k6MjUzO3M6MjoiOTQiO319";i:1;s:104:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjMwO3M6Njoib3B0aW9uIjthOjI6e2k6MjM3O3M6MjoiNDQiO2k6MjM4O3M6MjoiNDkiO319";i:1;s:104:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI4O3M6Njoib3B0aW9uIjthOjI6e2k6MjM0O3M6MjoiMzYiO2k6MjMzO3M6MjoiMzQiO319";i:12;}', 'a:19:{i:0;i:46;i:1;i:43;i:2;i:33;i:3;i:32;i:4;i:29;i:5;i:44;i:6;i:48;i:7;i:49;i:8;i:40;i:9;i:34;i:10;s:2:"35";i:11;s:2:"30";i:12;s:3:"42;";i:13;s:3:"30;";i:14;s:2:"45";i:15;s:2:"42";i:16;i:28;i:17;i:47;i:18;s:2:"41";}', 0, 1, '', '192.168.9.2', 1, 1, 0, '', '2014-12-04 15:09:03'),
-(2, 1, 0, 'admin', 'admin', 'admin@demolink.org', '111', '', '2958b7bb3bbc2a199376ca77a13ada16338a8f8e', '6b18ff90f', 'a:2:{s:108:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjMxO3M6Njoib3B0aW9uIjthOjI6e2k6MjU2O3M6MzoiMTAzIjtpOjI1NTtzOjI6Ijk4Ijt9fQ==";i:1;s:104:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjMzO3M6Njoib3B0aW9uIjthOjI6e2k6MjMxO3M6MjoiMjYiO2k6MjMyO3M6MjoiMzAiO319";i:1;}', 'a:3:{i:0;i:28;i:1;i:47;i:2;i:30;}', 0, 2, '', '192.168.9.23', 1, 1, 0, '', '2015-05-04 11:19:14');
+(2, 1, 0, 'admin', 'admin', 'admin@demolink.org', '111', '', '2958b7bb3bbc2a199376ca77a13ada16338a8f8e', '6b18ff90f', 'a:2:{s:108:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjMxO3M6Njoib3B0aW9uIjthOjI6e2k6MjU2O3M6MzoiMTAzIjtpOjI1NTtzOjI6Ijk4Ijt9fQ==";i:1;s:104:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjMzO3M6Njoib3B0aW9uIjthOjI6e2k6MjMxO3M6MjoiMjYiO2k6MjMyO3M6MjoiMzAiO319";i:1;}', 'a:3:{i:0;i:28;i:1;i:47;i:2;i:30;}', 0, 2, '', '192.168.9.23', 1, 1, 0, '', '2015-05-04 11:19:14'),
+(3, 1, 0, 'Fernando', 'Mendes', 'fernando.mendes@webca.com.br', '11976495157', '', '417264a695028c6f95cb13f7f5c5bc0a237ca994', 'a7b877a12', 'a:1:{s:108:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI4O3M6Njoib3B0aW9uIjthOjI6e2k6MjY4O3M6MzoiMTI3IjtpOjI2NztzOjM6IjEyNSI7fX0=";i:1;}', '', 0, 3, '', '127.0.0.1', 1, 1, 0, '', '2016-08-08 10:40:12');
 
 -- --------------------------------------------------------
 
@@ -1286,7 +957,7 @@ CREATE TABLE `oc_customer_activity` (
   `data` text NOT NULL,
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_customer_activity`
@@ -1312,7 +983,12 @@ INSERT INTO `oc_customer_activity` (`activity_id`, `customer_id`, `key`, `data`,
 (17, 2, 'login', 'a:2:{s:11:"customer_id";s:1:"2";s:4:"name";s:11:"admin admin";}', '192.168.9.23', '2015-05-08 10:54:58'),
 (18, 2, 'login', 'a:2:{s:11:"customer_id";s:1:"2";s:4:"name";s:11:"admin admin";}', '192.168.9.23', '2015-05-11 10:16:52'),
 (19, 2, 'login', 'a:2:{s:11:"customer_id";s:1:"2";s:4:"name";s:11:"admin admin";}', '192.168.9.23', '2015-05-11 17:21:54'),
-(20, 2, 'login', 'a:2:{s:11:"customer_id";s:1:"2";s:4:"name";s:11:"admin admin";}', '192.168.9.23', '2015-05-12 10:27:31');
+(20, 2, 'login', 'a:2:{s:11:"customer_id";s:1:"2";s:4:"name";s:11:"admin admin";}', '192.168.9.23', '2015-05-12 10:27:31'),
+(21, 3, 'register', 'a:2:{s:11:"customer_id";i:3;s:4:"name";s:15:"Fernando Mendes";}', '127.0.0.1', '2016-08-08 10:40:13'),
+(22, 3, 'order_account', 'a:3:{s:11:"customer_id";s:1:"3";s:4:"name";s:15:"Fernando Mendes";s:8:"order_id";i:13;}', '127.0.0.1', '2016-08-08 10:47:37'),
+(23, 3, 'login', 'a:2:{s:11:"customer_id";s:1:"3";s:4:"name";s:15:"Fernando Mendes";}', '127.0.0.1', '2016-08-08 12:55:40'),
+(24, 3, 'order_account', 'a:3:{s:11:"customer_id";s:1:"3";s:4:"name";s:15:"Fernando Mendes";s:8:"order_id";i:14;}', '127.0.0.1', '2016-08-08 12:56:04'),
+(25, 3, 'order_account', 'a:3:{s:11:"customer_id";s:1:"3";s:4:"name";s:15:"Fernando Mendes";s:8:"order_id";i:15;}', '127.0.0.1', '2016-08-08 13:25:23');
 
 -- --------------------------------------------------------
 
@@ -1362,9 +1038,7 @@ CREATE TABLE `oc_customer_group_description` (
 --
 
 INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
-(1, 1, 'Default', 'test'),
-(1, 2, 'Default', 'test'),
-(1, 3, 'Default', 'test');
+(1, 4, 'Default', 'test');
 
 -- --------------------------------------------------------
 
@@ -1390,7 +1064,7 @@ CREATE TABLE `oc_customer_ip` (
   `customer_id` int(11) NOT NULL,
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_customer_ip`
@@ -1401,7 +1075,8 @@ INSERT INTO `oc_customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added
 (2, 1, '::1', '2014-12-18 14:07:55'),
 (3, 1, '194.9.50.67', '2015-02-05 11:24:18'),
 (4, 1, '192.168.9.2', '2015-03-24 11:24:10'),
-(5, 2, '192.168.9.23', '2015-05-04 11:19:15');
+(5, 2, '192.168.9.23', '2015-05-04 11:19:15'),
+(6, 3, '127.0.0.1', '2016-08-08 10:40:13');
 
 -- --------------------------------------------------------
 
@@ -1581,28 +1256,27 @@ CREATE TABLE `oc_extension` (
 `extension_id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=446 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=453 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_extension`
 --
 
 INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
-(23, 'payment', 'cod'),
 (22, 'total', 'shipping'),
 (57, 'total', 'sub_total'),
 (58, 'total', 'tax'),
 (59, 'total', 'total'),
 (410, 'module', 'banner'),
 (390, 'total', 'credit'),
-(387, 'shipping', 'flat'),
+(446, 'shipping', 'correios'),
 (349, 'total', 'handling'),
 (350, 'total', 'low_order_fee'),
 (389, 'total', 'coupon'),
 (408, 'module', 'account'),
 (393, 'total', 'reward'),
 (398, 'total', 'voucher'),
-(407, 'payment', 'free_checkout'),
+(447, 'payment', 'pagseguro'),
 (427, 'module', 'featured'),
 (445, 'module', 'html'),
 (433, 'module', 'bestseller'),
@@ -1610,7 +1284,10 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 (435, 'module', 'special'),
 (436, 'module', 'affiliate'),
 (437, 'module', 'information'),
-(440, 'module', 'olark');
+(448, 'payment', 'bancosantander'),
+(452, 'module', 'category_password'),
+(450, 'payment', 'payu'),
+(451, 'shipping', 'pickup');
 
 -- --------------------------------------------------------
 
@@ -1703,12 +1380,7 @@ INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`
 (3, 1, 3, 1),
 (4, 1, 1, 1),
 (5, 1, 4, 1),
-(6, 1, 2, 1),
-(7, 0, 0, 1),
-(8, 0, 0, 1),
-(9, 0, 0, 1),
-(10, 0, 0, 1),
-(11, 0, 0, 1);
+(6, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -1731,35 +1403,10 @@ CREATE TABLE `oc_information_description` (
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(3, 2, 'Datenschutz-Bestimmungen', '&lt;table class=&quot;table table-responsive privacy_page&quot;&gt;\r\n\r\n	&lt;tbody&gt;\r\n&lt;tr&gt;\r\n\r\n		&lt;td class=&quot;col-sm-6&quot;&gt;\r\n			&lt;h4&gt;1. General information&lt;/h4&gt;\r\n\r\n			\r\n		&lt;/td&gt;\r\n\r\n		&lt;td class=&quot;col-sm-6&quot;&gt;\r\n			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel.&lt;/p&gt;\r\n\r\n			&lt;p&gt; Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula. &lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;2. Right to access, correct and delete data and to object to data processing&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur.&lt;/p&gt;\r\n\r\n			&lt;p&gt; In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;3. Management of personal data&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;Ut pretium fringilla feugiat. Proin et lorem iaculis, vehicula ipsum auctor, posuere magna. Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui. &lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;4. Information We Collect&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur.&lt;/p&gt;\r\n\r\n			&lt;p&gt; In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;5. How We Use Your Information&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non mauris ut augue dapibus posuere et sed quam. Curabitur rhoncus fringilla ligula id aliquet. Sed risus nulla, tempus vitae porta id, lobortis non nulla. Nullam aliquet est magna, hendrerit bibendum orci molestie eget. Quisque sodales, libero convallis eleifend aliquam, arcu libero venenatis tortor, ut gravida sem quam sed ante. Sed a elit ac magna pellentesque fermentum. Sed et diam at odio aliquet consectetur eu non metus. Donec sed nulla justo&lt;/p&gt;\r\n\r\n			&lt;p&gt; Ut pretium fringilla feugiat. Proin et lorem iaculis, vehicula ipsum auctor, posuere magna. Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;6. Sharing Your Information&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur.&lt;/p&gt;\r\n\r\n			&lt;p&gt; In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;', 'Privacy Policy', '', ''),
-(6, 3, 'Информация о доставке', '&lt;div class=&quot;delivery_page&quot;&gt;&lt;p&gt; &lt;span style=&quot;font-weight: bold;&quot;&gt;Lorem ipsum dolor sit amet,&lt;/span&gt; consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;In ut justo ac nibh rhoncus tincidunt.&lt;/span&gt; Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;h2&gt;Cost&lt;/h2&gt;\r\n\r\n\r\n\r\n&lt;div class=&quot;table-responsive&quot;&gt;\r\n&lt;table class=&quot;table table-bordered table-hover&quot;&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tbody&gt;\r\n\r\n\r\n\r\n\r\n&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Service&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Locations&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Delivery Schedule&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Cost per Shipment&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail Tracker (Order value $50 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$4.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Standard Courier Delivery&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;UK mainland only&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Delivery 7.30am - 5.30am &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$5.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Standard Courier Delivery&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Northern Ireland, Eire, Scilly Isles&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Delivery 7.30am - 5.30am &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$9.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Priority courier pre 12pm Next Working Day&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;UK mainland only&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Pre 12pm &lt;br&gt; Delivery 7.30am - 12pm &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$8.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n&lt;/tbody&gt;\r\n\r\n\r\n\r\n\r\n&lt;/table&gt;\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n&lt;h2&gt;Free Delivery&lt;/h2&gt;\r\n\r\n\r\n\r\n\r\n&lt;p&gt;Donec gravida finibus libero, sit amet consectetur erat maximus vel. Quisque congue lobortis sem non molestie. Vestibulum dignissim risus sit amet purus efficitur, vitae eleifend ex semper. Sed sit amet sollicitudin purus. Pellentesque at gravida nibh, sed feugiat dui. Praesent ut molestie risus. Mauris tempus luctus quam, ac aliquet nibh ultricies eu. Pellentesque ut imperdiet velit. Vivamus et dolor dignissim, efficitur dui vel, volutpat metus. Nullam sed magna sed turpis consequat feugiat ut at orci. Sed ut facilisis sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;', 'Delivery Information', '', ''),
-(4, 2, ' Uber Uns', '&lt;div class=&quot;row about-page&quot;&gt;	&lt;div class=&quot;col-sm-4&quot;&gt;		&lt;h3&gt;WHY CHOOSE US?&lt;/h3&gt;\r\n\r\n		&lt;span class=&quot;dropcap&quot;&gt;01&lt;/span&gt;&lt;!-- .dropcap (end) --&gt;		&lt;div class=&quot;extra-wrap&quot;&gt;			&lt;h4&gt;Lorem ipsum dolor amet consectetur.&lt;/h4&gt;\r\n\r\n			&lt;p&gt;Et dolore magna aliqua. Ut enim adim veniam, quis nostrudexercitation amc.&lt;/p&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;!-- .clear (end) --&gt;		&lt;span class=&quot;dropcap&quot;&gt;02&lt;/span&gt;&lt;!-- .dropcap (end) --&gt;		&lt;div class=&quot;extra-wrap&quot;&gt;			&lt;h4&gt;Vestibulum libero nisl porta sceleris.&lt;/h4&gt;\r\n\r\n			&lt;p&gt;Duis aute iruredolor in reprehenderit in. voluptate velit esse. Fusce euismod co.&lt;/p&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;!-- .clear (end) --&gt;		&lt;span class=&quot;dropcap&quot;&gt;03&lt;/span&gt;&lt;!-- .dropcap (end) --&gt;		&lt;div class=&quot;extra-wrap&quot;&gt;			&lt;h4&gt;Etiam cursus leo vel metus.&lt;/h4&gt;\r\n\r\n			&lt;p&gt;Amet, consectetuer adipiscing elit. Pel lentesque sed dolor. Aliquam congue.&lt;/p&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;!-- .clear (end) --&gt;	&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-8&quot;&gt;		&lt;h3&gt;a few words about us&lt;/h3&gt;\r\n\r\n		&lt;img src=&quot;image/catalog/article/page2_pic1.jpg&quot; alt=&quot;&quot; class=&quot;alignleft&quot;&gt;		&lt;h4&gt;Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude xercitation ullamco laboris nisi utaquip ex ea.&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Duis aute iruredolor in reprehenderit in. voluptate velit esse. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl.emo eniptaiades kunasa niausyse hauysgasa.&lt;/p&gt;\r\n\r\n		&lt;p&gt;Miuahs onsequ untur magni doloresqui. Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi utaquip ex ea. commodo consequa. Duis aute iruredolor in reprehenderit in. voluptate velit esse. Turie ntots nascetur riculus mullamale ada odi dio gravida atcur ecuus.&lt;/p&gt;\r\n\r\n		&lt;a target=&quot;_self&quot; class=&quot;btn btn-default btn-small btn-inline &quot; title=&quot;read more&quot; href=&quot;index.php?route=information/contact&quot;&gt;read more&lt;/a&gt;&lt;!-- .btn --&gt;			&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-12&quot;&gt;&lt;div class=&quot;sm_hr&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-4&quot;&gt;		&lt;h3&gt;TESTIMONIALS&lt;/h3&gt;\r\n\r\n		&lt;div class=&quot;testimonials &quot;&gt;			&lt;div class=&quot;testi-item&quot;&gt;				&lt;blockquote class=&quot;testi-item_blockquote&quot;&gt;					&lt;a href=&quot;&quot;&gt;Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.... &lt;/a&gt;					&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n				&lt;/blockquote&gt;				&lt;div class=&quot;testi-meta&quot;&gt;					&lt;div class=&quot;user&quot;&gt;Tim Barkley&lt;/div&gt;\r\n\r\n					&lt;a href=&quot;http://demolink.org&quot;&gt;http://demolink.org&lt;/a&gt;				&lt;/div&gt;			&lt;/div&gt;\r\n\r\n			&lt;div class=&quot;testi-item&quot;&gt;				&lt;blockquote class=&quot;testi-item_blockquote&quot;&gt;					&lt;a href=&quot;&quot;&gt;Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.... &lt;/a&gt;					&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n				&lt;/blockquote&gt;				&lt;div class=&quot;testi-meta&quot;&gt;					&lt;div class=&quot;user&quot;&gt;Lisa Whistler&lt;/div&gt;\r\n\r\n					&lt;a href=&quot;http://demolink.org&quot;&gt;http://demolink.org&lt;/a&gt;				&lt;/div&gt;			&lt;/div&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-8&quot;&gt;		&lt;h3&gt;OUR TEAM&lt;/h3&gt;\r\n\r\n		&lt;div class=&quot;recent-posts row&quot;&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Robert Johnson&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=7&quot;&gt;						&lt;img alt=&quot;Robert Johnson&quot; src=&quot;image/catalog/article/Depositphotos_6325694_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Robert Johnson&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=7&quot;&gt;Robert Johnson&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Jessica Priston&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=8&quot;&gt;						&lt;img alt=&quot;Jessica Priston&quot; src=&quot;image/catalog/article/Depositphotos_10953362_EL4-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Jessica Priston&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=8&quot;&gt;Jessica Priston&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Sam Kromstain&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=9&quot;&gt;						&lt;img alt=&quot;Sam Kromstain&quot; src=&quot;image/catalog/article/Depositphotos_1382984_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Sam Kromstain&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=9&quot;&gt;Sam Kromstain&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Edna Barton&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=10&quot;&gt;						&lt;img alt=&quot;Edna Barton&quot; src=&quot;image/catalog/article/Depositphotos_28394885_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Edna Barton&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=10&quot;&gt;Edna Barton&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Julie Herzigova&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=11&quot;&gt;						&lt;img alt=&quot;Julie Herzigova&quot; src=&quot;image/catalog/article/Depositphotos_1961767_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Julie Herzigova&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=11&quot;&gt;Julie Herzigova&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n&lt;/div&gt;', 'About Us', '', ''),
-(6, 2, 'Lieferinformationen', '&lt;div class=&quot;delivery_page&quot;&gt;&lt;p&gt; &lt;span style=&quot;font-weight: bold;&quot;&gt;Lorem ipsum dolor sit amet,&lt;/span&gt; consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;In ut justo ac nibh rhoncus tincidunt.&lt;/span&gt; Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;h2&gt;Cost&lt;/h2&gt;\r\n\r\n\r\n\r\n&lt;div class=&quot;table-responsive&quot;&gt;\r\n&lt;table class=&quot;table table-bordered table-hover&quot;&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tbody&gt;\r\n\r\n\r\n\r\n\r\n&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Service&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Locations&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Delivery Schedule&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Cost per Shipment&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail Tracker (Order value $50 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$4.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Standard Courier Delivery&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;UK mainland only&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Delivery 7.30am - 5.30am &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$5.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Standard Courier Delivery&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Northern Ireland, Eire, Scilly Isles&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Delivery 7.30am - 5.30am &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$9.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Priority courier pre 12pm Next Working Day&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;UK mainland only&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Pre 12pm &lt;br&gt; Delivery 7.30am - 12pm &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$8.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n&lt;/tbody&gt;\r\n\r\n\r\n\r\n\r\n&lt;/table&gt;\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n&lt;h2&gt;Free Delivery&lt;/h2&gt;\r\n\r\n\r\n\r\n\r\n&lt;p&gt;Donec gravida finibus libero, sit amet consectetur erat maximus vel. Quisque congue lobortis sem non molestie. Vestibulum dignissim risus sit amet purus efficitur, vitae eleifend ex semper. Sed sit amet sollicitudin purus. Pellentesque at gravida nibh, sed feugiat dui. Praesent ut molestie risus. Mauris tempus luctus quam, ac aliquet nibh ultricies eu. Pellentesque ut imperdiet velit. Vivamus et dolor dignissim, efficitur dui vel, volutpat metus. Nullam sed magna sed turpis consequat feugiat ut at orci. Sed ut facilisis sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;', 'Delivery Information', '', ''),
-(3, 1, 'Privacy Policy', '&lt;table class=&quot;table table-responsive privacy_page&quot;&gt;\r\n\r\n	&lt;tbody&gt;\r\n&lt;tr&gt;\r\n\r\n		&lt;td class=&quot;col-sm-6&quot;&gt;\r\n			&lt;h4&gt;1. General information&lt;/h4&gt;\r\n\r\n			\r\n		&lt;/td&gt;\r\n\r\n		&lt;td class=&quot;col-sm-6&quot;&gt;\r\n			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel.&lt;/p&gt;\r\n\r\n			&lt;p&gt; Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula. &lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;2. Right to access, correct and delete data and to object to data processing&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur.&lt;/p&gt;\r\n\r\n			&lt;p&gt; In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;3. Management of personal data&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;Ut pretium fringilla feugiat. Proin et lorem iaculis, vehicula ipsum auctor, posuere magna. Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui. &lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;4. Information We Collect&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur.&lt;/p&gt;\r\n\r\n			&lt;p&gt; In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;5. How We Use Your Information&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non mauris ut augue dapibus posuere et sed quam. Curabitur rhoncus fringilla ligula id aliquet. Sed risus nulla, tempus vitae porta id, lobortis non nulla. Nullam aliquet est magna, hendrerit bibendum orci molestie eget. Quisque sodales, libero convallis eleifend aliquam, arcu libero venenatis tortor, ut gravida sem quam sed ante. Sed a elit ac magna pellentesque fermentum. Sed et diam at odio aliquet consectetur eu non metus. Donec sed nulla justo&lt;/p&gt;\r\n\r\n			&lt;p&gt; Ut pretium fringilla feugiat. Proin et lorem iaculis, vehicula ipsum auctor, posuere magna. Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;6. Sharing Your Information&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur.&lt;/p&gt;\r\n\r\n			&lt;p&gt; In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;', 'Privacy Policy', '', ''),
-(5, 2, 'Allgemeine Geschäftsbedingungen', '&lt;div class=&quot;row terms_conditions_page&quot;&gt;\r\n	&lt;div class=&quot;col-sm-6&quot;&gt;\r\n		&lt;h4&gt;entire agreement&lt;/h4&gt;\r\n		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula.&lt;/p&gt;\r\n		&lt;h4&gt;controlling terms&lt;/h4&gt;\r\n		&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;\r\n		&lt;h4&gt;acceptance of orders&lt;/h4&gt;\r\n		&lt;p&gt;Ut pretium fringilla feugiat. Proin et lorem iaculis, vehicula ipsum auctor, posuere magna. Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa.&lt;/p&gt;\r\n		&lt;h4&gt;prices&lt;/h4&gt;\r\n		&lt;p&gt;Nullam rhoncus risus et nunc ultricies, ac rutrum eros varius. Mauris orci justo, elementum eu dignissim dictum, tincidunt quis nibh. Cras sit amet purus quam. Vivamus sodales ante vitae justo sagittis egestas. Donec vehicula ligula rhoncus, ultrices ipsum sed, molestie ante. Quisque tempor aliquam fringilla. Nulla quis eros quis felis eleifend imperdiet id sed erat. Donec imperdiet tellus tellus, eu fermentum risus convallis eget&lt;/p&gt;\r\n		&lt;h4&gt;delivery&lt;/h4&gt;\r\n		&lt;p&gt;Aliquam lobortis dolor mollis libero commodo, eget finibus augue pretium. Praesent fringilla, nulla nec sodales eleifend, odio ante porttitor neque, non tincidunt ligula dui id tortor. Maecenas maximus ornare urna euismod consectetur. Integer eu accumsan nulla. Sed venenatis non justo et faucibus. Curabitur interdum odio tellus, a cursus tortor vestibulum ut. Maecenas sapien dolor, pulvinar non orci non, mattis placerat elit. Maecenas luctus lacinia placerat. In dolor libero, volutpat vel ipsum quis, molestie suscipit enim. Duis maximus molestie gravida. Suspendisse sit amet auctor libero. Sed pellentesque porta neque condimentum feugiat. &lt;/p&gt;\r\n		&lt;h4&gt;transportation and risk of loss&lt;/h4&gt;\r\n		&lt;p&gt; In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula. &lt;/p&gt;\r\n		&lt;h4&gt;cancellation or modification&lt;/h4&gt;\r\n		&lt;p&gt;Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n		&lt;h4&gt;taxes&lt;/h4&gt;\r\n		&lt;p&gt; Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui. &lt;/p&gt;\r\n	&lt;/div&gt;\r\n	&lt;div class=&quot;col-sm-6&quot;&gt;\r\n		&lt;h4&gt;warranty and disclaimer&lt;/h4&gt;\r\n		&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;\r\n		&lt;h4&gt;limitation of liability&lt;/h4&gt;\r\n		&lt;p&gt;Aliquam lobortis dolor mollis libero commodo, eget finibus augue pretium. Praesent fringilla, nulla nec sodales eleifend, odio ante porttitor neque, non tincidunt ligula dui id tortor. Maecenas maximus ornare urna euismod consectetur. Integer eu accumsan nulla. Sed venenatis non justo et faucibus. Curabitur interdum odio tellus, a cursus tortor vestibulum ut. Maecenas sapien dolor, pulvinar non orci non, mattis placerat elit. Maecenas luctus lacinia placerat. In dolor libero, volutpat vel ipsum quis, molestie suscipit enim. Duis maximus molestie gravida. Suspendisse sit amet auctor libero. Sed pellentesque porta neque condimentum feugiat.&lt;/p&gt;\r\n		&lt;h4&gt;return of material&lt;/h4&gt;\r\n		&lt;p&gt;Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;\r\n		&lt;h4&gt;indemnity&lt;/h4&gt;\r\n		&lt;p&gt; Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui. &lt;/p&gt;\r\n		&lt;h4&gt;payment&lt;/h4&gt;\r\n		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula.&lt;/p&gt;\r\n		&lt;h4&gt;governing law and arbitration&lt;/h4&gt;\r\n		&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;', 'Terms &amp; Conditions', '', '');
-INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(5, 3, 'Сроки и условия', '&lt;div class=&quot;row terms_conditions_page&quot;&gt;	&lt;div class=&quot;col-sm-6&quot;&gt;		&lt;h4&gt;entire agreement&lt;/h4&gt;		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula.&lt;/p&gt;		&lt;h4&gt;controlling terms&lt;/h4&gt;		&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;		&lt;h4&gt;acceptance of orders&lt;/h4&gt;		&lt;p&gt;Ut pretium fringilla feugiat. Proin et lorem iaculis, vehicula ipsum auctor, posuere magna. Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa.&lt;/p&gt;		&lt;h4&gt;prices&lt;/h4&gt;		&lt;p&gt;Nullam rhoncus risus et nunc ultricies, ac rutrum eros varius. Mauris orci justo, elementum eu dignissim dictum, tincidunt quis nibh. Cras sit amet purus quam. Vivamus sodales ante vitae justo sagittis egestas. Donec vehicula ligula rhoncus, ultrices ipsum sed, molestie ante. Quisque tempor aliquam fringilla. Nulla quis eros quis felis eleifend imperdiet id sed erat. Donec imperdiet tellus tellus, eu fermentum risus convallis eget&lt;/p&gt;		&lt;h4&gt;delivery&lt;/h4&gt;		&lt;p&gt;Aliquam lobortis dolor mollis libero commodo, eget finibus augue pretium. Praesent fringilla, nulla nec sodales eleifend, odio ante porttitor neque, non tincidunt ligula dui id tortor. Maecenas maximus ornare urna euismod consectetur. Integer eu accumsan nulla. Sed venenatis non justo et faucibus. Curabitur interdum odio tellus, a cursus tortor vestibulum ut. Maecenas sapien dolor, pulvinar non orci non, mattis placerat elit. Maecenas luctus lacinia placerat. In dolor libero, volutpat vel ipsum quis, molestie suscipit enim. Duis maximus molestie gravida. Suspendisse sit amet auctor libero. Sed pellentesque porta neque condimentum feugiat. &lt;/p&gt;		&lt;h4&gt;transportation and risk of loss&lt;/h4&gt;		&lt;p&gt; In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula. &lt;/p&gt;		&lt;h4&gt;cancellation or modification&lt;/h4&gt;		&lt;p&gt;Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;		&lt;h4&gt;taxes&lt;/h4&gt;		&lt;p&gt; Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui. &lt;/p&gt;	&lt;/div&gt;	&lt;div class=&quot;col-sm-6&quot;&gt;		&lt;h4&gt;warranty and disclaimer&lt;/h4&gt;		&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;		&lt;h4&gt;limitation of liability&lt;/h4&gt;		&lt;p&gt;Aliquam lobortis dolor mollis libero commodo, eget finibus augue pretium. Praesent fringilla, nulla nec sodales eleifend, odio ante porttitor neque, non tincidunt ligula dui id tortor. Maecenas maximus ornare urna euismod consectetur. Integer eu accumsan nulla. Sed venenatis non justo et faucibus. Curabitur interdum odio tellus, a cursus tortor vestibulum ut. Maecenas sapien dolor, pulvinar non orci non, mattis placerat elit. Maecenas luctus lacinia placerat. In dolor libero, volutpat vel ipsum quis, molestie suscipit enim. Duis maximus molestie gravida. Suspendisse sit amet auctor libero. Sed pellentesque porta neque condimentum feugiat.&lt;/p&gt;		&lt;h4&gt;return of material&lt;/h4&gt;		&lt;p&gt;Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;		&lt;h4&gt;indemnity&lt;/h4&gt;		&lt;p&gt; Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui. &lt;/p&gt;		&lt;h4&gt;payment&lt;/h4&gt;		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula.&lt;/p&gt;		&lt;h4&gt;governing law and arbitration&lt;/h4&gt;		&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;	&lt;/div&gt;&lt;/div&gt;', 'Terms &amp; Conditions', '', ''),
-(4, 1, 'About Us', '&lt;div class=&quot;row about-page&quot;&gt;	&lt;div class=&quot;col-sm-4&quot;&gt;		&lt;h3&gt;WHY CHOOSE US?&lt;/h3&gt;\r\n\r\n		&lt;span class=&quot;dropcap&quot;&gt;01&lt;/span&gt;&lt;!-- .dropcap (end) --&gt;		&lt;div class=&quot;extra-wrap&quot;&gt;			&lt;h4&gt;Lorem ipsum dolor amet consectetur.&lt;/h4&gt;\r\n\r\n			&lt;p&gt;Et dolore magna aliqua. Ut enim adim veniam, quis nostrudexercitation amc.&lt;/p&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;!-- .clear (end) --&gt;		&lt;span class=&quot;dropcap&quot;&gt;02&lt;/span&gt;&lt;!-- .dropcap (end) --&gt;		&lt;div class=&quot;extra-wrap&quot;&gt;			&lt;h4&gt;Vestibulum libero nisl porta sceleris.&lt;/h4&gt;\r\n\r\n			&lt;p&gt;Duis aute iruredolor in reprehenderit in. voluptate velit esse. Fusce euismod co.&lt;/p&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;!-- .clear (end) --&gt;		&lt;span class=&quot;dropcap&quot;&gt;03&lt;/span&gt;&lt;!-- .dropcap (end) --&gt;		&lt;div class=&quot;extra-wrap&quot;&gt;			&lt;h4&gt;Etiam cursus leo vel metus.&lt;/h4&gt;\r\n\r\n			&lt;p&gt;Amet, consectetuer adipiscing elit. Pel lentesque sed dolor. Aliquam congue.&lt;/p&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;!-- .clear (end) --&gt;	&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-8&quot;&gt;		&lt;h3&gt;a few words about us&lt;/h3&gt;\r\n\r\n		&lt;img src=&quot;image/catalog/article/page2_pic1.jpg&quot; alt=&quot;&quot; class=&quot;alignleft&quot;&gt;		&lt;h4&gt;Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude xercitation ullamco laboris nisi utaquip ex ea.&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Duis aute iruredolor in reprehenderit in. voluptate velit esse. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl.emo eniptaiades kunasa niausyse hauysgasa.&lt;/p&gt;\r\n\r\n		&lt;p&gt;Miuahs onsequ untur magni doloresqui. Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi utaquip ex ea. commodo consequa. Duis aute iruredolor in reprehenderit in. voluptate velit esse. Turie ntots nascetur riculus mullamale ada odi dio gravida atcur ecuus.&lt;/p&gt;\r\n\r\n		&lt;a target=&quot;_self&quot; class=&quot;btn btn-default btn-small btn-inline &quot; title=&quot;read more&quot; href=&quot;index.php?route=information/contact&quot;&gt;read more&lt;/a&gt;&lt;!-- .btn --&gt;			&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-12&quot;&gt;&lt;div class=&quot;sm_hr&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-4&quot;&gt;		&lt;h3&gt;TESTIMONIALS&lt;/h3&gt;\r\n\r\n		&lt;div class=&quot;testimonials &quot;&gt;			&lt;div class=&quot;testi-item&quot;&gt;				&lt;blockquote class=&quot;testi-item_blockquote&quot;&gt;					&lt;a href=&quot;&quot;&gt;Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.... &lt;/a&gt;					&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n				&lt;/blockquote&gt;				&lt;div class=&quot;testi-meta&quot;&gt;					&lt;div class=&quot;user&quot;&gt;Tim Barkley&lt;/div&gt;\r\n\r\n					&lt;a href=&quot;http://demolink.org&quot;&gt;http://demolink.org&lt;/a&gt;				&lt;/div&gt;			&lt;/div&gt;\r\n\r\n			&lt;div class=&quot;testi-item&quot;&gt;				&lt;blockquote class=&quot;testi-item_blockquote&quot;&gt;					&lt;a href=&quot;&quot;&gt;Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.... &lt;/a&gt;					&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n				&lt;/blockquote&gt;				&lt;div class=&quot;testi-meta&quot;&gt;					&lt;div class=&quot;user&quot;&gt;Lisa Whistler&lt;/div&gt;\r\n\r\n					&lt;a href=&quot;http://demolink.org&quot;&gt;http://demolink.org&lt;/a&gt;				&lt;/div&gt;			&lt;/div&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-8&quot;&gt;		&lt;h3&gt;OUR TEAM&lt;/h3&gt;\r\n\r\n		&lt;div class=&quot;recent-posts row&quot;&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Robert Johnson&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=7&quot;&gt;						&lt;img alt=&quot;Robert Johnson&quot; src=&quot;image/catalog/article/Depositphotos_6325694_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Robert Johnson&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=7&quot;&gt;Robert Johnson&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Jessica Priston&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=8&quot;&gt;						&lt;img alt=&quot;Jessica Priston&quot; src=&quot;image/catalog/article/Depositphotos_10953362_EL4-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Jessica Priston&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=8&quot;&gt;Jessica Priston&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Sam Kromstain&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=9&quot;&gt;						&lt;img alt=&quot;Sam Kromstain&quot; src=&quot;image/catalog/article/Depositphotos_1382984_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Sam Kromstain&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=9&quot;&gt;Sam Kromstain&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Edna Barton&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=10&quot;&gt;						&lt;img alt=&quot;Edna Barton&quot; src=&quot;image/catalog/article/Depositphotos_28394885_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Edna Barton&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=10&quot;&gt;Edna Barton&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Julie Herzigova&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=11&quot;&gt;						&lt;img alt=&quot;Julie Herzigova&quot; src=&quot;image/catalog/article/Depositphotos_1961767_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Julie Herzigova&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=11&quot;&gt;Julie Herzigova&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n&lt;/div&gt;', 'About Us', '', ''),
-(5, 1, 'Terms &amp; Conditions', '&lt;div class=&quot;row terms_conditions_page&quot;&gt;\r\n	&lt;div class=&quot;col-sm-6&quot;&gt;\r\n		&lt;h4&gt;entire agreement&lt;/h4&gt;\r\n		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula.&lt;/p&gt;\r\n		&lt;h4&gt;controlling terms&lt;/h4&gt;\r\n		&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;\r\n		&lt;h4&gt;acceptance of orders&lt;/h4&gt;\r\n		&lt;p&gt;Ut pretium fringilla feugiat. Proin et lorem iaculis, vehicula ipsum auctor, posuere magna. Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa.&lt;/p&gt;\r\n		&lt;h4&gt;prices&lt;/h4&gt;\r\n		&lt;p&gt;Nullam rhoncus risus et nunc ultricies, ac rutrum eros varius. Mauris orci justo, elementum eu dignissim dictum, tincidunt quis nibh. Cras sit amet purus quam. Vivamus sodales ante vitae justo sagittis egestas. Donec vehicula ligula rhoncus, ultrices ipsum sed, molestie ante. Quisque tempor aliquam fringilla. Nulla quis eros quis felis eleifend imperdiet id sed erat. Donec imperdiet tellus tellus, eu fermentum risus convallis eget&lt;/p&gt;\r\n		&lt;h4&gt;delivery&lt;/h4&gt;\r\n		&lt;p&gt;Aliquam lobortis dolor mollis libero commodo, eget finibus augue pretium. Praesent fringilla, nulla nec sodales eleifend, odio ante porttitor neque, non tincidunt ligula dui id tortor. Maecenas maximus ornare urna euismod consectetur. Integer eu accumsan nulla. Sed venenatis non justo et faucibus. Curabitur interdum odio tellus, a cursus tortor vestibulum ut. Maecenas sapien dolor, pulvinar non orci non, mattis placerat elit. Maecenas luctus lacinia placerat. In dolor libero, volutpat vel ipsum quis, molestie suscipit enim. Duis maximus molestie gravida. Suspendisse sit amet auctor libero. Sed pellentesque porta neque condimentum feugiat. &lt;/p&gt;\r\n		&lt;h4&gt;transportation and risk of loss&lt;/h4&gt;\r\n		&lt;p&gt; In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula. &lt;/p&gt;\r\n		&lt;h4&gt;cancellation or modification&lt;/h4&gt;\r\n		&lt;p&gt;Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n		&lt;h4&gt;taxes&lt;/h4&gt;\r\n		&lt;p&gt; Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui. &lt;/p&gt;\r\n	&lt;/div&gt;\r\n	&lt;div class=&quot;col-sm-6&quot;&gt;\r\n		&lt;h4&gt;warranty and disclaimer&lt;/h4&gt;\r\n		&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;\r\n		&lt;h4&gt;limitation of liability&lt;/h4&gt;\r\n		&lt;p&gt;Aliquam lobortis dolor mollis libero commodo, eget finibus augue pretium. Praesent fringilla, nulla nec sodales eleifend, odio ante porttitor neque, non tincidunt ligula dui id tortor. Maecenas maximus ornare urna euismod consectetur. Integer eu accumsan nulla. Sed venenatis non justo et faucibus. Curabitur interdum odio tellus, a cursus tortor vestibulum ut. Maecenas sapien dolor, pulvinar non orci non, mattis placerat elit. Maecenas luctus lacinia placerat. In dolor libero, volutpat vel ipsum quis, molestie suscipit enim. Duis maximus molestie gravida. Suspendisse sit amet auctor libero. Sed pellentesque porta neque condimentum feugiat.&lt;/p&gt;\r\n		&lt;h4&gt;return of material&lt;/h4&gt;\r\n		&lt;p&gt;Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;\r\n		&lt;h4&gt;indemnity&lt;/h4&gt;\r\n		&lt;p&gt; Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui. &lt;/p&gt;\r\n		&lt;h4&gt;payment&lt;/h4&gt;\r\n		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula.&lt;/p&gt;\r\n		&lt;h4&gt;governing law and arbitration&lt;/h4&gt;\r\n		&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;', 'Terms &amp; Conditions', '', ''),
-(3, 3, 'Политика конфиденциальности', '&lt;table class=&quot;table table-responsive privacy_page&quot;&gt;\r\n\r\n	&lt;tbody&gt;\r\n&lt;tr&gt;\r\n\r\n		&lt;td class=&quot;col-sm-6&quot;&gt;\r\n			&lt;h4&gt;1. General information&lt;/h4&gt;\r\n\r\n			\r\n		&lt;/td&gt;\r\n\r\n		&lt;td class=&quot;col-sm-6&quot;&gt;\r\n			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel.&lt;/p&gt;\r\n\r\n			&lt;p&gt; Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula. &lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;2. Right to access, correct and delete data and to object to data processing&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur.&lt;/p&gt;\r\n\r\n			&lt;p&gt; In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;3. Management of personal data&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;Ut pretium fringilla feugiat. Proin et lorem iaculis, vehicula ipsum auctor, posuere magna. Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui. &lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;4. Information We Collect&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur.&lt;/p&gt;\r\n\r\n			&lt;p&gt; In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;5. How We Use Your Information&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non mauris ut augue dapibus posuere et sed quam. Curabitur rhoncus fringilla ligula id aliquet. Sed risus nulla, tempus vitae porta id, lobortis non nulla. Nullam aliquet est magna, hendrerit bibendum orci molestie eget. Quisque sodales, libero convallis eleifend aliquam, arcu libero venenatis tortor, ut gravida sem quam sed ante. Sed a elit ac magna pellentesque fermentum. Sed et diam at odio aliquet consectetur eu non metus. Donec sed nulla justo&lt;/p&gt;\r\n\r\n			&lt;p&gt; Ut pretium fringilla feugiat. Proin et lorem iaculis, vehicula ipsum auctor, posuere magna. Donec rutrum diam ex, ut vestibulum felis pretium id. Morbi blandit, lectus a mattis egestas, diam dolor cursus leo, vel commodo ex ipsum in urna. Vestibulum a nisi vel diam auctor condimentum a ut massa. Ut nunc massa, finibus eget mattis sed, pretium non ante. Vivamus orci quam, lobortis et iaculis id, volutpat non ipsum. Maecenas pharetra erat et nisi sagittis lacinia. Maecenas ullamcorper, enim ac convallis porta, purus nisi pharetra purus, eget sagittis elit erat ut dui.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n	&lt;tr&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;h4&gt;6. Sharing Your Information&lt;/h4&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n		&lt;td&gt;\r\n			&lt;p&gt;In ut justo ac nibh rhoncus tincidunt. Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur.&lt;/p&gt;\r\n\r\n			&lt;p&gt; In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis.&lt;/p&gt;\r\n\r\n		&lt;/td&gt;\r\n\r\n	&lt;/tr&gt;\r\n\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;', 'Privacy Policy', '', ''),
-(4, 3, 'O нас', '&lt;div class=&quot;row about-page&quot;&gt;	&lt;div class=&quot;col-sm-4&quot;&gt;		&lt;h3&gt;WHY CHOOSE US?&lt;/h3&gt;\r\n\r\n		&lt;span class=&quot;dropcap&quot;&gt;01&lt;/span&gt;&lt;!-- .dropcap (end) --&gt;		&lt;div class=&quot;extra-wrap&quot;&gt;			&lt;h4&gt;Lorem ipsum dolor amet consectetur.&lt;/h4&gt;\r\n\r\n			&lt;p&gt;Et dolore magna aliqua. Ut enim adim veniam, quis nostrudexercitation amc.&lt;/p&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;!-- .clear (end) --&gt;		&lt;span class=&quot;dropcap&quot;&gt;02&lt;/span&gt;&lt;!-- .dropcap (end) --&gt;		&lt;div class=&quot;extra-wrap&quot;&gt;			&lt;h4&gt;Vestibulum libero nisl porta sceleris.&lt;/h4&gt;\r\n\r\n			&lt;p&gt;Duis aute iruredolor in reprehenderit in. voluptate velit esse. Fusce euismod co.&lt;/p&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;!-- .clear (end) --&gt;		&lt;span class=&quot;dropcap&quot;&gt;03&lt;/span&gt;&lt;!-- .dropcap (end) --&gt;		&lt;div class=&quot;extra-wrap&quot;&gt;			&lt;h4&gt;Etiam cursus leo vel metus.&lt;/h4&gt;\r\n\r\n			&lt;p&gt;Amet, consectetuer adipiscing elit. Pel lentesque sed dolor. Aliquam congue.&lt;/p&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;!-- .clear (end) --&gt;	&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-8&quot;&gt;		&lt;h3&gt;a few words about us&lt;/h3&gt;\r\n\r\n		&lt;img src=&quot;image/catalog/article/page2_pic1.jpg&quot; alt=&quot;&quot; class=&quot;alignleft&quot;&gt;		&lt;h4&gt;Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude xercitation ullamco laboris nisi utaquip ex ea.&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Duis aute iruredolor in reprehenderit in. voluptate velit esse. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl.emo eniptaiades kunasa niausyse hauysgasa.&lt;/p&gt;\r\n\r\n		&lt;p&gt;Miuahs onsequ untur magni doloresqui. Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi utaquip ex ea. commodo consequa. Duis aute iruredolor in reprehenderit in. voluptate velit esse. Turie ntots nascetur riculus mullamale ada odi dio gravida atcur ecuus.&lt;/p&gt;\r\n\r\n		&lt;a target=&quot;_self&quot; class=&quot;btn btn-default btn-small btn-inline &quot; title=&quot;read more&quot; href=&quot;index.php?route=information/contact&quot;&gt;read more&lt;/a&gt;&lt;!-- .btn --&gt;			&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-12&quot;&gt;&lt;div class=&quot;sm_hr&quot;&gt;&lt;/div&gt;\r\n\r\n&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-4&quot;&gt;		&lt;h3&gt;TESTIMONIALS&lt;/h3&gt;\r\n\r\n		&lt;div class=&quot;testimonials &quot;&gt;			&lt;div class=&quot;testi-item&quot;&gt;				&lt;blockquote class=&quot;testi-item_blockquote&quot;&gt;					&lt;a href=&quot;&quot;&gt;Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.... &lt;/a&gt;					&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n				&lt;/blockquote&gt;				&lt;div class=&quot;testi-meta&quot;&gt;					&lt;div class=&quot;user&quot;&gt;Tim Barkley&lt;/div&gt;\r\n\r\n					&lt;a href=&quot;http://demolink.org&quot;&gt;http://demolink.org&lt;/a&gt;				&lt;/div&gt;			&lt;/div&gt;\r\n\r\n			&lt;div class=&quot;testi-item&quot;&gt;				&lt;blockquote class=&quot;testi-item_blockquote&quot;&gt;					&lt;a href=&quot;&quot;&gt;Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.... &lt;/a&gt;					&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n				&lt;/blockquote&gt;				&lt;div class=&quot;testi-meta&quot;&gt;					&lt;div class=&quot;user&quot;&gt;Lisa Whistler&lt;/div&gt;\r\n\r\n					&lt;a href=&quot;http://demolink.org&quot;&gt;http://demolink.org&lt;/a&gt;				&lt;/div&gt;			&lt;/div&gt;\r\n\r\n		&lt;/div&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-8&quot;&gt;		&lt;h3&gt;OUR TEAM&lt;/h3&gt;\r\n\r\n		&lt;div class=&quot;recent-posts row&quot;&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Robert Johnson&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=7&quot;&gt;						&lt;img alt=&quot;Robert Johnson&quot; src=&quot;image/catalog/article/Depositphotos_6325694_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Robert Johnson&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=7&quot;&gt;Robert Johnson&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Jessica Priston&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=8&quot;&gt;						&lt;img alt=&quot;Jessica Priston&quot; src=&quot;image/catalog/article/Depositphotos_10953362_EL4-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Jessica Priston&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=8&quot;&gt;Jessica Priston&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Sam Kromstain&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=9&quot;&gt;						&lt;img alt=&quot;Sam Kromstain&quot; src=&quot;image/catalog/article/Depositphotos_1382984_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Sam Kromstain&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=9&quot;&gt;Sam Kromstain&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Edna Barton&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=10&quot;&gt;						&lt;img alt=&quot;Edna Barton&quot; src=&quot;image/catalog/article/Depositphotos_28394885_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Edna Barton&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=10&quot;&gt;Edna Barton&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;			&lt;div class=&quot;col-sm-4&quot;&gt;				&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;					&lt;a title=&quot;Julie Herzigova&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=11&quot;&gt;						&lt;img alt=&quot;Julie Herzigova&quot; src=&quot;image/catalog/article/Depositphotos_1961767_original-230x240.jpg&quot;&gt;					&lt;/a&gt;				&lt;/figure&gt;				&lt;h5&gt;					&lt;a title=&quot;Julie Herzigova&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=11&quot;&gt;Julie Herzigova&lt;/a&gt;				&lt;/h5&gt;\r\n\r\n				&lt;div class=&quot;excerpt&quot;&gt;Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... &lt;/div&gt;\r\n\r\n				&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n			&lt;/div&gt;\r\n\r\n&lt;!-- .entry (end) --&gt;		&lt;/div&gt;\r\n\r\n		&lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n&lt;/div&gt;', 'About Us', '', ''),
-(7, 1, 'Robert Johnson', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_6325694_original-230x240.jpg&quot; alt=&quot;Robert Johnson&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Robert Johnson', '', ''),
-(7, 2, 'Robert Johnson', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_6325694_original-230x240.jpg&quot; alt=&quot;Robert Johnson&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Robert Johnson', '', '');
-INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(7, 3, 'Robert Johnson', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_6325694_original-230x240.jpg&quot; alt=&quot;Robert Johnson&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Robert Johnson', '', ''),
-(6, 1, 'Delivery Information', '&lt;div class=&quot;delivery_page&quot;&gt;&lt;p&gt; &lt;span style=&quot;font-weight: bold;&quot;&gt;Lorem ipsum dolor sit amet,&lt;/span&gt; consectetur adipiscing elit. Ut eget porta massa, ac maximus mauris. Aenean eu nulla nulla. Curabitur tincidunt nisl neque, id vestibulum lectus aliquam ut. Suspendisse scelerisque purus nec lectus vehicula, ac suscipit tellus eleifend. Cras dapibus pulvinar tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae diam felis. Quisque vel maximus orci. Praesent nec mollis ex. Duis vehicula odio nisi, ut molestie purus lobortis vel. Duis molestie sem ac justo bibendum, in ultrices nibh blandit. Etiam ac lacinia turpis. Nam vehicula, purus eu maximus sollicitudin, ante arcu sagittis nulla, ut finibus elit augue sed ligula.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;In ut justo ac nibh rhoncus tincidunt.&lt;/span&gt; Sed ullamcorper faucibus elit, at placerat velit posuere vitae. Suspendisse feugiat, ante vel varius vestibulum, lacus mi efficitur arcu, at finibus leo eros a augue. Donec tortor est, auctor a luctus non, finibus fermentum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed ipsum ex. Donec sollicitudin vulputate mi id consectetur. In hac habitasse platea dictumst. Sed mattis ipsum diam, ac venenatis nibh interdum sed. Vivamus ac blandit sapien, tincidunt rutrum turpis. Praesent mollis, risus et porttitor dictum, eros risus dignissim mi, sed suscipit risus odio rhoncus mi. Vivamus lacinia efficitur sem, non condimentum quam vulputate ac. Fusce ut eleifend orci. Mauris a quam eget erat mattis varius eu et justo. Cras eget nulla at metus pellentesque convallis. &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;h2&gt;Cost&lt;/h2&gt;\r\n\r\n\r\n\r\n&lt;div class=&quot;table-responsive&quot;&gt;\r\n&lt;table class=&quot;table table-bordered table-hover&quot;&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tbody&gt;\r\n\r\n\r\n\r\n\r\n&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Service&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Locations&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Delivery Schedule&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n		&lt;th&gt;Cost per Shipment&lt;/th&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail Tracker (Order value $50 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$4.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Standard Courier Delivery&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;UK mainland only&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Delivery 7.30am - 5.30am &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$5.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Standard Courier Delivery&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Northern Ireland, Eire, Scilly Isles&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Delivery 7.30am - 5.30am &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$9.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Priority courier pre 12pm Next Working Day&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;UK mainland only&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Pre 12pm &lt;br&gt; Delivery 7.30am - 12pm &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$8.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n&lt;/tbody&gt;\r\n\r\n\r\n\r\n\r\n&lt;/table&gt;\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n&lt;h2&gt;Free Delivery&lt;/h2&gt;\r\n\r\n\r\n\r\n\r\n&lt;p&gt;Donec gravida finibus libero, sit amet consectetur erat maximus vel. Quisque congue lobortis sem non molestie. Vestibulum dignissim risus sit amet purus efficitur, vitae eleifend ex semper. Sed sit amet sollicitudin purus. Pellentesque at gravida nibh, sed feugiat dui. Praesent ut molestie risus. Mauris tempus luctus quam, ac aliquet nibh ultricies eu. Pellentesque ut imperdiet velit. Vivamus et dolor dignissim, efficitur dui vel, volutpat metus. Nullam sed magna sed turpis consequat feugiat ut at orci. Sed ut facilisis sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;', 'Delivery Information', '', ''),
-(8, 1, 'Jessica Priston', '&lt;div class=&quot;human_info&quot;&gt;&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_10953362_EL4-230x240.jpg&quot; alt=&quot;Jessica Priston&quot;&gt;&lt;/figure&gt;&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n&lt;/div&gt;', 'Jessica Priston', '', ''),
-(8, 2, 'Jessica Priston', '&lt;div class=&quot;human_info&quot;&gt;&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_10953362_EL4-230x240.jpg&quot; alt=&quot;Jessica Priston&quot;&gt;&lt;/figure&gt;&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n&lt;/div&gt;', 'Jessica Priston', '', ''),
-(8, 3, 'Jessica Priston', '&lt;div class=&quot;human_info&quot;&gt;&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_10953362_EL4-230x240.jpg&quot; alt=&quot;Jessica Priston&quot;&gt;&lt;/figure&gt;&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n&lt;/div&gt;', 'Jessica Priston', '', ''),
-(9, 1, 'Sam Kromstain', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_1382984_original-230x240.jpg&quot; alt=&quot;Sam Kromstain&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Sam Kromstain', '', ''),
-(9, 2, 'Sam Kromstain', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_1382984_original-230x240.jpg&quot; alt=&quot;Sam Kromstain&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Sam Kromstain', '', ''),
-(9, 3, 'Sam Kromstain', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_1382984_original-230x240.jpg&quot; alt=&quot;Sam Kromstain&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Sam Kromstain', '', ''),
-(10, 3, 'Edna Barton', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_28394885_original-230x240.jpg&quot; alt=&quot;Edna Barton&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Edna Barton', '', ''),
-(10, 1, 'Edna Barton', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_28394885_original-230x240.jpg&quot; alt=&quot;Edna Barton&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Edna Barton', '', ''),
-(10, 2, 'Edna Barton', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_28394885_original-230x240.jpg&quot; alt=&quot;Edna Barton&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Edna Barton', '', ''),
-(11, 1, 'Julie Herzigova', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_1961767_original-230x240.jpg&quot; alt=&quot;Julie Herzigova&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Julie Herzigova', '', ''),
-(11, 2, 'Julie Herzigova', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_1961767_original-230x240.jpg&quot; alt=&quot;Julie Herzigova&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Julie Herzigova', '', ''),
-(11, 3, 'Julie Herzigova', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;&lt;img src=&quot;image/catalog/article/Depositphotos_1961767_original-230x240.jpg&quot; alt=&quot;Julie Herzigova&quot;&gt;&lt;/figure&gt;\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;b&gt;Lorem ipsum dolor&lt;/b&gt; sit amet, consectetur adipiscing elit. Proin in mi efficitur, interdum augue eget, tincidunt velit. Nulla vel libero et ipsum aliquam varius eget id magna. Quisque mollis efficitur sollicitudin. Aenean in ex luctus, porttitor orci eu, lacinia libero. Nam fringilla mauris sed sagittis cursus. Nulla justo orci, pellentesque eget massa quis, feugiat dapibus nibh. Nullam nec commodo velit. Duis varius eros vitae neque eleifend, aliquam ullamcorper elit dapibus. Sed vulputate ipsum a augue interdum lacinia in id metus. Donec purus orci, elementum mattis ex id, porta iaculis odio. Mauris pulvinar mattis elit at tincidunt. Donec eu imperdiet ipsum, quis ullamcorper lorem. &lt;/p&gt;\r\n\r\n&lt;p&gt;Vivamus a ipsum mattis, egestas ante sed, ultricies nibh.Nunc eget sodales risus. Nunc ullamcorper, erat eu luctus fringilla, magna lectus hendrerit ante, eget eleifend libero felis ut tellus. Nunc porttitor leo ac metus pellentesque, vitae sodales nisi tristique. Nulla auctor, eros id vestibulum posuere, eros ligula vehicula felis, ut lobortis nulla libero eu risus. Praesent ultrices egestas leo, at viverra purus porttitor ac. Duis id lacinia ex. Sed rhoncus sollicitudin tortor non consectetur. Cras quis sem eu est ornare dictum sed id quam. Nulla at mi eleifend, rutrum dui id, efficitur eros. &lt;/p&gt;\r\n\r\n&lt;/div&gt;', 'Julie Herzigova', '', '');
+(3, 4, 'Políticas de Privacidade', 'Texto Políticas de Privacidade', 'Políticas de Privacidade', '', ''),
+(4, 4, 'Sobre nós', 'Texto Sobre nós', 'Sobre nós', '', ''),
+(5, 4, 'Termos e Condições', 'Texto Termos e Condições', 'Termos e Condições', '', ''),
+(6, 4, 'Informações de Entrega', 'Texto Informações de Entrega', 'Informações de Entrega', '', '');
 
 -- --------------------------------------------------------
 
@@ -1781,12 +1428,7 @@ INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id
 (4, 0, 0),
 (6, 0, 0),
 (3, 0, 0),
-(5, 0, 0),
-(7, 0, 0),
-(8, 0, 0),
-(9, 0, 0),
-(10, 0, 0),
-(11, 0, 0);
+(5, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1807,12 +1449,7 @@ INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 (3, 0),
 (4, 0),
 (5, 0),
-(6, 0),
-(7, 0),
-(8, 0),
-(9, 0),
-(10, 0),
-(11, 0);
+(6, 0);
 
 -- --------------------------------------------------------
 
@@ -1829,16 +1466,14 @@ CREATE TABLE `oc_language` (
   `directory` varchar(32) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_language`
 --
 
 INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `sort_order`, `status`) VALUES
-(1, 'English', 'en', 'en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 1, 1),
-(2, 'Deutsch', 'de', 'de,de-DE,de_DE,de_DE.UTF-8,de-de,de-AT,de-CH,german', 'de.png', 'de-DE', 2, 1),
-(3, 'Русский', 'ru', 'ru,ru_RU,ru_RU.UTF-8', 'ru.png', 'russian', 3, 1);
+(4, 'Português (BR)', 'pt-br', 'pt_BR.UTF-8, pt_BR, UTF-8', 'br.png', 'portuguese-br', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1890,29 +1525,15 @@ CREATE TABLE `oc_layout_module` (
 
 INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `position`, `sort_order`) VALUES
 (410, 8, 'account', 'column_left', 1),
-(407, 12, 'olark.50', 'footer_top', 1),
 (405, 7, 'account', 'column_left', 1),
-(404, 7, 'olark.50', 'footer_top', 1),
-(529, 3, 'olark.50', 'footer_top', 1),
 (528, 3, 'bestseller.43', 'column_left', 2),
 (531, 10, 'affiliate', 'column_left', 1),
-(393, 6, 'olark.50', 'footer_top', 1),
-(530, 10, 'olark.50', 'footer_top', 1),
-(426, 9, 'olark.50', 'footer_top', 1),
 (535, 13, 'latest.55', 'column_left', 1),
-(418, 5, 'olark.50', 'footer_top', 1),
 (532, 4, 'latest.55', 'column_left', 1),
-(409, 8, 'olark.50', 'column_left', 1),
 (392, 6, 'account', 'column_left', 1),
-(533, 4, 'olark.50', 'footer_top', 1),
 (527, 3, 'special.48', 'column_left', 1),
-(415, 11, 'olark.50', 'footer_top', 1),
 (417, 5, 'account', 'column_left', 2),
-(420, 2, 'olark.50', 'footer_top', 1),
-(534, 13, 'olark.50', 'footer_top', 1),
 (425, 9, 'account', 'column_left', 1),
-(526, 1, 'html.54', 'content_top', 1),
-(525, 1, 'olark.50', 'footer_top', 1),
 (524, 1, 'featured.51', 'content_top', 2);
 
 -- --------------------------------------------------------
@@ -1985,15 +1606,9 @@ CREATE TABLE `oc_length_class_description` (
 --
 
 INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
-(1, 1, 'Centimeter', 'cm'),
-(2, 1, 'Millimeter', 'mm'),
-(3, 1, 'Inch', 'in'),
-(1, 2, 'Centimeter', 'cm'),
-(2, 2, 'Millimeter', 'mm'),
-(3, 2, 'Inch', 'in'),
-(1, 3, 'Centimeter', 'cm'),
-(2, 3, 'Millimeter', 'mm'),
-(3, 3, 'Inch', 'in');
+(1, 4, 'Centimeter', 'cm'),
+(2, 4, 'Millimeter', 'mm'),
+(3, 4, 'Inch', 'in');
 
 -- --------------------------------------------------------
 
@@ -2135,12 +1750,10 @@ CREATE TABLE `oc_module` (
 --
 
 INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
-(51, 'Featured', 'featured', 'a:6:{s:4:"name";s:8:"Featured";s:7:"product";a:8:{i:0;s:2:"44";i:1;s:2:"35";i:2;s:2:"33";i:3;s:2:"31";i:4;s:2:"30";i:5;s:2:"28";i:6;s:2:"34";i:7;s:2:"41";}s:5:"limit";s:1:"8";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
-(54, 'Banners', 'html', 'a:3:{s:4:"name";s:7:"Banners";s:18:"module_description";a:3:{i:1;a:2:{s:5:"title";s:7:"banners";s:11:"description";s:2671:"&lt;div class=&quot;row&quot;&gt;\r\n&lt;div class=&quot;col-sm-12 banner-1&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=35&quot;&gt;&lt;img src=&quot;image/catalog/banner-1.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;New&lt;br&gt;collection&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;span class=&quot;button&quot;&gt;Shop now!&lt;/span&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-7 banner-2&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=33&quot;&gt;&lt;img src=&quot;image/catalog/banner-2.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Shoes&lt;br&gt;&lt;span&gt;25%off&lt;/span&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;span class=&quot;button&quot;&gt;Shop now!&lt;/span&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-5 banner-3&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=28&quot;&gt;&lt;img src=&quot;image/catalog/banner-3.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Lingerie&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-5&quot;&gt;\r\n&lt;div class=&quot;banner-4&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=47&quot;&gt;&lt;img src=&quot;image/catalog/banner-4.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Sale&lt;br&gt;Sale&lt;br&gt;Sale&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;banner-5&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=30&quot;&gt;&lt;img src=&quot;image/catalog/banner-5.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Free shipping &lt;p&gt;on orders over $99.&lt;br&gt;This offer is valid on all our store items.&lt;/p&gt;\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-7 banner-6&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=31&quot;&gt;&lt;img src=&quot;image/catalog/banner-6.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Designer\r\n&lt;br&gt;collection&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;";}i:2;a:2:{s:5:"title";s:7:"banners";s:11:"description";s:2671:"&lt;div class=&quot;row&quot;&gt;\r\n&lt;div class=&quot;col-sm-12 banner-1&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=35&quot;&gt;&lt;img src=&quot;image/catalog/banner-1.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;New&lt;br&gt;collection&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;span class=&quot;button&quot;&gt;Shop now!&lt;/span&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-7 banner-2&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=33&quot;&gt;&lt;img src=&quot;image/catalog/banner-2.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Shoes&lt;br&gt;&lt;span&gt;25%off&lt;/span&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;span class=&quot;button&quot;&gt;Shop now!&lt;/span&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-5 banner-3&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=28&quot;&gt;&lt;img src=&quot;image/catalog/banner-3.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Lingerie&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-5&quot;&gt;\r\n&lt;div class=&quot;banner-4&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=47&quot;&gt;&lt;img src=&quot;image/catalog/banner-4.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Sale&lt;br&gt;Sale&lt;br&gt;Sale&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;banner-5&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=30&quot;&gt;&lt;img src=&quot;image/catalog/banner-5.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Free shipping &lt;p&gt;on orders over $99.&lt;br&gt;This offer is valid on all our store items.&lt;/p&gt;\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-7 banner-6&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=31&quot;&gt;&lt;img src=&quot;image/catalog/banner-6.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Designer\r\n&lt;br&gt;collection&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;";}i:3;a:2:{s:5:"title";s:7:"banners";s:11:"description";s:2671:"&lt;div class=&quot;row&quot;&gt;\r\n&lt;div class=&quot;col-sm-12 banner-1&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=35&quot;&gt;&lt;img src=&quot;image/catalog/banner-1.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;New&lt;br&gt;collection&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;span class=&quot;button&quot;&gt;Shop now!&lt;/span&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-7 banner-2&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=33&quot;&gt;&lt;img src=&quot;image/catalog/banner-2.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Shoes&lt;br&gt;&lt;span&gt;25%off&lt;/span&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;span class=&quot;button&quot;&gt;Shop now!&lt;/span&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-5 banner-3&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=28&quot;&gt;&lt;img src=&quot;image/catalog/banner-3.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Lingerie&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-5&quot;&gt;\r\n&lt;div class=&quot;banner-4&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=47&quot;&gt;&lt;img src=&quot;image/catalog/banner-4.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Sale&lt;br&gt;Sale&lt;br&gt;Sale&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;banner-5&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=30&quot;&gt;&lt;img src=&quot;image/catalog/banner-5.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Free shipping &lt;p&gt;on orders over $99.&lt;br&gt;This offer is valid on all our store items.&lt;/p&gt;\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;col-sm-7 banner-6&quot;&gt;&lt;a href=&quot;index.php?route=product/product&amp;amp;product_id=31&quot;&gt;&lt;img src=&quot;image/catalog/banner-6.jpg&quot;&gt;&lt;div class=&quot;desc&quot;&gt;&lt;div class=&quot;tx&quot;&gt;Designer\r\n&lt;br&gt;collection&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/a&gt;&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;";}}s:6:"status";s:1:"1";}'),
-(50, 'Olark Chat', 'olark', 'a:4:{s:4:"name";s:10:"Olark Chat";s:13:"olark_version";s:5:"2.0.0";s:13:"olark_site_id";s:16:"7830-582-10-3714";s:6:"status";s:1:"1";}'),
-(43, 'Bestsellers', 'bestseller', 'a:5:{s:4:"name";s:11:"Bestsellers";s:5:"limit";s:1:"1";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
-(48, 'Specials', 'special', 'a:5:{s:4:"name";s:8:"Specials";s:5:"limit";s:1:"1";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
-(55, 'Latest', 'latest', 'a:5:{s:4:"name";s:6:"Latest";s:5:"limit";s:1:"1";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}');
+(51, 'Featured', 'featured', 'a:6:{s:4:"name";s:8:"Featured";s:7:"product";a:8:{i:0;s:2:"49";i:1;s:2:"32";i:2;s:2:"29";i:3;s:2:"43";i:4;s:2:"45";i:5;s:2:"48";i:6;s:2:"28";i:7;s:2:"42";}s:5:"limit";s:1:"4";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
+(43, 'Bestsellers', 'bestseller', 'a:5:{s:4:"name";s:11:"Bestsellers";s:5:"limit";s:1:"1";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"0";}'),
+(48, 'Specials', 'special', 'a:5:{s:4:"name";s:8:"Specials";s:5:"limit";s:1:"1";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"0";}'),
+(55, 'Latest', 'latest', 'a:5:{s:4:"name";s:6:"Latest";s:5:"limit";s:1:"1";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"0";}');
 
 -- --------------------------------------------------------
 
@@ -2152,7 +1765,7 @@ CREATE TABLE `oc_option` (
 `option_id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
   `sort_order` int(3) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_option`
@@ -2170,7 +1783,9 @@ INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
 (10, 'datetime', 9),
 (11, 'select', 10),
 (12, 'date', 11),
-(13, 'radio', 1);
+(13, 'radio', 1),
+(14, 'select', 0),
+(15, 'image', 0);
 
 -- --------------------------------------------------------
 
@@ -2189,42 +1804,20 @@ CREATE TABLE `oc_option_description` (
 --
 
 INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
-(1, 1, 'Radio'),
-(2, 1, 'Checkbox'),
-(4, 1, 'Text'),
-(6, 1, 'Textarea'),
-(8, 1, 'Date'),
-(7, 1, 'File'),
-(5, 1, 'Select'),
-(9, 1, 'Time'),
-(10, 1, 'Date &amp; Time'),
-(12, 1, 'Delivery Date'),
-(11, 1, 'Size'),
-(1, 2, 'Radio'),
-(2, 2, 'Checkbox'),
-(4, 2, 'Text'),
-(6, 2, 'Textarea'),
-(8, 2, 'Date'),
-(7, 2, 'File'),
-(5, 2, 'Select'),
-(9, 2, 'Time'),
-(10, 2, 'Date &amp; Time'),
-(12, 2, 'Delivery Date'),
-(11, 2, 'Size'),
-(1, 3, 'Radio'),
-(2, 3, 'Checkbox'),
-(4, 3, 'Text'),
-(6, 3, 'Textarea'),
-(8, 3, 'Date'),
-(7, 3, 'File'),
-(5, 3, 'Select'),
-(9, 3, 'Time'),
-(10, 3, 'Date &amp; Time'),
-(12, 3, 'Delivery Date'),
-(11, 3, 'Size'),
-(13, 1, 'Color'),
-(13, 2, 'Color'),
-(13, 3, 'Color');
+(1, 4, 'Radio'),
+(2, 4, 'Checkbox'),
+(4, 4, 'Text'),
+(6, 4, 'Textarea'),
+(8, 4, 'Date'),
+(7, 4, 'File'),
+(5, 4, 'Select'),
+(9, 4, 'Time'),
+(10, 4, 'Date &amp; Time'),
+(12, 4, 'Delivery Date'),
+(11, 4, 'Size'),
+(13, 4, 'Color'),
+(14, 4, 'Tamanho'),
+(15, 4, 'Simbolo');
 
 -- --------------------------------------------------------
 
@@ -2237,7 +1830,7 @@ CREATE TABLE `oc_option_value` (
   `option_id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_option_value`
@@ -2260,7 +1853,12 @@ INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_or
 (48, 11, '', 3),
 (49, 13, 'catalog/product-06.png', 1),
 (50, 13, 'catalog/product-02.png', 2),
-(51, 13, 'catalog/product-42.png', 3);
+(51, 13, 'catalog/product-42.png', 3),
+(52, 14, '', 11),
+(53, 14, '', 12),
+(54, 14, '', 14),
+(55, 15, 'catalog/Chalkboard_Bottle1.png', 5),
+(56, 15, 'catalog/Chalkboard_Bottle2.png', 2);
 
 -- --------------------------------------------------------
 
@@ -2280,57 +1878,28 @@ CREATE TABLE `oc_option_value_description` (
 --
 
 INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
-(43, 1, 1, 'Large'),
-(32, 1, 1, 'Small'),
-(45, 1, 2, 'Checkbox 4'),
-(44, 1, 2, 'Checkbox 3'),
-(31, 1, 1, 'Medium'),
-(42, 1, 5, 'Yellow'),
-(41, 1, 5, 'Green'),
-(39, 1, 5, 'Red'),
-(40, 1, 5, 'Blue'),
-(23, 1, 2, 'Checkbox 1'),
-(24, 1, 2, 'Checkbox 2'),
-(48, 1, 11, 'Large'),
-(47, 1, 11, 'Medium'),
-(46, 1, 11, 'Small'),
-(43, 2, 1, 'Large'),
-(32, 2, 1, 'Small'),
-(45, 2, 2, 'Checkbox 4'),
-(44, 2, 2, 'Checkbox 3'),
-(31, 2, 1, 'Medium'),
-(42, 2, 5, 'Yellow'),
-(41, 2, 5, 'Green'),
-(39, 2, 5, 'Red'),
-(40, 2, 5, 'Blue'),
-(23, 2, 2, 'Checkbox 1'),
-(24, 2, 2, 'Checkbox 2'),
-(48, 2, 11, 'Large'),
-(47, 2, 11, 'Medium'),
-(46, 2, 11, 'Small'),
-(43, 3, 1, 'Large'),
-(32, 3, 1, 'Small'),
-(45, 3, 2, 'Checkbox 4'),
-(44, 3, 2, 'Checkbox 3'),
-(31, 3, 1, 'Medium'),
-(42, 3, 5, 'Yellow'),
-(41, 3, 5, 'Green'),
-(39, 3, 5, 'Red'),
-(40, 3, 5, 'Blue'),
-(23, 3, 2, 'Checkbox 1'),
-(24, 3, 2, 'Checkbox 2'),
-(48, 3, 11, 'Large'),
-(47, 3, 11, 'Medium'),
-(46, 3, 11, 'Small'),
-(49, 1, 13, 'black'),
-(49, 2, 13, 'black'),
-(49, 3, 13, 'black'),
-(50, 1, 13, 'white'),
-(50, 2, 13, 'white'),
-(50, 3, 13, 'white'),
-(51, 1, 13, 'red'),
-(51, 2, 13, 'red'),
-(51, 3, 13, 'red');
+(43, 4, 1, 'Large'),
+(32, 4, 1, 'Small'),
+(45, 4, 2, 'Checkbox 4'),
+(44, 4, 2, 'Checkbox 3'),
+(31, 4, 1, 'Medium'),
+(42, 4, 5, 'Yellow'),
+(41, 4, 5, 'Green'),
+(39, 4, 5, 'Red'),
+(40, 4, 5, 'Blue'),
+(23, 4, 2, 'Checkbox 1'),
+(24, 4, 2, 'Checkbox 2'),
+(48, 4, 11, 'Large'),
+(47, 4, 11, 'Medium'),
+(46, 4, 11, 'Small'),
+(49, 4, 13, 'black'),
+(50, 4, 13, 'white'),
+(51, 4, 13, 'red'),
+(52, 4, 14, '11'),
+(53, 4, 14, '12'),
+(54, 4, 14, '14'),
+(55, 4, 15, 'aaaa'),
+(56, 4, 15, 'dddd');
 
 -- --------------------------------------------------------
 
@@ -2400,22 +1969,19 @@ CREATE TABLE `oc_order` (
   `accept_language` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_order`
 --
 
 INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
-(1, 0, 'INV-2013-00', 0, 'Lingerie online store', 'http://192.168.9.2/+test2/', 1, 1, 'Demo', 'Demo', 'demo@demo.com', '5555555555', '', 'b:0;', 'Demo', 'Demo', 'Demo', 'Demo', '', 'Demo', '5555555555', 'United Kingdom', 222, 'Cheshire', 3529, '', 'b:0;', 'Cash On Delivery', 'cod', 'Demo', 'Demo', 'Demo', 'Demo', '', 'Demo', '5555555555', 'United Kingdom', 222, 'Cheshire', 3529, '', 'b:0;', 'Flat Shipping Rate', 'flat.flat', '', 448.0000, 1, 0, 0.0000, 0, '', 1, 1, 'GBP', 0.63880002, '192.168.9.1', '192.168.9.2', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0', 'en-US,en;q=0.5', '2014-12-04 15:34:45', '2014-12-04 15:34:47'),
-(2, 0, 'INV-2013-00', 0, 'Watches online store', 'http://192.168.9.2/+2014/theme555/', 1, 1, 'Demo', 'Demo', 'demo@demo.com', '5555555555', '', 'b:0;', 'Demo', 'Demo', 'Demo', 'Demo', '', 'Demo', '5555555555', 'United Kingdom', 222, 'Cheshire', 3529, '', 'b:0;', 'Cash On Delivery', 'cod', 'Demo', 'Demo', 'Demo', 'Demo', '', 'Demo', '5555555555', 'United Kingdom', 222, 'Cheshire', 3529, '', 'b:0;', 'Flat Shipping Rate', 'flat.flat', '', 374.0000, 1, 0, 0.0000, 0, '', 1, 1, 'GBP', 0.63830000, '192.168.9.1', '192.168.9.2', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0', 'en-US,en;q=0.5', '2014-12-11 15:12:48', '2014-12-11 15:12:51'),
-(3, 0, 'INV-2013-00', 0, 'Watches online store', 'http://localhost/theme555/', 1, 1, 'Demo', 'Demo', 'demo@demo.com', '5555555555', '', 'b:0;', 'Demo', 'Demo', 'Demo', 'Demo', '', 'Demo', '5555555555', 'United Kingdom', 222, 'Cheshire', 3529, '', 'b:0;', 'Cash On Delivery', 'cod', 'Demo', 'Demo', 'Demo', 'Demo', '', 'Demo', '5555555555', 'United Kingdom', 222, 'Cheshire', 3529, '', 'b:0;', 'Flat Shipping Rate', 'flat.flat', '', 2470.0000, 0, 0, 0.0000, 0, '', 1, 2, 'USD', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0', 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', '2014-12-23 00:33:59', '2014-12-23 00:33:59'),
-(4, 0, 'INV-2013-00', 0, 'Watches online store', 'http://localhost/theme555/', 1, 1, 'Demo', 'Demo', 'demo@demo.com', '5555555555', '', 'b:0;', 'Demo', 'Demo', 'Demo', 'Demo', '', 'Demo', '5555555555', 'United Kingdom', 222, 'Cheshire', 3529, '', 'b:0;', 'Cash On Delivery', 'cod', 'Demo', 'Demo', 'Demo', 'Demo', '', 'Demo', '5555555555', 'United Kingdom', 222, 'Cheshire', 3529, '', 'b:0;', 'Flat Shipping Rate', 'flat.flat', '', 142.0000, 0, 0, 0.0000, 0, '', 1, 2, 'USD', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0', 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', '2014-12-23 01:16:04', '2014-12-23 01:16:04'),
-(5, 0, 'INV-2013-00', 0, 'One Day online store', 'http://192.168.9.23/555/', 2, 1, 'admin', 'admin', 'admin@demolink.org', '111', '', 'b:0;', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Cash On Delivery', 'cod', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Flat Shipping Rate', 'flat.flat', '', 330.0000, 1, 0, 0.0000, 0, '', 1, 2, 'USD', 1.00000000, '192.168.9.23', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'en-US,en;q=0.5', '2015-05-05 17:44:51', '2015-05-05 17:44:53'),
-(6, 0, 'INV-2013-00', 0, 'One Day online store', 'http://192.168.9.23/555/', 2, 1, 'admin', 'admin', 'admin@demolink.org', '111', '', 'b:0;', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Cash On Delivery', 'cod', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Flat Shipping Rate', 'flat.flat', '', 576.0000, 0, 0, 0.0000, 0, '', 1, 2, 'USD', 1.00000000, '192.168.9.23', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'en-US,en;q=0.5', '2015-05-07 17:23:30', '2015-05-07 17:23:30'),
-(7, 0, 'INV-2013-00', 0, 'One Day online store', 'http://192.168.9.23/555/', 2, 1, 'admin', 'admin', 'admin@demolink.org', '111', '', 'b:0;', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Cash On Delivery', 'cod', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Flat Shipping Rate', 'flat.flat', '', 576.0000, 0, 0, 0.0000, 0, '', 1, 2, 'USD', 1.00000000, '192.168.9.23', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'en-US,en;q=0.5', '2015-05-07 17:25:17', '2015-05-07 17:25:17'),
-(8, 0, 'INV-2013-00', 0, 'One Day online store', 'http://192.168.9.23/555/', 2, 1, 'admin', 'admin', 'admin@demolink.org', '111', '', 'b:0;', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Cash On Delivery', 'cod', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Flat Shipping Rate', 'flat.flat', '', 576.0000, 0, 0, 0.0000, 0, '', 1, 2, 'USD', 1.00000000, '192.168.9.23', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'en-US,en;q=0.5', '2015-05-07 17:26:44', '2015-05-07 17:26:44'),
-(9, 0, 'INV-2013-00', 0, 'One Day online store', 'http://192.168.9.23/555/', 2, 1, 'admin', 'admin', 'admin@demolink.org', '111', '', 'b:0;', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Cash On Delivery', 'cod', 'admin', 'admin', '', '111', '', '111', '111', 'Tuvalu', 218, 'Vaitupu', 3423, '', 'b:0;', 'Flat Shipping Rate', 'flat.flat', '', 576.0000, 0, 0, 0.0000, 0, '', 1, 2, 'USD', 1.00000000, '192.168.9.23', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'en-US,en;q=0.5', '2015-05-07 17:27:14', '2015-05-07 17:27:14');
+(10, 0, 'OUROAF', 0, 'Ouro AF', 'http://ouroaf.homolog.lojavirtual.digital/', 3, 1, 'Fernando', 'Mendes', 'fernando.mendes@webca.com.br', '11976495157', '', 'b:0;', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Boleto', 'bancosantander', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Frete grátis', 'free.free', '', 10.0000, 0, 0, 0.0000, 0, '', 4, 4, 'BRL', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36', 'en-US,en;q=0.8,pt;q=0.6', '2016-08-08 10:40:53', '2016-08-08 10:40:53'),
+(11, 0, 'OUROAF', 0, 'Ouro AF', 'http://ouroaf.homolog.lojavirtual.digital/', 3, 1, 'Fernando', 'Mendes', 'fernando.mendes@webca.com.br', '11976495157', '', 'b:0;', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Boleto', 'bancosantander', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Frete grátis', 'free.free', '', 10.0000, 0, 0, 0.0000, 0, '', 4, 4, 'BRL', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36', 'en-US,en;q=0.8,pt;q=0.6', '2016-08-08 10:41:19', '2016-08-08 10:41:19'),
+(12, 0, 'OUROAF', 0, 'Ouro AF', 'http://ouroaf.homolog.lojavirtual.digital/', 3, 1, 'Fernando', 'Mendes', 'fernando.mendes@webca.com.br', '11976495157', '', 'b:0;', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Boleto', 'bancosantander', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Frete grátis', 'free.free', '', 10.0000, 0, 0, 0.0000, 0, '', 4, 4, 'BRL', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36', 'en-US,en;q=0.8,pt;q=0.6', '2016-08-08 10:46:07', '2016-08-08 10:46:07'),
+(13, 0, 'OUROAF', 0, 'Ouro AF', 'http://ouroaf.homolog.lojavirtual.digital/', 3, 1, 'Fernando', 'Mendes', 'fernando.mendes@webca.com.br', '11976495157', '', 'b:0;', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Boleto', 'bancosantander', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Frete grátis', 'free.free', '', 10.0000, 1, 0, 0.0000, 0, '', 4, 4, 'BRL', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36', 'en-US,en;q=0.8,pt;q=0.6', '2016-08-08 10:47:32', '2016-08-08 10:47:35'),
+(14, 0, 'OUROAF', 0, 'Ouro AF', 'http://ouroaf.homolog.lojavirtual.digital/', 3, 1, 'Fernando', 'Mendes', 'fernando.mendes@webca.com.br', '11976495157', '', 'b:0;', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Boleto', 'bancosantander', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Frete grátis', 'free.free', '', 10.0000, 1, 0, 0.0000, 0, '', 4, 4, 'BRL', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36', 'en-US,en;q=0.8,pt;q=0.6', '2016-08-08 12:56:01', '2016-08-08 12:56:02'),
+(15, 0, 'OUROAF', 0, 'Ouro AF', 'http://ouroaf.homolog.lojavirtual.digital/', 3, 1, 'Fernando', 'Mendes', 'fernando.mendes@webca.com.br', '11976495157', '', 'b:0;', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Boleto', 'bancosantander', 'Fernando', 'Mendes', '', 'Rua Lomas Valentinas', '', 'Sao Caetano do Sul', '09560260', 'Brasil', 30, 'São Paulo', 464, '', 'b:0;', 'Frete grátis', 'free.free', '', 5.0000, 1, 0, 0.0000, 0, '', 4, 4, 'BRL', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36', 'en-US,en;q=0.8,pt;q=0.6', '2016-08-08 13:25:18', '2016-08-08 13:25:21');
 
 -- --------------------------------------------------------
 
@@ -2509,7 +2075,7 @@ CREATE TABLE `oc_order_history` (
   `notify` tinyint(1) NOT NULL DEFAULT '0',
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_order_history`
@@ -2518,7 +2084,10 @@ CREATE TABLE `oc_order_history` (
 INSERT INTO `oc_order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
 (1, 1, 1, 0, '', '2014-12-04 15:34:47'),
 (2, 2, 1, 0, '', '2014-12-11 15:12:51'),
-(3, 5, 1, 0, '', '2015-05-05 17:44:53');
+(3, 5, 1, 0, '', '2015-05-05 17:44:53'),
+(4, 13, 1, 1, 'Para Imprimir a Segunda Via do Boleto: <a href=''http://ouroaf.homolog.lojavirtual.digital/index.php?route=payment/bancosantander/gerarboleto&pedido=13'' target=''_blank''>Clique Aqui!</a>', '2016-08-08 10:47:35'),
+(5, 14, 1, 1, 'Para Imprimir a Segunda Via do Boleto: <a href=''http://ouroaf.homolog.lojavirtual.digital/index.php?route=payment/bancosantander/gerarboleto&pedido=14'' target=''_blank''>Clique Aqui!</a>', '2016-08-08 12:56:02'),
+(6, 15, 1, 1, 'Para Imprimir a Segunda Via do Boleto: <a href=''http://ouroaf.homolog.lojavirtual.digital/index.php?route=payment/bancosantander/gerarboleto&pedido=15'' target=''_blank''>Clique Aqui!</a>', '2016-08-08 13:25:21');
 
 -- --------------------------------------------------------
 
@@ -2588,7 +2157,7 @@ CREATE TABLE `oc_order_product` (
   `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_order_product`
@@ -2615,7 +2184,13 @@ INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `n
 (18, 8, 31, 'Eiusmod tempor', 'Product 4', 1, 288.0000, 288.0000, 0.0000, 0),
 (19, 8, 33, 'Eiusmod tempor', 'Product 6', 1, 283.0000, 283.0000, 0.0000, 0),
 (20, 9, 31, 'Eiusmod tempor', 'Product 4', 1, 288.0000, 288.0000, 0.0000, 0),
-(21, 9, 33, 'Eiusmod tempor', 'Product 6', 1, 283.0000, 283.0000, 0.0000, 0);
+(21, 9, 33, 'Eiusmod tempor', 'Product 6', 1, 283.0000, 283.0000, 0.0000, 0),
+(22, 10, 28, 'Eiusmod tempor', 'Product 1', 1, 10.0000, 10.0000, 0.0000, 400),
+(23, 11, 28, 'Eiusmod tempor', 'Product 1', 1, 10.0000, 10.0000, 0.0000, 400),
+(24, 12, 28, 'Eiusmod tempor', 'Product 1', 1, 10.0000, 10.0000, 0.0000, 400),
+(25, 13, 28, 'Eiusmod tempor', 'Product 1', 1, 10.0000, 10.0000, 0.0000, 400),
+(26, 14, 28, 'Eiusmod tempor', 'Product 1', 1, 10.0000, 10.0000, 0.0000, 400),
+(27, 15, 28, 'Eiusmod tempor', 'Product 1', 1, 10.0000, 10.0000, 0.0000, 400);
 
 -- --------------------------------------------------------
 
@@ -2678,48 +2253,20 @@ CREATE TABLE `oc_order_status` (
 --
 
 INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
-(2, 1, 'Processing'),
-(3, 1, 'Shipped'),
-(7, 1, 'Canceled'),
-(5, 1, 'Complete'),
-(8, 1, 'Denied'),
-(9, 1, 'Canceled Reversal'),
-(10, 1, 'Failed'),
-(11, 1, 'Refunded'),
-(12, 1, 'Reversed'),
-(13, 1, 'Chargeback'),
-(1, 1, 'Pending'),
-(16, 1, 'Voided'),
-(15, 1, 'Processed'),
-(14, 1, 'Expired'),
-(2, 2, 'Processing'),
-(3, 2, 'Shipped'),
-(7, 2, 'Canceled'),
-(5, 2, 'Complete'),
-(8, 2, 'Denied'),
-(9, 2, 'Canceled Reversal'),
-(10, 2, 'Failed'),
-(11, 2, 'Refunded'),
-(12, 2, 'Reversed'),
-(13, 2, 'Chargeback'),
-(1, 2, 'Pending'),
-(16, 2, 'Voided'),
-(15, 2, 'Processed'),
-(14, 2, 'Expired'),
-(2, 3, 'Processing'),
-(3, 3, 'Shipped'),
-(7, 3, 'Canceled'),
-(5, 3, 'Complete'),
-(8, 3, 'Denied'),
-(9, 3, 'Canceled Reversal'),
-(10, 3, 'Failed'),
-(11, 3, 'Refunded'),
-(12, 3, 'Reversed'),
-(13, 3, 'Chargeback'),
-(1, 3, 'Pending'),
-(16, 3, 'Voided'),
-(15, 3, 'Processed'),
-(14, 3, 'Expired');
+(2, 4, 'Processing'),
+(3, 4, 'Shipped'),
+(7, 4, 'Canceled'),
+(5, 4, 'Complete'),
+(8, 4, 'Denied'),
+(9, 4, 'Canceled Reversal'),
+(10, 4, 'Failed'),
+(11, 4, 'Refunded'),
+(12, 4, 'Reversed'),
+(13, 4, 'Chargeback'),
+(1, 4, 'Pending'),
+(16, 4, 'Voided'),
+(15, 4, 'Processed'),
+(14, 4, 'Expired');
 
 -- --------------------------------------------------------
 
@@ -2734,7 +2281,7 @@ CREATE TABLE `oc_order_total` (
   `title` varchar(255) NOT NULL,
   `value` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `sort_order` int(3) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_order_total`
@@ -2775,7 +2322,26 @@ INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `va
 (32, 8, 'total', 'Total', 576.0000, 9),
 (33, 9, 'sub_total', 'Sub-Total', 571.0000, 1),
 (34, 9, 'shipping', 'Flat Shipping Rate', 5.0000, 3),
-(35, 9, 'total', 'Total', 576.0000, 9);
+(35, 9, 'total', 'Total', 576.0000, 9),
+(36, 10, 'sub_total', 'Sub-total', 10.0000, 1),
+(37, 10, 'shipping', 'Frete grátis', 0.0000, 3),
+(38, 10, 'total', 'Total', 10.0000, 9),
+(39, 11, 'sub_total', 'Sub-total', 10.0000, 1),
+(40, 11, 'shipping', 'Frete grátis', 0.0000, 3),
+(41, 11, 'total', 'Total', 10.0000, 9),
+(42, 12, 'sub_total', 'Sub-total', 10.0000, 1),
+(43, 12, 'shipping', 'Frete grátis', 0.0000, 3),
+(44, 12, 'total', 'Total', 10.0000, 9),
+(45, 13, 'sub_total', 'Sub-total', 10.0000, 1),
+(46, 13, 'shipping', 'Frete grátis', 0.0000, 3),
+(47, 13, 'total', 'Total', 10.0000, 9),
+(48, 14, 'sub_total', 'Sub-total', 10.0000, 1),
+(49, 14, 'shipping', 'Frete grátis', 0.0000, 3),
+(50, 14, 'total', 'Total', 10.0000, 9),
+(51, 15, 'sub_total', 'Sub-total', 10.0000, 1),
+(52, 15, 'shipping', 'Frete grátis', 0.0000, 3),
+(53, 15, 'coupon', 'Cupom (TESTE)', -5.0000, 4),
+(54, 15, 'total', 'Total', 5.0000, 9);
 
 -- --------------------------------------------------------
 
@@ -2796,6 +2362,51 @@ CREATE TABLE `oc_order_voucher` (
   `voucher_theme_id` int(11) NOT NULL,
   `message` text NOT NULL,
   `amount` decimal(15,4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oc_payu_order_transaction`
+--
+
+CREATE TABLE `oc_payu_order_transaction` (
+`payu_order_transaction_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `mihpayid` varchar(255) DEFAULT NULL,
+  `mode` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `unmappedstatus` varchar(255) DEFAULT NULL,
+  `key` varchar(255) DEFAULT NULL,
+  `txnid` varchar(255) DEFAULT NULL,
+  `amount` varchar(255) DEFAULT NULL,
+  `addedon` varchar(255) DEFAULT NULL,
+  `productinfo` text,
+  `firstname` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `address1` varchar(255) DEFAULT NULL,
+  `address2` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `zipcode` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `hash` varchar(255) DEFAULT NULL,
+  `PG_TYPE` varchar(255) DEFAULT NULL,
+  `encryptedPaymentId` varchar(255) DEFAULT NULL,
+  `bank_ref_num` varchar(255) DEFAULT NULL,
+  `bankcode` varchar(255) DEFAULT NULL,
+  `error` varchar(255) DEFAULT NULL,
+  `error_Message` varchar(255) DEFAULT NULL,
+  `cardToken` varchar(255) DEFAULT NULL,
+  `name_on_card` varchar(255) DEFAULT NULL,
+  `cardnum` varchar(255) DEFAULT NULL,
+  `cardhash` text,
+  `amount_split` varchar(255) DEFAULT NULL,
+  `payuMoneyId` varchar(255) DEFAULT NULL,
+  `discount` varchar(255) DEFAULT NULL,
+  `net_amount_debit` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2843,25 +2454,14 @@ CREATE TABLE `oc_product` (
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
-(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/Personalized_Wedding1.png', 5, 1, 258.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 16:06:50', '2015-05-07 14:12:00'),
-(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/Mini_Lantern1.png', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2015-05-06 10:20:55'),
-(30, 'Product 3', '', '', '', '', '', '', '', 60000, 6, 'catalog/Square_Favor1.png', 9, 1, 258.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 16:59:00', '2015-05-07 14:11:36'),
-(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/Crystal_Ball1.png', 10, 1, 258.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, 0, '2009-02-03 17:00:10', '2015-05-07 14:11:16'),
-(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/Leaf_Copper1.png', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2015-05-06 10:20:34'),
-(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'catalog/Chalkboard_Bottle1.png', 10, 1, 258.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 17:08:31', '2015-05-07 14:10:56'),
-(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'catalog/Silk_Bow1.png', 8, 1, 258.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 18:07:54', '2015-05-07 14:12:27'),
-(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, 'catalog/Personalized_Napkins1.png', 5, 0, 258.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 18:08:31', '2015-05-07 14:10:34'),
-(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/sweet_birds1.png', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2015-05-06 10:23:49'),
-(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/patterned1.png', 8, 1, 101.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2015-05-06 10:23:27'),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/Plantable_Card1.png', 8, 1, 302.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:26', '2015-05-07 14:12:58'),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/Flower_Basket1.png', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, 0, '2009-02-03 21:07:37', '2015-05-06 10:19:41'),
-(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/Personalized_Guest1.png', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 21:07:49', '2015-05-06 10:22:02'),
-(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/Hand-painted1.png', 8, 1, 258.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2015-05-07 14:10:13'),
-(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/Paper_Lantern1.png', 8, 1, 200.0000, 0, 0, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2015-05-06 10:21:17'),
-(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'catalog/heart_card1.png', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:29', '2015-05-06 10:22:41'),
-(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'catalog/Crush_Garter1.png', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, 0, '2009-02-03 21:08:40', '2015-05-11 17:12:51'),
-(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/Paper_Pom1.png', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-08 17:21:51', '2015-05-06 10:21:39'),
-(49, 'Product 15', '', '', '', '', '', '', '', 80000, 8, 'catalog/Heart_Wedding1.png', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2011-04-26 08:57:34', '2015-05-06 10:20:07');
+(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/Femininos/1122 - Luna.jpg', 5, 1, 10.0000, 200, 0, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 18, '2009-02-03 16:06:50', '2016-08-26 10:39:47'),
+(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/Masculinos/1322 - Apolo.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2016-07-22 14:57:15'),
+(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/Femininos/1126 - Aurora.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2016-07-22 14:57:20'),
+(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/Femininos/1123 - Isis.jpg', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, 2, '2009-02-03 21:07:37', '2016-07-22 14:57:31'),
+(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/Masculinos/1325 - Thor.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 21:07:49', '2016-07-22 14:56:59'),
+(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/Masculinos/1323 - Zeus.jpg', 8, 1, 200.0000, 0, 0, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 1, '2009-02-03 21:08:17', '2016-07-22 14:57:10'),
+(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/Masculinos/1324 - Hades.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-08 17:21:51', '2016-07-22 14:57:05'),
+(49, 'Product 15', '', '', '', '', '', '', '', 80000, 8, 'catalog/Femininos/1124 - Herta.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2011-04-26 08:57:34', '2016-07-22 14:57:25');
 
 -- --------------------------------------------------------
 
@@ -2881,225 +2481,36 @@ CREATE TABLE `oc_product_attribute` (
 --
 
 INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
-(43, 4, 2, '8'),
-(42, 7, 3, '64'),
-(43, 4, 1, '8'),
-(42, 8, 1, '128'),
-(47, 8, 2, '64'),
-(43, 2, 3, '1'),
-(47, 8, 1, '64'),
-(43, 4, 3, '8'),
-(47, 7, 3, '32'),
-(43, 2, 2, '1'),
-(47, 8, 3, '64'),
-(33, 5, 2, '500'),
-(35, 5, 3, 'Lorem ipsum'),
-(33, 5, 3, '500'),
-(28, 9, 2, '700'),
-(28, 9, 1, '700'),
-(47, 7, 2, '32'),
-(30, 8, 1, '128'),
-(44, 8, 1, '128'),
-(41, 8, 1, '128'),
-(49, 7, 3, '64'),
-(32, 7, 3, '64'),
-(29, 8, 1, '128'),
-(48, 8, 1, '128'),
-(34, 8, 1, '128'),
-(43, 2, 1, '1'),
-(31, 8, 1, '128'),
-(46, 8, 1, '128'),
-(40, 8, 1, '128'),
-(36, 7, 3, '64'),
-(35, 7, 1, ' Etiam eu volutpat'),
-(33, 5, 1, '500'),
-(28, 9, 3, '700'),
-(47, 9, 1, '16'),
-(49, 8, 1, '128'),
-(32, 8, 1, '128'),
-(36, 7, 2, '64'),
-(42, 8, 2, '128'),
-(33, 7, 1, '700'),
-(28, 8, 3, '900'),
-(47, 7, 1, '32'),
-(41, 7, 3, '64'),
-(45, 8, 1, '128'),
-(48, 7, 3, '64'),
-(34, 7, 3, '64'),
-(31, 7, 3, '64'),
-(46, 7, 3, '64'),
-(40, 7, 3, '64'),
-(36, 8, 1, '128'),
-(47, 9, 2, '16'),
-(30, 7, 3, '64'),
-(42, 7, 2, '64'),
-(35, 5, 2, 'Lorem ipsum'),
-(47, 5, 3, '4'),
-(44, 7, 3, '32'),
-(49, 7, 2, '64'),
-(29, 7, 3, '64'),
-(35, 7, 2, ' Etiam eu volutpat'),
-(33, 7, 2, '700'),
-(28, 8, 2, '900'),
-(47, 9, 3, '16'),
-(30, 8, 2, '128'),
-(44, 8, 2, '128'),
-(41, 7, 2, '64'),
-(42, 7, 1, '64'),
-(49, 7, 1, '64'),
-(32, 7, 2, '64'),
-(29, 8, 2, '128'),
-(45, 8, 2, '128'),
-(48, 7, 2, '64'),
-(34, 7, 2, '64'),
-(31, 7, 2, '64'),
-(46, 7, 2, '64'),
-(40, 7, 2, '64'),
-(35, 5, 1, 'Lorem ipsum'),
-(47, 5, 2, '4'),
-(30, 7, 2, '64'),
-(30, 7, 1, '64'),
-(44, 7, 2, '32'),
-(44, 7, 1, '32'),
-(41, 8, 2, '128'),
-(41, 8, 3, '128'),
-(42, 8, 3, '128'),
-(49, 8, 2, '128'),
-(32, 8, 2, '128'),
-(32, 8, 3, '128'),
-(29, 7, 2, '64'),
-(29, 7, 1, '64'),
-(45, 7, 3, '64'),
-(45, 7, 2, '64'),
-(48, 8, 2, '128'),
-(48, 8, 3, '128'),
-(34, 8, 2, '128'),
-(34, 8, 3, '128'),
-(31, 8, 2, '128'),
-(31, 8, 3, '128'),
-(46, 8, 2, '128'),
-(46, 8, 3, '128'),
-(40, 8, 2, '128'),
-(40, 8, 3, '128'),
-(36, 8, 2, '128'),
-(36, 8, 3, '128'),
-(35, 7, 3, ' Etiam eu volutpat'),
-(33, 7, 3, '700'),
-(33, 8, 1, '800'),
-(33, 8, 2, '800'),
-(28, 8, 1, '900'),
-(28, 7, 3, '800'),
-(28, 7, 2, '800'),
-(30, 8, 3, '128'),
-(30, 11, 1, '32'),
-(44, 8, 3, '128'),
-(44, 9, 1, '16'),
-(41, 7, 1, '64'),
-(41, 5, 3, '16'),
-(42, 5, 3, '16'),
-(42, 5, 2, '16'),
-(42, 5, 1, '16'),
-(49, 5, 3, '16'),
-(32, 7, 1, '64'),
-(32, 5, 3, '16'),
-(32, 5, 2, '16'),
-(32, 5, 1, '16'),
-(29, 8, 3, '128'),
-(29, 9, 1, '32'),
-(45, 8, 3, '128'),
-(48, 7, 1, '64'),
-(48, 5, 3, '16'),
-(48, 5, 2, '16'),
-(48, 5, 1, '16'),
-(34, 7, 1, '64'),
-(34, 5, 3, '16'),
-(31, 7, 1, '64'),
-(31, 5, 3, '16'),
-(46, 7, 1, '64'),
-(46, 5, 3, '16'),
-(46, 5, 2, '16'),
-(46, 5, 1, '16'),
-(40, 7, 1, '64'),
-(40, 5, 3, '16'),
-(40, 5, 2, '16'),
-(40, 5, 1, '16'),
-(36, 7, 1, '64'),
-(36, 5, 3, '16'),
-(36, 5, 2, '16'),
-(36, 5, 1, '16'),
-(45, 7, 1, '64'),
-(45, 5, 3, '16'),
-(45, 5, 2, '16'),
-(45, 5, 1, '16'),
-(47, 5, 1, '4'),
-(29, 5, 3, '16'),
-(29, 5, 2, '16'),
-(29, 5, 1, '16'),
-(30, 5, 3, '16'),
-(49, 8, 3, '128'),
-(44, 5, 3, '64'),
-(49, 5, 2, '16'),
-(49, 5, 1, '16'),
-(44, 9, 2, '16'),
-(35, 9, 1, 'Dolore sit amet'),
-(35, 9, 2, 'Dolore sit amet'),
-(33, 8, 3, '800'),
-(33, 9, 1, '600'),
-(31, 9, 1, '32'),
-(30, 11, 2, '32'),
-(28, 7, 1, '800'),
-(28, 5, 3, '600'),
-(34, 9, 1, '32'),
-(41, 9, 1, '32'),
-(31, 5, 2, '16'),
-(41, 5, 2, '16'),
-(44, 5, 2, '64'),
-(31, 9, 2, '32'),
-(30, 5, 2, '16'),
-(30, 5, 1, '16'),
-(34, 5, 2, '16'),
-(34, 5, 1, '16'),
-(41, 9, 2, '32'),
-(42, 9, 1, '32'),
-(42, 9, 2, '32'),
-(42, 9, 3, '32'),
-(49, 9, 1, '32'),
-(49, 9, 2, '32'),
-(49, 9, 3, '32'),
-(32, 9, 1, '32'),
-(32, 9, 2, '32'),
-(32, 9, 3, '32'),
-(29, 9, 2, '32'),
-(29, 9, 3, '32'),
-(45, 9, 1, '32'),
-(45, 9, 2, '32'),
-(45, 9, 3, '32'),
-(48, 9, 1, '32'),
-(48, 9, 2, '32'),
-(48, 9, 3, '32'),
-(46, 9, 1, '32'),
-(46, 9, 2, '32'),
-(46, 9, 3, '32'),
-(40, 9, 1, '32'),
-(40, 9, 2, '32'),
-(40, 9, 3, '32'),
-(36, 11, 1, '32'),
-(36, 11, 2, '32'),
-(36, 11, 3, '32'),
-(44, 9, 3, '16'),
-(31, 5, 1, '16'),
-(41, 5, 1, '16'),
-(28, 5, 2, '600'),
-(28, 5, 1, '500'),
-(44, 5, 1, '64'),
-(35, 9, 3, 'Dolore sit amet'),
-(33, 9, 2, '600'),
-(33, 9, 3, '600'),
-(31, 9, 3, '32'),
-(30, 11, 3, '32'),
-(34, 9, 2, '32'),
-(34, 9, 3, '32'),
-(41, 9, 3, '32');
+(43, 2, 4, '1'),
+(42, 7, 4, '64'),
+(28, 9, 4, '700'),
+(29, 7, 4, '64'),
+(48, 7, 4, '64'),
+(43, 4, 4, '8'),
+(49, 7, 4, '64'),
+(32, 7, 4, '64'),
+(45, 7, 4, '64'),
+(42, 8, 4, '128'),
+(49, 8, 4, '128'),
+(49, 9, 4, '32'),
+(29, 8, 4, '128'),
+(28, 8, 4, '900'),
+(32, 8, 4, '128'),
+(29, 5, 4, '16'),
+(48, 8, 4, '128'),
+(48, 9, 4, '32'),
+(45, 9, 4, '32'),
+(32, 9, 4, '32'),
+(45, 8, 4, '128'),
+(29, 9, 4, '32'),
+(42, 9, 4, '32'),
+(28, 7, 4, '800'),
+(42, 5, 4, '16'),
+(49, 5, 4, '16'),
+(32, 5, 4, '16'),
+(45, 5, 4, '16'),
+(48, 5, 4, '16'),
+(28, 5, 4, '500');
 
 -- --------------------------------------------------------
 
@@ -3123,64 +2534,14 @@ CREATE TABLE `oc_product_description` (
 --
 
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(48, 1, 'Praesent imperdiet', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Praesent imperdiet', '', ''),
-(40, 2, 'Vehicula libero sed', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Vehicula libero sed', '', ''),
-(35, 3, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(46, 2, 'Suspendisse imperdiet', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Suspendisse imperdiet', '', ''),
-(32, 1, 'Nulla vitae eleifend', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Nulla vitae eleifend', '', ''),
-(32, 2, 'Nulla vitae eleifend', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Nulla vitae eleifend', '', ''),
-(33, 2, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(34, 1, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(33, 3, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(46, 1, 'Suspendisse imperdiet', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Suspendisse imperdiet', '', ''),
-(48, 2, 'Praesent imperdiet', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Praesent imperdiet', '', ''),
-(41, 2, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(45, 1, 'Phasellus vel scelerisque', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Phasellus vel scelerisque', '', ''),
-(29, 3, 'Nullam iaculis', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Nullam iaculis', '', ''),
-(36, 2, 'Vestibulum id tin', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Vestibulum id tin', '', ''),
-(34, 2, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(43, 2, 'Quisque eget', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Quisque eget', '', ''),
-(35, 2, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(49, 2, 'Mauris gravida', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Mauris gravida', '', ''),
-(44, 3, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(40, 1, 'Vehicula libero sed', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Vehicula libero sed', '', ''),
-(28, 2, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(29, 2, 'Nullam iaculis', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Nullam iaculis', '', ''),
-(36, 1, 'Vestibulum id tin', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Vestibulum id tin', '', ''),
-(47, 2, 'Vestibulum id tin', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Vestibulum id tin', '', ''),
-(43, 1, 'Quisque eget', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Quisque eget', '', ''),
-(31, 2, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(49, 3, 'Mauris gravida', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Mauris gravida', '', ''),
-(42, 3, 'Lorem ipsum', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Lorem ipsum', '', ''),
-(42, 2, 'Lorem ipsum', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Lorem ipsum', '', ''),
-(42, 1, 'Lorem ipsum', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Lorem ipsum', '', ''),
-(47, 3, 'Vestibulum id tin', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Vestibulum id tin', '', ''),
-(44, 2, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(30, 2, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(33, 1, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(28, 3, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(30, 1, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(44, 1, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(41, 3, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(32, 3, 'Nulla vitae eleifend', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Nulla vitae eleifend', '', '');
-INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(29, 1, 'Nullam iaculis', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Nullam iaculis', '', ''),
-(45, 2, 'Phasellus vel scelerisque', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Phasellus vel scelerisque', '', ''),
-(48, 3, 'Praesent imperdiet', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Praesent imperdiet', '', ''),
-(34, 3, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(43, 3, 'Quisque eget', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Quisque eget', '', ''),
-(31, 3, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(46, 3, 'Suspendisse imperdiet', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Suspendisse imperdiet', '', ''),
-(40, 3, 'Vehicula libero sed', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Vehicula libero sed', '', ''),
-(30, 3, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(49, 1, 'Mauris gravida', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Mauris gravida', '', ''),
-(45, 3, 'Phasellus vel scelerisque', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Phasellus vel scelerisque', '', ''),
-(36, 3, 'Vestibulum id tin', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Vestibulum id tin', '', ''),
-(47, 1, 'Vestibulum id tin', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;\r\n&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Vestibulum id tin', '', ''),
-(28, 1, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(35, 1, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(31, 1, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', ''),
-(41, 1, 'Eiusmod tempor', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', '');
+(48, 4, 'Praesent imperdiet', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Praesent imperdiet', '', ''),
+(32, 4, 'Nulla vitae eleifend', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Nulla vitae eleifend', '', ''),
+(45, 4, 'Phasellus vel scelerisque', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Phasellus vel scelerisque', '', ''),
+(43, 4, 'Quisque eget', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Quisque eget', '', ''),
+(42, 4, 'Lorem ipsum', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Lorem ipsum', '', ''),
+(29, 4, 'Nullam iaculis', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Nullam iaculis', '', ''),
+(49, 4, 'Mauris gravida', '&lt;iframe src=&quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Mauris gravida', '', ''),
+(28, 4, 'Eiusmod tempor', '&lt;iframe src=\\&quot;\\\\&amp;quot;\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;//www.youtube.com/embed/PRZoWTRCxoQ?rel=0&amp;amp;controls=0&amp;amp;showinfo=0\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\&amp;quot;\\\\&amp;quot;\\&quot; allowfullscreen=\\&quot;\\\\&amp;quot;\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\&amp;quot;\\\\&amp;quot;\\&quot; height=\\&quot;\\\\&amp;quot;\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;315\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\&amp;quot;\\\\&amp;quot;\\&quot; width=\\&quot;\\\\&amp;quot;\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;560\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\\\\\\\\\&amp;quot;\\\\\\\\&amp;quot;\\\\&amp;quot;\\&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;b&gt;When you ask a woman&lt;/b&gt; about the most memorable days of her life, she will certainly mention her wedding day in a list of others. Of course, she remembers the first time she met her future husband on the wonderful May day, but the day that happened in a year, the wedding one, will always stay apart in her reminiscences along with the birth of her children and the time she fell in love with their father. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Making your special days&lt;/b&gt; even more special, we feel happier. Our goal is to make you feel not so absorbed with all the difficulties that deal with the usual preparations, and to provide you with all the high-level services. We try our best to solve any problems that arise in the process of preparations, offer you the goods you need and support with everything. The assortment of our wedding store will glad your eyes and help you get everything you need for this special day.&lt;/p&gt;', '', 'Eiusmod tempor', '', '');
 
 -- --------------------------------------------------------
 
@@ -3197,16 +2558,16 @@ CREATE TABLE `oc_product_discount` (
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `date_start` date NOT NULL DEFAULT '0000-00-00',
   `date_end` date NOT NULL DEFAULT '0000-00-00'
-) ENGINE=MyISAM AUTO_INCREMENT=489 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=492 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_product_discount`
 --
 
 INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(488, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
-(487, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
-(486, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
+(491, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
+(490, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
+(489, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -3230,55 +2591,29 @@ CREATE TABLE `oc_product_image` (
   `product_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=3342 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3376 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_product_image`
 --
 
 INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-(3327, 30, 'catalog/Square_Favor3.png', 2),
-(3341, 47, 'catalog/Crush_Garter3.png', 2),
-(3333, 41, 'catalog/Plantable_Card3.png', 2),
-(3299, 36, 'catalog/sweet_birds3.png', 2),
-(3331, 34, 'catalog/Silk_Bow3.png', 2),
-(3293, 43, 'catalog/Personalized_Guest3.png', 2),
-(3319, 44, 'catalog/Hand-painted7.png', 6),
-(3289, 45, 'catalog/Paper_Lantern3.png', 2),
-(3325, 31, 'catalog/Crystal_Ball3.png', 2),
-(3287, 29, 'catalog/Mini_Lantern3.png', 2),
-(3295, 46, 'catalog/heart_card3.png', 2),
-(3291, 48, 'catalog/Paper_Pom3.png', 2),
-(3297, 40, 'catalog/patterned3.png', 2),
-(3329, 28, 'catalog/Personalized_Wedding3.png', 2),
-(3296, 40, 'catalog/patterned2.png', 1),
-(3290, 48, 'catalog/Paper_Pom2.png', 1),
-(3298, 36, 'catalog/sweet_birds2.png', 1),
-(3330, 34, 'catalog/Silk_Bow2.png', 1),
-(3285, 32, 'catalog/Leaf_Copper3.png', 2),
-(3292, 43, 'catalog/Personalized_Guest2.png', 1),
-(3316, 44, 'catalog/Hand-painted4.png', 3),
-(3288, 45, 'catalog/Paper_Lantern2.png', 1),
-(3324, 31, 'catalog/Crystal_Ball2.png', 1),
-(3294, 46, 'catalog/heart_card2.png', 1),
-(3283, 49, 'catalog/Heart_Wedding3.png', 2),
-(3282, 49, 'catalog/Heart_Wedding2.png', 1),
-(3317, 44, 'catalog/Hand-painted5.png', 4),
-(3340, 47, 'catalog/Crush_Garter2.png', 1),
-(3328, 28, 'catalog/Personalized_Wedding2.png', 1),
-(3332, 41, 'catalog/Plantable_Card2.png', 1),
-(3286, 29, 'catalog/Mini_Lantern2.png', 1),
-(3320, 35, 'catalog/Personalized_Napkins2.png', 1),
-(3323, 33, 'catalog/Chalkboard_Bottle3.png', 2),
-(3322, 33, 'catalog/Chalkboard_Bottle2.png', 1),
-(3281, 42, 'catalog/Flower_Basket3.png', 2),
-(3280, 42, 'catalog/Flower_Basket2.png', 1),
-(3284, 32, 'catalog/Leaf_Copper2.png', 1),
-(3321, 35, 'catalog/Personalized_Napkins3.png', 2),
-(3326, 30, 'catalog/Square_Favor2.png', 1),
-(3318, 44, 'catalog/Hand-painted6.png', 5),
-(3315, 44, 'catalog/Hand-painted3.png', 2),
-(3314, 44, 'catalog/Hand-painted2.png', 1);
+(3347, 45, 'catalog/Paper_Lantern3.png', 2),
+(3344, 48, 'catalog/Paper_Pom2.png', 1),
+(3345, 48, 'catalog/Paper_Pom3.png', 2),
+(3342, 43, 'catalog/Personalized_Guest2.png', 1),
+(3343, 43, 'catalog/Personalized_Guest3.png', 2),
+(3346, 45, 'catalog/Paper_Lantern2.png', 1),
+(3353, 49, 'catalog/Heart_Wedding3.png', 2),
+(3352, 49, 'catalog/Heart_Wedding2.png', 1),
+(3375, 28, 'catalog/Personalized_Wedding3.png', 2),
+(3374, 28, 'catalog/Personalized_Wedding2.png', 1),
+(3348, 29, 'catalog/Mini_Lantern2.png', 1),
+(3349, 29, 'catalog/Mini_Lantern3.png', 2),
+(3355, 42, 'catalog/Flower_Basket3.png', 2),
+(3354, 42, 'catalog/Flower_Basket2.png', 1),
+(3350, 32, 'catalog/Leaf_Copper2.png', 1),
+(3351, 32, 'catalog/Leaf_Copper3.png', 2);
 
 -- --------------------------------------------------------
 
@@ -3292,52 +2627,32 @@ CREATE TABLE `oc_product_option` (
   `option_id` int(11) NOT NULL,
   `value` text NOT NULL,
   `required` tinyint(1) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=267 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=269 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_product_option`
 --
 
 INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
-(234, 28, 13, '', 0),
-(236, 47, 13, '', 1),
-(264, 42, 10, '2014-12-18 12:25', 1),
-(237, 30, 13, '', 1),
-(266, 42, 9, '', 1),
-(232, 33, 11, '', 1),
-(231, 33, 13, '', 1),
-(224, 35, 11, '', 1),
-(227, 35, 2, '', 1),
-(230, 35, 13, '', 1),
-(233, 28, 11, '', 1),
-(235, 47, 11, '', 1),
-(238, 30, 11, '', 1),
-(239, 44, 11, '', 1),
-(240, 41, 11, '', 1),
-(241, 49, 11, '', 1),
-(242, 49, 13, '', 1),
-(243, 32, 11, '', 1),
-(244, 32, 13, '', 1),
-(245, 29, 11, '', 1),
-(246, 29, 13, '', 1),
-(248, 45, 13, '', 1),
-(247, 45, 11, '', 0),
-(250, 48, 13, '', 1),
-(249, 48, 11, '', 1),
-(252, 34, 13, '', 1),
-(251, 34, 11, '', 1),
-(254, 43, 13, '', 1),
-(253, 43, 11, '', 1),
-(256, 31, 13, '', 1),
-(255, 31, 11, '', 1),
-(257, 46, 11, '', 1),
-(259, 40, 13, '', 1),
-(258, 40, 11, '', 1),
-(261, 36, 13, '', 1),
-(260, 36, 11, '', 1),
-(263, 42, 13, '', 1),
+(268, 28, 15, '', 1),
 (265, 42, 12, '2014-12-18', 1),
-(262, 42, 11, '', 1);
+(263, 42, 13, '', 1),
+(267, 28, 14, '', 1),
+(262, 42, 11, '', 1),
+(242, 49, 13, '', 1),
+(241, 49, 11, '', 1),
+(244, 32, 13, '', 1),
+(243, 32, 11, '', 1),
+(246, 29, 13, '', 1),
+(245, 29, 11, '', 1),
+(247, 45, 11, '', 0),
+(248, 45, 13, '', 1),
+(249, 48, 11, '', 1),
+(250, 48, 13, '', 1),
+(253, 43, 11, '', 1),
+(254, 43, 13, '', 1),
+(266, 42, 9, '', 1),
+(264, 42, 10, '2014-12-18 12:25', 1);
 
 -- --------------------------------------------------------
 
@@ -3359,121 +2674,78 @@ CREATE TABLE `oc_product_option_value` (
   `points_prefix` varchar(1) NOT NULL,
   `weight` decimal(15,8) NOT NULL,
   `weight_prefix` varchar(1) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=125 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_product_option_value`
 --
 
 INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(68, 245, 29, 11, 47, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(120, 262, 42, 11, 47, 1500, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(121, 262, 42, 11, 46, 1500, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(13, 224, 35, 11, 47, 10, 1, 10.0000, '+', 0, '+', 0.00000000, '+'),
-(44, 237, 30, 13, 49, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
 (119, 262, 42, 11, 48, 1500, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(122, 263, 42, 13, 49, 1500, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(14, 224, 35, 11, 48, 15, 1, 15.0000, '+', 0, '+', 0.00000000, '+'),
-(18, 227, 35, 2, 24, 12, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(19, 227, 35, 2, 44, 12, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(29, 232, 33, 11, 48, 155, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(30, 232, 33, 11, 47, 155, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(31, 232, 33, 11, 46, 155, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(26, 231, 33, 13, 49, 155, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(27, 231, 33, 13, 51, 1551, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(28, 231, 33, 13, 50, 155, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(37, 234, 28, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(36, 234, 28, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(35, 234, 28, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(34, 233, 28, 11, 46, 144, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(33, 233, 28, 11, 47, 144, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(32, 233, 28, 11, 48, 144, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(43, 236, 47, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(42, 236, 47, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(41, 236, 47, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(40, 235, 47, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(39, 235, 47, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(38, 235, 47, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(45, 237, 30, 13, 51, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(46, 237, 30, 13, 50, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(47, 238, 30, 11, 48, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(48, 238, 30, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(49, 238, 30, 11, 46, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(50, 239, 44, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(51, 239, 44, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(52, 239, 44, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(55, 240, 41, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(54, 240, 41, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(53, 240, 41, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(124, 263, 42, 13, 50, 1500, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
+(121, 262, 42, 11, 46, 1500, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
 (123, 263, 42, 13, 51, 1500, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(56, 241, 49, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(57, 241, 49, 11, 48, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(58, 241, 49, 11, 48, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(59, 242, 49, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(60, 242, 49, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(120, 262, 42, 11, 47, 1500, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(128, 268, 28, 15, 56, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(127, 268, 28, 15, 55, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(125, 267, 28, 14, 52, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(126, 267, 28, 14, 53, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(124, 263, 42, 13, 50, 1500, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
+(122, 263, 42, 13, 49, 1500, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
 (61, 242, 49, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(62, 243, 32, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(63, 243, 32, 11, 48, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(64, 243, 32, 11, 48, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(65, 244, 32, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(66, 244, 32, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(60, 242, 49, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(59, 242, 49, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
+(58, 241, 49, 11, 48, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
+(57, 241, 49, 11, 48, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(56, 241, 49, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
 (67, 244, 32, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
+(66, 244, 32, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(65, 244, 32, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
+(64, 243, 32, 11, 48, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
+(63, 243, 32, 11, 48, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(62, 243, 32, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
+(74, 247, 45, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
+(75, 247, 45, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(76, 247, 45, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
+(77, 248, 45, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
 (79, 248, 45, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
 (78, 248, 45, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(77, 248, 45, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(76, 247, 45, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(75, 247, 45, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(74, 247, 45, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
+(80, 249, 48, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
+(81, 249, 48, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(82, 249, 48, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
+(83, 250, 48, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
 (85, 250, 48, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
 (84, 250, 48, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(83, 250, 48, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(82, 249, 48, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(81, 249, 48, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(80, 249, 48, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(91, 252, 34, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(90, 252, 34, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(89, 252, 34, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(88, 251, 34, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(87, 251, 34, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(86, 251, 34, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
+(92, 253, 43, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
+(93, 253, 43, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(94, 253, 43, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
+(95, 254, 43, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
 (97, 254, 43, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
 (96, 254, 43, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(95, 254, 43, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(94, 253, 43, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(93, 253, 43, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(92, 253, 43, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(103, 256, 31, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(102, 256, 31, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(101, 256, 31, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(100, 255, 31, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(99, 255, 31, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(98, 255, 31, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(106, 257, 46, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(105, 257, 46, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(104, 257, 46, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(112, 259, 40, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(111, 259, 40, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(110, 259, 40, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(109, 258, 40, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(108, 258, 40, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(107, 258, 40, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(118, 261, 36, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(117, 261, 36, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(116, 261, 36, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(115, 260, 36, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(114, 260, 36, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(113, 260, 36, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(69, 245, 29, 11, 46, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(17, 227, 35, 2, 23, 12, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(24, 230, 35, 13, 51, 122, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
+(71, 246, 29, 13, 49, 1000, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(73, 246, 29, 13, 50, 1000, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 (72, 246, 29, 13, 51, 1000, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 (70, 245, 29, 11, 48, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(25, 230, 35, 13, 50, 122, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(73, 246, 29, 13, 50, 1000, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-(71, 246, 29, 13, 49, 1000, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-(23, 230, 35, 13, 49, 122, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(12, 224, 35, 11, 46, 12, 1, 5.0000, '+', 0, '+', 0.00000000, '+');
+(68, 245, 29, 11, 47, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
+(69, 245, 29, 11, 46, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oc_product_password`
+--
+
+CREATE TABLE `oc_product_password` (
+`product_password_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL DEFAULT '0',
+  `password` text
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `oc_product_password`
+--
+
+INSERT INTO `oc_product_password` (`product_password_id`, `product_id`, `password`) VALUES
+(1, 28, '111');
 
 -- --------------------------------------------------------
 
@@ -3505,208 +2777,29 @@ CREATE TABLE `oc_product_related` (
 INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
 (28, 28),
 (28, 29),
-(28, 30),
-(28, 31),
 (28, 32),
-(28, 33),
-(28, 34),
-(28, 35),
-(28, 36),
-(28, 40),
-(28, 41),
 (28, 42),
 (28, 43),
-(28, 44),
 (28, 45),
-(28, 46),
-(28, 47),
 (28, 48),
 (28, 49),
 (29, 28),
-(29, 30),
-(29, 33),
-(29, 35),
-(29, 41),
 (29, 42),
-(29, 47),
-(30, 28),
-(30, 29),
-(30, 30),
-(30, 31),
-(30, 32),
-(30, 33),
-(30, 34),
-(30, 35),
-(30, 36),
-(30, 40),
-(30, 41),
-(30, 43),
-(30, 44),
-(30, 45),
-(30, 46),
-(30, 47),
-(30, 48),
-(30, 49),
-(31, 28),
-(31, 30),
-(31, 33),
-(31, 35),
-(31, 47),
 (32, 28),
-(32, 30),
-(32, 33),
-(32, 35),
-(32, 41),
 (32, 42),
-(32, 47),
-(33, 28),
-(33, 29),
-(33, 30),
-(33, 31),
-(33, 32),
-(33, 33),
-(33, 34),
-(33, 35),
-(33, 36),
-(33, 40),
-(33, 41),
-(33, 42),
-(33, 43),
-(33, 44),
-(33, 45),
-(33, 46),
-(33, 47),
-(33, 48),
-(33, 49),
-(34, 28),
-(34, 30),
-(34, 33),
-(34, 35),
-(34, 41),
-(34, 42),
-(34, 47),
-(35, 28),
-(35, 29),
-(35, 30),
-(35, 31),
-(35, 32),
-(35, 33),
-(35, 34),
-(35, 35),
-(35, 36),
-(35, 40),
-(35, 41),
-(35, 42),
-(35, 43),
-(35, 44),
-(35, 45),
-(35, 46),
-(35, 47),
-(35, 48),
-(35, 49),
-(36, 28),
-(36, 30),
-(36, 33),
-(36, 35),
-(36, 41),
-(36, 42),
-(36, 47),
-(40, 28),
-(40, 30),
-(40, 33),
-(40, 35),
-(40, 41),
-(40, 42),
-(40, 47),
-(41, 28),
-(41, 29),
-(41, 30),
-(41, 32),
-(41, 33),
-(41, 34),
-(41, 35),
-(41, 36),
-(41, 40),
-(41, 41),
-(41, 42),
-(41, 45),
-(41, 46),
-(41, 47),
-(41, 48),
-(41, 49),
 (42, 28),
 (42, 29),
 (42, 32),
-(42, 33),
-(42, 34),
-(42, 35),
-(42, 36),
-(42, 40),
-(42, 41),
-(42, 44),
 (42, 45),
-(42, 46),
-(42, 47),
 (42, 48),
 (42, 49),
 (43, 28),
-(43, 30),
-(43, 33),
-(43, 35),
-(43, 47),
-(44, 28),
-(44, 30),
-(44, 33),
-(44, 35),
-(44, 42),
-(44, 47),
 (45, 28),
-(45, 30),
-(45, 33),
-(45, 35),
-(45, 41),
 (45, 42),
-(45, 47),
-(46, 28),
-(46, 30),
-(46, 33),
-(46, 35),
-(46, 41),
-(46, 42),
-(46, 47),
-(47, 28),
-(47, 29),
-(47, 30),
-(47, 31),
-(47, 32),
-(47, 33),
-(47, 34),
-(47, 35),
-(47, 36),
-(47, 40),
-(47, 41),
-(47, 42),
-(47, 43),
-(47, 44),
-(47, 45),
-(47, 46),
-(47, 47),
-(47, 48),
-(47, 49),
 (48, 28),
-(48, 30),
-(48, 33),
-(48, 35),
-(48, 41),
 (48, 42),
-(48, 47),
 (49, 28),
-(49, 30),
-(49, 33),
-(49, 35),
-(49, 41),
-(49, 42),
-(49, 47);
+(49, 42);
 
 -- --------------------------------------------------------
 
@@ -3719,32 +2812,21 @@ CREATE TABLE `oc_product_reward` (
   `product_id` int(11) NOT NULL DEFAULT '0',
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=809 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=826 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_product_reward`
 --
 
 INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-(782, 42, 1, 100),
-(808, 47, 1, 300),
-(802, 28, 1, 400),
-(788, 43, 1, 600),
-(785, 29, 1, 0),
-(787, 48, 1, 0),
-(790, 40, 1, 0),
-(801, 30, 1, 200),
-(797, 44, 1, 700),
-(786, 45, 1, 800),
-(800, 31, 1, 0),
-(798, 35, 1, 0),
-(799, 33, 1, 0),
-(789, 46, 1, 0),
-(804, 41, 1, 0),
-(791, 36, 1, 0),
-(803, 34, 1, 0),
-(784, 32, 1, 0),
-(783, 49, 1, 1000);
+(815, 42, 1, 100),
+(825, 28, 1, 400),
+(809, 43, 1, 600),
+(812, 29, 1, 0),
+(810, 48, 1, 0),
+(811, 45, 1, 800),
+(813, 32, 1, 0),
+(814, 49, 1, 1000);
 
 -- --------------------------------------------------------
 
@@ -3760,16 +2842,16 @@ CREATE TABLE `oc_product_special` (
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `date_start` date NOT NULL DEFAULT '0000-00-00',
   `date_end` date NOT NULL DEFAULT '0000-00-00'
-) ENGINE=MyISAM AUTO_INCREMENT=566 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=574 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_product_special`
 --
 
 INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(561, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
-(564, 41, 1, 0, 258.0000, '0000-00-00', '0000-00-00'),
-(562, 32, 1, 0, 90.0000, '0000-00-00', '0000-00-00');
+(567, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
+(566, 32, 1, 0, 90.0000, '0000-00-00', '0000-00-00'),
+(573, 28, 1, 0, 8.0000, '2016-08-08', '2016-08-12');
 
 -- --------------------------------------------------------
 
@@ -3787,217 +2869,7 @@ CREATE TABLE `oc_product_to_category` (
 --
 
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
-(28, 20),
-(28, 28),
-(28, 29),
-(28, 30),
-(28, 31),
-(28, 32),
-(28, 33),
-(28, 34),
-(28, 36),
-(28, 37),
-(28, 38),
-(28, 39),
-(28, 40),
-(28, 41),
-(28, 42),
-(28, 43),
-(28, 44),
-(28, 45),
-(28, 46),
-(28, 47),
-(28, 48),
-(28, 49),
-(28, 50),
-(28, 51),
-(28, 52),
-(28, 53),
-(28, 54),
-(28, 55),
-(28, 56),
-(28, 57),
-(28, 58),
-(28, 59),
-(28, 60),
-(28, 61),
-(28, 62),
-(28, 63),
-(28, 64),
-(28, 65),
-(28, 66),
-(28, 67),
-(28, 68),
-(28, 69),
-(28, 70),
-(29, 20),
-(30, 20),
-(30, 29),
-(30, 30),
-(30, 32),
-(30, 33),
-(30, 34),
-(30, 36),
-(31, 25),
-(31, 28),
-(31, 29),
-(31, 30),
-(31, 31),
-(31, 32),
-(31, 33),
-(31, 36),
-(31, 37),
-(31, 38),
-(31, 39),
-(31, 40),
-(31, 41),
-(31, 42),
-(31, 43),
-(31, 44),
-(31, 45),
-(31, 46),
-(31, 47),
-(31, 48),
-(31, 49),
-(31, 50),
-(31, 51),
-(31, 52),
-(31, 53),
-(31, 54),
-(31, 55),
-(31, 56),
-(31, 57),
-(31, 58),
-(31, 59),
-(31, 60),
-(31, 61),
-(31, 62),
-(31, 63),
-(31, 64),
-(31, 65),
-(31, 66),
-(31, 67),
-(31, 68),
-(31, 69),
-(31, 70),
-(32, 34),
-(33, 20),
-(33, 28),
-(34, 34),
-(35, 20),
-(36, 34),
-(40, 20),
-(40, 31),
-(41, 28),
-(41, 29),
-(41, 30),
-(41, 31),
-(41, 32),
-(41, 36),
-(41, 37),
-(41, 38),
-(41, 39),
-(41, 40),
-(41, 41),
-(41, 42),
-(41, 43),
-(41, 44),
-(41, 45),
-(41, 46),
-(41, 47),
-(41, 48),
-(41, 49),
-(41, 50),
-(41, 51),
-(41, 52),
-(41, 53),
-(41, 54),
-(41, 55),
-(41, 56),
-(41, 57),
-(41, 58),
-(41, 59),
-(41, 60),
-(41, 61),
-(41, 62),
-(41, 63),
-(41, 64),
-(41, 65),
-(41, 66),
-(41, 67),
-(41, 68),
-(41, 69),
-(41, 70),
-(42, 20),
-(42, 28),
-(42, 29),
-(42, 30),
-(42, 32),
-(42, 33),
-(42, 34),
-(43, 18),
-(43, 20),
-(43, 25),
-(44, 18),
-(44, 20),
-(44, 28),
-(44, 29),
-(44, 30),
-(44, 31),
-(44, 32),
-(44, 33),
-(44, 34),
-(44, 35),
-(44, 36),
-(44, 37),
-(44, 38),
-(44, 39),
-(44, 40),
-(44, 41),
-(44, 42),
-(44, 43),
-(44, 44),
-(44, 45),
-(44, 46),
-(44, 47),
-(44, 48),
-(44, 49),
-(44, 50),
-(44, 51),
-(44, 52),
-(44, 53),
-(44, 54),
-(44, 55),
-(44, 56),
-(44, 57),
-(44, 58),
-(44, 59),
-(44, 60),
-(44, 61),
-(44, 62),
-(44, 63),
-(44, 64),
-(44, 65),
-(44, 66),
-(44, 67),
-(44, 68),
-(44, 69),
-(44, 70),
-(45, 18),
-(46, 18),
-(46, 20),
-(46, 25),
-(46, 31),
-(47, 18),
-(47, 20),
-(47, 29),
-(47, 30),
-(47, 32),
-(47, 33),
-(47, 34),
-(47, 36),
-(48, 20),
-(48, 34);
+(28, 75);
 
 -- --------------------------------------------------------
 
@@ -4028,24 +2900,13 @@ CREATE TABLE `oc_product_to_layout` (
 
 INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
 (42, 0, 0),
-(30, 0, 0),
-(47, 0, 0),
 (28, 0, 0),
-(41, 0, 0),
-(40, 0, 0),
 (48, 0, 0),
-(36, 0, 0),
-(34, 0, 0),
 (32, 0, 0),
 (43, 0, 0),
-(44, 0, 0),
 (45, 0, 0),
-(31, 0, 0),
 (29, 0, 0),
-(35, 0, 0),
-(49, 0, 0),
-(33, 0, 0),
-(46, 0, 0);
+(49, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -4065,21 +2926,10 @@ CREATE TABLE `oc_product_to_store` (
 INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 (28, 0),
 (29, 0),
-(30, 0),
-(31, 0),
 (32, 0),
-(33, 0),
-(34, 0),
-(35, 0),
-(36, 0),
-(40, 0),
-(41, 0),
 (42, 0),
 (43, 0),
-(44, 0),
 (45, 0),
-(46, 0),
-(47, 0),
 (48, 0),
 (49, 0);
 
@@ -4161,15 +3011,9 @@ CREATE TABLE `oc_return_action` (
 --
 
 INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUES
-(1, 1, 'Refunded'),
-(2, 1, 'Credit Issued'),
-(3, 1, 'Replacement Sent'),
-(1, 2, 'Refunded'),
-(2, 2, 'Credit Issued'),
-(3, 2, 'Replacement Sent'),
-(1, 3, 'Refunded'),
-(2, 3, 'Credit Issued'),
-(3, 3, 'Replacement Sent');
+(1, 4, 'Refunded'),
+(2, 4, 'Credit Issued'),
+(3, 4, 'Replacement Sent');
 
 -- --------------------------------------------------------
 
@@ -4203,21 +3047,11 @@ CREATE TABLE `oc_return_reason` (
 --
 
 INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
-(1, 1, 'Dead On Arrival'),
-(2, 1, 'Received Wrong Item'),
-(3, 1, 'Order Error'),
-(4, 1, 'Faulty, please supply details'),
-(5, 1, 'Other, please supply details'),
-(1, 2, 'Dead On Arrival'),
-(2, 2, 'Received Wrong Item'),
-(3, 2, 'Order Error'),
-(4, 2, 'Faulty, please supply details'),
-(5, 2, 'Other, please supply details'),
-(1, 3, 'Dead On Arrival'),
-(2, 3, 'Received Wrong Item'),
-(3, 3, 'Order Error'),
-(4, 3, 'Faulty, please supply details'),
-(5, 3, 'Other, please supply details');
+(1, 4, 'Dead On Arrival'),
+(2, 4, 'Received Wrong Item'),
+(3, 4, 'Order Error'),
+(4, 4, 'Faulty, please supply details'),
+(5, 4, 'Other, please supply details');
 
 -- --------------------------------------------------------
 
@@ -4236,15 +3070,9 @@ CREATE TABLE `oc_return_status` (
 --
 
 INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUES
-(1, 1, 'Pending'),
-(3, 1, 'Complete'),
-(2, 1, 'Awaiting Products'),
-(1, 2, 'Pending'),
-(3, 2, 'Complete'),
-(2, 2, 'Awaiting Products'),
-(1, 3, 'Pending'),
-(3, 3, 'Complete'),
-(2, 3, 'Awaiting Products');
+(1, 4, 'Pending'),
+(3, 4, 'Complete'),
+(2, 4, 'Awaiting Products');
 
 -- --------------------------------------------------------
 
@@ -4269,22 +3097,14 @@ CREATE TABLE `oc_review` (
 --
 
 INSERT INTO `oc_review` (`review_id`, `product_id`, `customer_id`, `author`, `text`, `rating`, `status`, `date_added`, `date_modified`) VALUES
-(1, 47, 0, 'Demo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non mauris ut augue dapibus posuere et sed quam. Curabitur rhoncus fringilla ligula id aliquet. Sed risus nulla, tempus vitae porta id, lobortis non nulla. Nullam aliquet est magna, hendrerit bibendum orci molestie eget.', 4, 1, '2014-12-03 12:02:11', '2014-12-03 12:25:23'),
-(4, 30, 0, 'Demo', ' Vivamus egestas magna pretium felis laoreet lacinia. In tristique, erat sit amet dignissim laoreet, nulla nisi aliquam lectus, vel vehicula massa libero ac leo. Aliquam a felis diam. Suspendisse placerat magna lorem, sed lacinia leo vehicula id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.', 4, 1, '2014-12-03 12:03:31', '2014-12-03 12:25:33'),
 (7, 32, 0, 'Demo', ' Vestibulum et massa a nisl pharetra aliquam vel eu orci. Curabitur justo eros, efficitur a elit nec, convallis venenatis ligula. Sed vel eros ut erat iaculis tincidunt ac maximus leo. Donec varius rhoncus tellus ut lacinia. Pellentesque consequat vel massa at molestie. Mauris mattis ex eget ligula cursus convallis. ', 5, 1, '2014-12-03 12:04:21', '2014-12-03 12:25:42'),
 (9, 29, 0, 'Demo', 'Pellentesque magna tortor, laoreet nec diam id, lacinia feugiat leo. Morbi eget posuere lorem. Phasellus ultrices posuere sapien, nec suscipit nulla aliquam id. Phasellus iaculis mattis orci, bibendum vulputate neque malesuada id. Vivamus at pharetra libero.', 5, 1, '2014-12-03 12:05:27', '2014-12-03 12:25:49'),
 (12, 45, 0, 'Aliquam ', 'Aliquam dictum tempor venenatis. Mauris consequat dui fringilla felis iaculis, quis pellentesque tortor porta. Nullam tincidunt diam nec lacus dignissim porttitor. Duis eget diam dictum, aliquet enim vel, efficitur risus. Etiam aliquet purus at elementum mattis. Nam auctor et diam ut varius.', 5, 1, '2014-12-03 12:06:13', '2014-12-03 12:26:00'),
 (15, 48, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula.', 1, 1, '2014-12-03 12:06:53', '2014-12-10 14:29:39'),
-(21, 44, 0, 'Vestibulum ', 'Vestibulum ut neque eget dui tincidunt molestie. Mauris accumsan fermentum mi a cursus. Aenean ac mauris eget mi consectetur tristique vitae in nisi. In posuere lorem non eleifend suscipit. Vestibulum non nunc eu mauris lacinia malesuada nec vitae velit. Vivamus tincidunt aliquam elementum. Aliquam ut faucibus lacus. ', 3, 1, '2014-12-03 12:08:39', '2015-05-06 14:34:31'),
-(22, 31, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula. ', 4, 1, '2014-12-03 12:10:01', '2014-12-03 12:26:39'),
-(25, 40, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula.', 5, 1, '2014-12-03 12:10:41', '2014-12-03 12:27:00'),
 (28, 49, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula. ', 5, 1, '2014-12-03 12:11:12', '2014-12-03 12:27:12'),
-(31, 35, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula.', 5, 1, '2014-12-03 12:12:44', '2014-12-03 12:27:22'),
-(34, 33, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula. ', 5, 1, '2014-12-03 12:13:18', '2014-12-03 12:27:32'),
 (37, 28, 0, 'Donec', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula.', 5, 1, '2014-12-03 12:13:51', '2014-12-03 12:27:48'),
 (40, 43, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula.', 5, 1, '2014-12-03 12:33:14', '2014-12-03 12:36:23'),
-(43, 42, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula. ', 5, 1, '2014-12-03 12:34:03', '2014-12-03 12:36:32'),
-(46, 46, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula.', 5, 1, '2014-12-03 12:35:00', '2014-12-03 12:36:41');
+(43, 42, 0, 'Donec ', 'Donec auctor tristique ante, ut porta arcu sollicitudin nec. Nullam bibendum augue non justo interdum posuere. Vivamus quis iaculis tortor. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere sed elit ac dictum. Donec lacinia ultrices elit eu vehicula. ', 5, 1, '2014-12-03 12:34:03', '2014-12-03 12:36:32');
 
 -- --------------------------------------------------------
 
@@ -4299,7 +3119,7 @@ CREATE TABLE `oc_setting` (
   `key` varchar(64) NOT NULL,
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=5042 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6377 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_setting`
@@ -4313,21 +3133,12 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (5, 0, 'total', 'total_sort_order', '9', 0),
 (6, 0, 'total', 'total_status', '1', 0),
 (7, 0, 'tax', 'tax_sort_order', '5', 0),
-(8, 0, 'free_checkout', 'free_checkout_sort_order', '1', 0),
-(9, 0, 'cod', 'cod_sort_order', '5', 0),
-(10, 0, 'cod', 'cod_total', '0.01', 0),
-(11, 0, 'cod', 'cod_order_status_id', '1', 0),
-(12, 0, 'cod', 'cod_geo_zone_id', '0', 0),
-(13, 0, 'cod', 'cod_status', '1', 0),
 (14, 0, 'shipping', 'shipping_status', '1', 0),
 (15, 0, 'shipping', 'shipping_estimator', '1', 0),
 (27, 0, 'coupon', 'coupon_sort_order', '4', 0),
 (28, 0, 'coupon', 'coupon_status', '1', 0),
-(34, 0, 'flat', 'flat_sort_order', '1', 0),
-(35, 0, 'flat', 'flat_status', '1', 0),
-(36, 0, 'flat', 'flat_geo_zone_id', '0', 0),
-(37, 0, 'flat', 'flat_tax_class_id', '9', 0),
-(41, 0, 'flat', 'flat_cost', '5.00', 0),
+(5785, 0, 'correios', 'correios_declarar_valor', 'n', 0),
+(5784, 0, 'correios', 'correios_aviso_recebimento', 'n', 0),
 (42, 0, 'credit', 'credit_sort_order', '7', 0),
 (43, 0, 'credit', 'credit_status', '1', 0),
 (53, 0, 'reward', 'reward_sort_order', '2', 0),
@@ -4337,118 +3148,180 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (954, 0, 'affiliate', 'affiliate_status', '1', 0),
 (94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 (95, 0, 'voucher', 'voucher_status', '1', 0),
-(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
-(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-(5005, 0, 'config', 'config_image_related_width', '270', 0),
-(5006, 0, 'config', 'config_image_related_height', '270', 0),
-(5007, 0, 'config', 'config_image_compare_width', '90', 0),
-(5008, 0, 'config', 'config_image_compare_height', '90', 0),
-(5009, 0, 'config', 'config_image_wishlist_width', '47', 0),
-(5010, 0, 'config', 'config_image_wishlist_height', '47', 0),
-(5011, 0, 'config', 'config_image_cart_width', '47', 0),
-(5012, 0, 'config', 'config_image_cart_height', '47', 0),
-(5013, 0, 'config', 'config_image_location_width', '268', 0),
-(5014, 0, 'config', 'config_image_location_height', '50', 0),
-(5015, 0, 'config', 'config_ftp_hostname', '192.168.9.2', 0),
-(5016, 0, 'config', 'config_ftp_port', '21', 0),
-(5017, 0, 'config', 'config_ftp_username', '', 0),
-(5018, 0, 'config', 'config_ftp_password', '', 0),
-(5019, 0, 'config', 'config_ftp_root', '', 0),
-(5020, 0, 'config', 'config_ftp_status', '0', 0),
-(5021, 0, 'config', 'config_mail', 'a:7:{s:8:"protocol";s:4:"mail";s:9:"parameter";s:0:"";s:13:"smtp_hostname";s:0:"";s:13:"smtp_username";s:0:"";s:13:"smtp_password";s:0:"";s:9:"smtp_port";s:0:"";s:12:"smtp_timeout";s:0:"";}', 1),
-(5022, 0, 'config', 'config_mail_alert', '', 0),
-(5023, 0, 'config', 'config_fraud_detection', '0', 0),
-(5024, 0, 'config', 'config_fraud_key', '', 0),
-(5025, 0, 'config', 'config_fraud_score', '', 0),
-(5026, 0, 'config', 'config_fraud_status_id', '7', 0),
-(5027, 0, 'config', 'config_secure', '0', 0),
-(5028, 0, 'config', 'config_shared', '0', 0),
-(5029, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\\''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(5004, 0, 'config', 'config_image_additional_height', '88', 0),
-(5003, 0, 'config', 'config_image_additional_width', '88', 0),
-(4999, 0, 'config', 'config_image_popup_width', '800', 0),
-(5000, 0, 'config', 'config_image_popup_height', '800', 0),
-(5001, 0, 'config', 'config_image_product_width', '270', 0),
-(5002, 0, 'config', 'config_image_product_height', '270', 0),
-(4998, 0, 'config', 'config_image_thumb_height', '800', 0),
-(4997, 0, 'config', 'config_image_thumb_width', '800', 0),
-(4996, 0, 'config', 'config_image_category_height', '190', 0),
-(4995, 0, 'config', 'config_image_category_width', '190', 0),
-(4994, 0, 'config', 'config_icon', 'catalog/favicon.png', 0),
-(4993, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(4992, 0, 'config', 'config_return_status_id', '2', 0),
-(4991, 0, 'config', 'config_return_id', '0', 0),
-(4990, 0, 'config', 'config_affiliate_mail', '0', 0),
-(4989, 0, 'config', 'config_affiliate_id', '4', 0),
-(4988, 0, 'config', 'config_affiliate_commission', '5', 0),
-(4987, 0, 'config', 'config_affiliate_auto', '0', 0),
-(4986, 0, 'config', 'config_affiliate_approval', '0', 0),
-(4985, 0, 'config', 'config_stock_checkout', '0', 0),
-(4984, 0, 'config', 'config_stock_warning', '0', 0),
-(4983, 0, 'config', 'config_stock_display', '0', 0),
-(4982, 0, 'config', 'config_order_mail', '0', 0),
-(4981, 0, 'config', 'config_complete_status', 'a:1:{i:0;s:1:"5";}', 1),
-(4980, 0, 'config', 'config_processing_status', 'a:1:{i:0;s:1:"2";}', 1),
-(4979, 0, 'config', 'config_order_status_id', '1', 0),
-(4978, 0, 'config', 'config_checkout_id', '5', 0),
-(4977, 0, 'config', 'config_checkout_guest', '1', 0),
-(4976, 0, 'config', 'config_cart_weight', '1', 0),
-(4975, 0, 'config', 'config_api_id', '10', 0),
-(4974, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-(4973, 0, 'config', 'config_account_mail', '0', 0),
-(4972, 0, 'config', 'config_account_id', '3', 0),
-(4971, 0, 'config', 'config_login_attempts', '5', 0),
-(4970, 0, 'config', 'config_customer_price', '0', 0),
-(4969, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-(4968, 0, 'config', 'config_customer_group_id', '1', 0),
-(4967, 0, 'config', 'config_customer_online', '0', 0),
-(4966, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(4965, 0, 'config', 'config_tax_default', 'shipping', 0),
-(4964, 0, 'config', 'config_tax', '0', 0),
-(4963, 0, 'config', 'config_voucher_max', '1000', 0),
-(4962, 0, 'config', 'config_voucher_min', '1', 0),
-(4961, 0, 'config', 'config_review_mail', '0', 0),
-(4960, 0, 'config', 'config_review_guest', '1', 0),
-(4959, 0, 'config', 'config_review_status', '1', 0),
-(4958, 0, 'config', 'config_limit_admin', '20', 0),
-(4957, 0, 'config', 'config_product_description_length', '246', 0),
-(4956, 0, 'config', 'config_product_limit', '6', 0),
-(4955, 0, 'config', 'config_product_count', '0', 0),
-(4954, 0, 'config', 'config_weight_class_id', '1', 0),
-(4953, 0, 'config', 'config_length_class_id', '1', 0),
-(4952, 0, 'config', 'config_currency_auto', '1', 0),
-(4951, 0, 'config', 'config_currency', 'USD', 0),
-(4950, 0, 'config', 'config_admin_language', 'en', 0),
-(4949, 0, 'config', 'config_language', 'en', 0),
-(4948, 0, 'config', 'config_zone_id', '3563', 0),
-(4947, 0, 'config', 'config_country_id', '222', 0),
-(4946, 0, 'config', 'config_layout_id', '4', 0),
-(4945, 0, 'config', 'config_template', 'theme555', 0),
-(4944, 0, 'config', 'config_meta_keyword', '', 0),
-(4943, 0, 'config', 'config_meta_description', 'One Day online store', 0),
-(4942, 0, 'config', 'config_meta_title', 'One Day online store', 0),
-(4941, 0, 'config', 'config_comment', 'Aenean mattis efficitur metus eget ornare.', 0),
-(4940, 0, 'config', 'config_open', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 0),
-(4938, 0, 'config', 'config_fax', '800-2345-6790', 0),
-(4939, 0, 'config', 'config_image', '', 0),
-(4937, 0, 'config', 'config_telephone', '800-2345-6789', 0),
-(4936, 0, 'config', 'config_email', 'atendimento@lojavirtual.digital', 0),
-(4935, 0, 'config', 'config_geocode', '40.6700, -73.9400', 0),
-(4934, 0, 'config', 'config_address', '4578 Marmora Road,Glasgow D04 89GR', 0),
-(4933, 0, 'config', 'config_owner', 'One Day online store', 0),
-(4932, 0, 'config', 'config_name', '1 Day online store', 0),
-(5030, 0, 'config', 'config_seo_url', '0', 0),
-(5031, 0, 'config', 'config_file_max_size', '300000', 0),
-(5032, 0, 'config', 'config_file_ext_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-(5033, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-(5034, 0, 'config', 'config_maintenance', '0', 0),
-(5035, 0, 'config', 'config_password', '1', 0),
-(5036, 0, 'config', 'config_encryption', '13c230f0b48cad869ec80ebbdf0d3301', 0),
-(5037, 0, 'config', 'config_compression', '0', 0),
-(5038, 0, 'config', 'config_error_display', '1', 0),
-(5039, 0, 'config', 'config_error_log', '1', 0),
-(5040, 0, 'config', 'config_error_filename', 'error.log', 0),
-(5041, 0, 'config', 'config_google_analytics', '', 0);
+(6376, 0, 'config', 'config_google_analytics', '', 0),
+(6374, 0, 'config', 'config_error_log', '1', 0),
+(6375, 0, 'config', 'config_error_filename', 'error.log', 0),
+(6373, 0, 'config', 'config_error_display', '1', 0),
+(6369, 0, 'config', 'config_maintenance', '0', 0),
+(6370, 0, 'config', 'config_password', '1', 0),
+(6371, 0, 'config', 'config_encryption', '13c230f0b48cad869ec80ebbdf0d3301', 0),
+(6372, 0, 'config', 'config_compression', '0', 0),
+(6368, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+(6362, 0, 'config', 'config_secure', '0', 0),
+(6363, 0, 'config', 'config_shared', '0', 0),
+(6364, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(6365, 0, 'config', 'config_seo_url', '0', 0),
+(6366, 0, 'config', 'config_file_max_size', '300000', 0),
+(6367, 0, 'config', 'config_file_ext_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+(6360, 0, 'config', 'config_fraud_score', '', 0),
+(6361, 0, 'config', 'config_fraud_status_id', '7', 0),
+(6356, 0, 'config', 'config_mail', 'a:7:{s:8:"protocol";s:4:"mail";s:9:"parameter";s:0:"";s:13:"smtp_hostname";s:0:"";s:13:"smtp_username";s:0:"";s:13:"smtp_password";s:0:"";s:9:"smtp_port";s:0:"";s:12:"smtp_timeout";s:0:"";}', 1),
+(6355, 0, 'config', 'config_ftp_status', '1', 0),
+(6359, 0, 'config', 'config_fraud_key', '', 0),
+(6358, 0, 'config', 'config_fraud_detection', '0', 0),
+(6357, 0, 'config', 'config_mail_alert', '', 0),
+(6354, 0, 'config', 'config_ftp_root', '/Users/fernandomendes/github/ouroaf/public/', 0),
+(6352, 0, 'config', 'config_ftp_username', 'fernandomendes', 0),
+(6353, 0, 'config', 'config_ftp_password', '12qw12qw', 0),
+(6351, 0, 'config', 'config_ftp_port', '21', 0),
+(6350, 0, 'config', 'config_ftp_hostname', '127.0.0.1', 0),
+(6349, 0, 'config', 'config_image_location_height', '50', 0),
+(6348, 0, 'config', 'config_image_location_width', '268', 0),
+(6347, 0, 'config', 'config_image_cart_height', '47', 0),
+(6346, 0, 'config', 'config_image_cart_width', '47', 0),
+(6345, 0, 'config', 'config_image_wishlist_height', '47', 0),
+(6344, 0, 'config', 'config_image_wishlist_width', '47', 0),
+(6343, 0, 'config', 'config_image_compare_height', '90', 0),
+(6342, 0, 'config', 'config_image_compare_width', '90', 0),
+(6341, 0, 'config', 'config_image_related_height', '270', 0),
+(6340, 0, 'config', 'config_image_related_width', '270', 0),
+(6339, 0, 'config', 'config_image_additional_height', '88', 0),
+(6338, 0, 'config', 'config_image_additional_width', '88', 0),
+(6337, 0, 'config', 'config_image_product_height', '270', 0),
+(6336, 0, 'config', 'config_image_product_width', '270', 0),
+(6334, 0, 'config', 'config_image_popup_width', '800', 0),
+(6335, 0, 'config', 'config_image_popup_height', '800', 0),
+(6333, 0, 'config', 'config_image_thumb_height', '800', 0),
+(6332, 0, 'config', 'config_image_thumb_width', '800', 0),
+(6331, 0, 'config', 'config_image_category_height', '190', 0),
+(6330, 0, 'config', 'config_image_category_width', '190', 0),
+(6329, 0, 'config', 'config_icon', '', 0),
+(6328, 0, 'config', 'config_logo', 'catalog/logo1.png', 0),
+(6327, 0, 'config', 'config_return_status_id', '2', 0),
+(6325, 0, 'config', 'config_affiliate_mail', '1', 0),
+(6326, 0, 'config', 'config_return_id', '0', 0),
+(6324, 0, 'config', 'config_affiliate_id', '4', 0),
+(6323, 0, 'config', 'config_affiliate_commission', '5', 0),
+(6321, 0, 'config', 'config_affiliate_approval', '0', 0),
+(6322, 0, 'config', 'config_affiliate_auto', '1', 0),
+(6320, 0, 'config', 'config_stock_checkout', '1', 0),
+(6319, 0, 'config', 'config_stock_warning', '1', 0),
+(5783, 0, 'correios', 'correios_mao_propria', 'n', 0),
+(5782, 0, 'correios', 'correios_contrato_senha', '', 0),
+(5781, 0, 'correios', 'correios_contrato_codigo', '', 0),
+(5780, 0, 'correios', 'correios_total_81850', '', 0),
+(5779, 0, 'correios', 'correios_total_81833', '', 0),
+(5778, 0, 'correios', 'correios_total_81868', '', 0),
+(5777, 0, 'correios', 'correios_total_81035', '', 0),
+(5776, 0, 'correios', 'correios_total_81027', '', 0),
+(5775, 0, 'correios', 'correios_total_81019', '', 0),
+(5774, 0, 'correios', 'correios_total_41300', '', 0),
+(5773, 0, 'correios', 'correios_total_41068', '', 0),
+(5772, 0, 'correios', 'correios_total_40606', '', 0),
+(5771, 0, 'correios', 'correios_total_40568', '', 0),
+(5770, 0, 'correios', 'correios_total_40444', '', 0),
+(5769, 0, 'correios', 'correios_total_40436', '', 0),
+(5768, 0, 'correios', 'correios_total_40096', '', 0),
+(5767, 0, 'correios', 'correios_total_40126', '', 0),
+(5766, 0, 'correios', 'correios_total_41262', '', 0),
+(5765, 0, 'correios', 'correios_total_41106', '', 0),
+(5764, 0, 'correios', 'correios_41106', '1', 0),
+(5763, 0, 'correios', 'correios_total_40290', '', 0),
+(5762, 0, 'correios', 'correios_total_40169', '', 0),
+(5761, 0, 'correios', 'correios_total_40215', '', 0),
+(5760, 0, 'correios', 'correios_total_40045', '', 0),
+(5759, 0, 'correios', 'correios_total_40010', '', 0),
+(5758, 0, 'correios', 'correios_40010', '1', 0),
+(5757, 0, 'correios', 'correios_postcode', '01541000', 0),
+(6318, 0, 'config', 'config_stock_display', '0', 0),
+(6317, 0, 'config', 'config_order_mail', '1', 0),
+(6315, 0, 'config', 'config_processing_status', 'a:1:{i:0;s:1:"2";}', 1),
+(6316, 0, 'config', 'config_complete_status', 'a:1:{i:0;s:1:"5";}', 1),
+(6314, 0, 'config', 'config_order_status_id', '1', 0),
+(6313, 0, 'config', 'config_checkout_id', '5', 0),
+(6312, 0, 'config', 'config_checkout_guest', '0', 0),
+(6311, 0, 'config', 'config_cart_weight', '0', 0),
+(6310, 0, 'config', 'config_api_id', '10', 0),
+(6309, 0, 'config', 'config_invoice_prefix', 'OUROAF', 0),
+(6308, 0, 'config', 'config_account_mail', '0', 0),
+(6307, 0, 'config', 'config_account_id', '3', 0),
+(6306, 0, 'config', 'config_login_attempts', '5', 0),
+(6304, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+(6305, 0, 'config', 'config_customer_price', '0', 0),
+(6303, 0, 'config', 'config_customer_group_id', '1', 0),
+(6302, 0, 'config', 'config_customer_online', '0', 0),
+(5918, 0, 'bancosantander', 'bancosantander_ins2', 'Após o vencimento obter um novo boleto através do site http://ouroaf.com/', 0),
+(5917, 0, 'bancosantander', 'bancosantander_ins1', 'Pagamento somente até a data de vencimento', 0),
+(5916, 0, 'bancosantander', 'bancosantander_demo3', '', 0),
+(5915, 0, 'bancosantander', 'bancosantander_demo2', 'Após o vencimento obter um novo boleto através do site http://ouroaf.com/', 0),
+(5914, 0, 'bancosantander', 'bancosantander_demo1', 'Pagamento somente até a data de vencimento', 0),
+(5913, 0, 'bancosantander', 'bancosantander_dias', '2', 0),
+(5912, 0, 'bancosantander', 'bancosantander_taxa', '0', 0),
+(5911, 0, 'bancosantander', 'bancosantander_venda', '0114', 0),
+(5910, 0, 'bancosantander', 'bancosantander_cliente', '8011761', 0),
+(5909, 0, 'bancosantander', 'bancosantander_endereco', 'Endereço do cedente', 0),
+(5908, 0, 'bancosantander', 'bancosantander_cpfcnpj', '221.930.018-80', 0),
+(5907, 0, 'bancosantander', 'bancosantander_cedente', 'CLAUDIO DE PAULA BAPTISTA', 0),
+(5906, 0, 'bancosantander', 'bancosantander_nome', 'Boleto', 0),
+(5786, 0, 'correios', 'correios_adicional', '', 0),
+(5787, 0, 'correios', 'correios_prazo_adicional', '', 0),
+(5788, 0, 'correios', 'correios_tax_class_id', '0', 0),
+(5789, 0, 'correios', 'correios_geo_zone_id', '0', 0),
+(5790, 0, 'correios', 'correios_status', '1', 0),
+(5791, 0, 'correios', 'correios_sort_order', '', 0),
+(6301, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(6300, 0, 'config', 'config_tax_default', 'shipping', 0),
+(6299, 0, 'config', 'config_tax', '0', 0),
+(6298, 0, 'config', 'config_voucher_max', '1000', 0),
+(6297, 0, 'config', 'config_voucher_min', '1', 0),
+(6296, 0, 'config', 'config_review_mail', '0', 0),
+(6295, 0, 'config', 'config_review_guest', '0', 0),
+(6293, 0, 'config', 'config_limit_admin', '20', 0),
+(6294, 0, 'config', 'config_review_status', '0', 0),
+(6292, 0, 'config', 'config_product_description_length', '246', 0),
+(6291, 0, 'config', 'config_product_limit', '6', 0),
+(6290, 0, 'config', 'config_product_count', '0', 0),
+(6289, 0, 'config', 'config_weight_class_id', '1', 0),
+(6288, 0, 'config', 'config_length_class_id', '1', 0),
+(6287, 0, 'config', 'config_currency_auto', '0', 0),
+(6286, 0, 'config', 'config_currency', 'BRL', 0),
+(6285, 0, 'config', 'config_admin_language', 'pt-br', 0),
+(6284, 0, 'config', 'config_language', 'pt-br', 0),
+(6283, 0, 'config', 'config_zone_id', '', 0),
+(6282, 0, 'config', 'config_country_id', '30', 0),
+(6281, 0, 'config', 'config_layout_id', '4', 0),
+(6280, 0, 'config', 'config_template', 'theme555', 0),
+(6279, 0, 'config', 'config_meta_keyword', '', 0),
+(6278, 0, 'config', 'config_meta_description', 'One Day online store', 0),
+(6275, 0, 'config', 'config_open', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 0),
+(6276, 0, 'config', 'config_comment', 'Aenean mattis efficitur metus eget ornare.', 0),
+(6277, 0, 'config', 'config_meta_title', 'Ouro AF', 0),
+(6274, 0, 'config', 'config_image', '', 0),
+(6273, 0, 'config', 'config_fax', '800-2345-6790', 0),
+(5919, 0, 'bancosantander', 'bancosantander_ins3', '', 0),
+(5920, 0, 'bancosantander', 'bancosantander_ins4', '', 0),
+(5921, 0, 'bancosantander', 'bancosantander_total', '5', 0),
+(5922, 0, 'bancosantander', 'bancosantander_order_status_id', '1', 0),
+(5923, 0, 'bancosantander', 'bancosantander_geo_zone_id', '0', 0),
+(5924, 0, 'bancosantander', 'bancosantander_status', '1', 0),
+(5925, 0, 'bancosantander', 'bancosantander_sort_order', '', 0),
+(6270, 0, 'config', 'config_geocode', '40.6700, -73.9400', 0),
+(6271, 0, 'config', 'config_email', 'atendimento@lojavirtual.digital', 0),
+(6272, 0, 'config', 'config_telephone', '800-2345-6789', 0),
+(6269, 0, 'config', 'config_address', 'Endereço Ouro AF', 0),
+(6268, 0, 'config', 'config_owner', 'Ouro AF', 0),
+(6267, 0, 'config', 'config_name', 'Ouro AF', 0),
+(6036, 0, 'payu', 'payu_merchant', '1', 0),
+(6037, 0, 'payu', 'payu_security', '1', 0),
+(6038, 0, 'payu', 'payu_test', '0', 0),
+(6039, 0, 'payu', 'payu_total', '1', 0),
+(6040, 0, 'payu', 'payu_order_status_id', '7', 0),
+(6041, 0, 'payu', 'payu_geo_zone_id', '0', 0),
+(6042, 0, 'payu', 'payu_status', '1', 0),
+(6043, 0, 'payu', 'payu_sort_order', '0', 0),
+(6044, 0, 'pickup', 'pickup_geo_zone_id', '0', 0),
+(6045, 0, 'pickup', 'pickup_status', '1', 0),
+(6046, 0, 'pickup', 'pickup_sort_order', '', 0);
 
 -- --------------------------------------------------------
 
@@ -4467,18 +3340,10 @@ CREATE TABLE `oc_stock_status` (
 --
 
 INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
-(7, 1, 'In Stock'),
-(8, 1, 'Pre-Order'),
-(5, 1, 'Out Of Stock'),
-(6, 1, '2-3 Days'),
-(7, 2, 'In Stock'),
-(8, 2, 'Pre-Order'),
-(5, 2, 'Out Of Stock'),
-(6, 2, '2-3 Days'),
-(7, 3, 'In Stock'),
-(8, 3, 'Pre-Order'),
-(5, 3, 'Out Of Stock'),
-(6, 3, '2-3 Days');
+(7, 4, 'In Stock'),
+(8, 4, 'Pre-Order'),
+(5, 4, 'Out Of Stock'),
+(6, 4, '2-3 Days');
 
 -- --------------------------------------------------------
 
@@ -4606,56 +3471,41 @@ CREATE TABLE `oc_url_alias` (
 `url_alias_id` int(11) NOT NULL,
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=1199 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1238 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_url_alias`
 --
 
 INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
-(1159, 'product_id=48', 'ipod-classic'),
-(1076, 'category_id=20', 'desktops'),
+(1211, 'product_id=48', 'ipod-classic'),
+(1235, 'category_id=84', ''),
 (834, 'category_id=26', 'pc'),
 (835, 'category_id=27', 'mac'),
 (875, 'manufacturer_id=8', 'apple'),
-(1072, 'information_id=4', 'about_us'),
-(1154, 'product_id=42', 'test'),
-(1078, 'category_id=34', 'mp3-players'),
-(1173, 'category_id=36', 'test2'),
-(1077, 'category_id=18', 'laptop-notebook'),
-(1075, 'category_id=25', 'component'),
-(1168, 'category_id=29', 'mouse'),
-(1191, 'category_id=28', 'monitor'),
-(1079, 'category_id=35', 'test1'),
-(1190, 'category_id=30', 'printer'),
-(1189, 'category_id=31', 'scanner'),
-(1188, 'category_id=32', 'web-camera'),
-(1074, 'category_id=33', 'camera'),
-(1184, 'product_id=30', 'canon-eos-5d'),
-(1195, 'product_id=47', 'hp-lp3065'),
-(1185, 'product_id=28', 'htc-touch-hd'),
-(1160, 'product_id=43', 'macbook'),
-(1180, 'product_id=44', 'macbook-air'),
-(1158, 'product_id=45', 'macbook-pro'),
-(1183, 'product_id=31', 'nikon-d300'),
-(1157, 'product_id=29', 'palm-treo-pro'),
-(1181, 'product_id=35', 'product-8'),
-(1155, 'product_id=49', 'samsung-galaxy-tab-10-1'),
-(1182, 'product_id=33', 'samsung-syncmaster-941bw'),
-(1161, 'product_id=46', 'sony-vaio'),
-(1187, 'product_id=41', 'imac'),
-(1162, 'product_id=40', 'iphone'),
-(1163, 'product_id=36', 'ipod-nano'),
-(1186, 'product_id=34', 'ipod-shuffle'),
-(1156, 'product_id=32', 'ipod-touch'),
+(1206, 'information_id=4', 'sobre'),
+(1216, 'product_id=42', 'test'),
+(1201, 'category_id=73', 'pingentes'),
+(1202, 'category_id=74', 'aliancas'),
+(1230, 'category_id=75', 'relogios'),
+(1234, 'category_id=83', ''),
+(1232, 'category_id=72', 'aneis-de-formatura'),
+(1233, 'product_id=28', 'htc-touch-hd'),
+(1210, 'product_id=43', 'macbook'),
+(1212, 'product_id=45', 'macbook-pro'),
+(1213, 'product_id=29', 'palm-treo-pro'),
+(1215, 'product_id=49', 'samsung-galaxy-tab-10-1'),
+(1236, 'category_id=85', ''),
+(1237, 'category_id=86', ''),
+(1214, 'product_id=32', 'ipod-touch'),
 (876, 'manufacturer_id=9', 'canon'),
 (878, 'manufacturer_id=5', 'htc'),
 (877, 'manufacturer_id=7', 'hewlett-packard'),
 (879, 'manufacturer_id=6', 'palm'),
 (880, 'manufacturer_id=10', 'sony'),
-(1198, 'information_id=6', 'delivery'),
-(874, 'information_id=3', 'privacy'),
-(1179, 'information_id=5', 'terms'),
+(1207, 'information_id=6', 'entrega'),
+(1208, 'information_id=3', 'privacidade'),
+(1209, 'information_id=5', 'termos'),
 (845, 'common/home', ''),
 (846, 'information/contact', 'contact-us'),
 (847, 'information/sitemap', 'sitemap'),
@@ -4684,7 +3534,8 @@ INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (870, 'affiliate/forgotten', 'affiliate-forgot-password'),
 (871, 'affiliate/register', 'create-affiliate-account'),
 (872, 'affiliate/login', 'affiliate-login'),
-(873, 'affiliate/account', 'affiliates');
+(873, 'affiliate/account', 'affiliates'),
+(1199, 'category_id=71', '');
 
 -- --------------------------------------------------------
 
@@ -4732,7 +3583,7 @@ CREATE TABLE `oc_user_group` (
 --
 
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', 'a:2:{s:6:"access";a:199:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:14:"module/account";i:57;s:16:"module/affiliate";i:58;s:20:"module/amazon_button";i:59;s:13:"module/banner";i:60;s:17:"module/bestseller";i:61;s:15:"module/carousel";i:62;s:15:"module/category";i:63;s:11:"module/ebay";i:64;s:15:"module/featured";i:65;s:13:"module/filter";i:66;s:22:"module/google_hangouts";i:67;s:11:"module/html";i:68;s:18:"module/information";i:69;s:13:"module/latest";i:70;s:16:"module/pp_button";i:71;s:15:"module/pp_login";i:72;s:16:"module/slideshow";i:73;s:14:"module/special";i:74;s:12:"module/store";i:75;s:14:"openbay/amazon";i:76;s:22:"openbay/amazon_listing";i:77;s:22:"openbay/amazon_product";i:78;s:16:"openbay/amazonus";i:79;s:24:"openbay/amazonus_listing";i:80;s:24:"openbay/amazonus_product";i:81;s:12:"openbay/ebay";i:82;s:20:"openbay/ebay_profile";i:83;s:21:"openbay/ebay_template";i:84;s:12:"openbay/etsy";i:85;s:20:"openbay/etsy_product";i:86;s:21:"openbay/etsy_shipping";i:87;s:17:"openbay/etsy_shop";i:88;s:23:"payment/amazon_checkout";i:89;s:24:"payment/authorizenet_aim";i:90;s:24:"payment/authorizenet_sim";i:91;s:21:"payment/bank_transfer";i:92;s:22:"payment/bluepay_hosted";i:93;s:24:"payment/bluepay_redirect";i:94;s:14:"payment/cheque";i:95;s:11:"payment/cod";i:96;s:17:"payment/firstdata";i:97;s:24:"payment/firstdata_remote";i:98;s:21:"payment/free_checkout";i:99;s:22:"payment/klarna_account";i:100;s:22:"payment/klarna_invoice";i:101;s:14:"payment/liqpay";i:102;s:14:"payment/nochex";i:103;s:15:"payment/paymate";i:104;s:16:"payment/paypoint";i:105;s:13:"payment/payza";i:106;s:26:"payment/perpetual_payments";i:107;s:18:"payment/pp_express";i:108;s:18:"payment/pp_payflow";i:109;s:25:"payment/pp_payflow_iframe";i:110;s:14:"payment/pp_pro";i:111;s:21:"payment/pp_pro_iframe";i:112;s:19:"payment/pp_standard";i:113;s:14:"payment/realex";i:114;s:21:"payment/realex_remote";i:115;s:22:"payment/sagepay_direct";i:116;s:22:"payment/sagepay_server";i:117;s:18:"payment/sagepay_us";i:118;s:24:"payment/securetrading_pp";i:119;s:24:"payment/securetrading_ws";i:120;s:14:"payment/skrill";i:121;s:19:"payment/twocheckout";i:122;s:28:"payment/web_payment_software";i:123;s:16:"payment/worldpay";i:124;s:16:"report/affiliate";i:125;s:25:"report/affiliate_activity";i:126;s:22:"report/affiliate_login";i:127;s:24:"report/customer_activity";i:128;s:22:"report/customer_credit";i:129;s:21:"report/customer_login";i:130;s:22:"report/customer_online";i:131;s:21:"report/customer_order";i:132;s:22:"report/customer_reward";i:133;s:16:"report/marketing";i:134;s:24:"report/product_purchased";i:135;s:21:"report/product_viewed";i:136;s:18:"report/sale_coupon";i:137;s:17:"report/sale_order";i:138;s:18:"report/sale_return";i:139;s:20:"report/sale_shipping";i:140;s:15:"report/sale_tax";i:141;s:17:"sale/custom_field";i:142;s:13:"sale/customer";i:143;s:20:"sale/customer_ban_ip";i:144;s:19:"sale/customer_group";i:145;s:10:"sale/order";i:146;s:14:"sale/recurring";i:147;s:11:"sale/return";i:148;s:12:"sale/voucher";i:149;s:18:"sale/voucher_theme";i:150;s:15:"setting/setting";i:151;s:13:"setting/store";i:152;s:16:"shipping/auspost";i:153;s:17:"shipping/citylink";i:154;s:14:"shipping/fedex";i:155;s:13:"shipping/flat";i:156;s:13:"shipping/free";i:157;s:13:"shipping/item";i:158;s:23:"shipping/parcelforce_48";i:159;s:15:"shipping/pickup";i:160;s:19:"shipping/royal_mail";i:161;s:12:"shipping/ups";i:162;s:13:"shipping/usps";i:163;s:15:"shipping/weight";i:164;s:11:"tool/backup";i:165;s:14:"tool/error_log";i:166;s:11:"tool/upload";i:167;s:12:"total/coupon";i:168;s:12:"total/credit";i:169;s:14:"total/handling";i:170;s:16:"total/klarna_fee";i:171;s:19:"total/low_order_fee";i:172;s:12:"total/reward";i:173;s:14:"total/shipping";i:174;s:15:"total/sub_total";i:175;s:9:"total/tax";i:176;s:11:"total/total";i:177;s:13:"total/voucher";i:178;s:8:"user/api";i:179;s:9:"user/user";i:180;s:20:"user/user_permission";i:181;s:15:"module/parallax";i:182;s:11:"module/html";i:183;s:18:"module/tm_category";i:184;s:15:"module/tm_fbbox";i:185;s:15:"module/tm_fbbox";i:186;s:17:"module/bestseller";i:187;s:13:"module/latest";i:188;s:14:"module/special";i:189;s:16:"module/affiliate";i:190;s:18:"module/information";i:191;s:19:"module/tm_slideshow";i:192;s:20:"module/tm_google_map";i:193;s:12:"module/olark";i:194;s:23:"module/tm_cookie_policy";i:195;s:20:"module/tm_google_map";i:196;s:19:"module/tm_instagram";i:197;s:20:"module/tm_module_tab";i:198;s:11:"module/html";}s:6:"modify";a:199:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:14:"module/account";i:57;s:16:"module/affiliate";i:58;s:20:"module/amazon_button";i:59;s:13:"module/banner";i:60;s:17:"module/bestseller";i:61;s:15:"module/carousel";i:62;s:15:"module/category";i:63;s:11:"module/ebay";i:64;s:15:"module/featured";i:65;s:13:"module/filter";i:66;s:22:"module/google_hangouts";i:67;s:11:"module/html";i:68;s:18:"module/information";i:69;s:13:"module/latest";i:70;s:16:"module/pp_button";i:71;s:15:"module/pp_login";i:72;s:16:"module/slideshow";i:73;s:14:"module/special";i:74;s:12:"module/store";i:75;s:14:"openbay/amazon";i:76;s:22:"openbay/amazon_listing";i:77;s:22:"openbay/amazon_product";i:78;s:16:"openbay/amazonus";i:79;s:24:"openbay/amazonus_listing";i:80;s:24:"openbay/amazonus_product";i:81;s:12:"openbay/ebay";i:82;s:20:"openbay/ebay_profile";i:83;s:21:"openbay/ebay_template";i:84;s:12:"openbay/etsy";i:85;s:20:"openbay/etsy_product";i:86;s:21:"openbay/etsy_shipping";i:87;s:17:"openbay/etsy_shop";i:88;s:23:"payment/amazon_checkout";i:89;s:24:"payment/authorizenet_aim";i:90;s:24:"payment/authorizenet_sim";i:91;s:21:"payment/bank_transfer";i:92;s:22:"payment/bluepay_hosted";i:93;s:24:"payment/bluepay_redirect";i:94;s:14:"payment/cheque";i:95;s:11:"payment/cod";i:96;s:17:"payment/firstdata";i:97;s:24:"payment/firstdata_remote";i:98;s:21:"payment/free_checkout";i:99;s:22:"payment/klarna_account";i:100;s:22:"payment/klarna_invoice";i:101;s:14:"payment/liqpay";i:102;s:14:"payment/nochex";i:103;s:15:"payment/paymate";i:104;s:16:"payment/paypoint";i:105;s:13:"payment/payza";i:106;s:26:"payment/perpetual_payments";i:107;s:18:"payment/pp_express";i:108;s:18:"payment/pp_payflow";i:109;s:25:"payment/pp_payflow_iframe";i:110;s:14:"payment/pp_pro";i:111;s:21:"payment/pp_pro_iframe";i:112;s:19:"payment/pp_standard";i:113;s:14:"payment/realex";i:114;s:21:"payment/realex_remote";i:115;s:22:"payment/sagepay_direct";i:116;s:22:"payment/sagepay_server";i:117;s:18:"payment/sagepay_us";i:118;s:24:"payment/securetrading_pp";i:119;s:24:"payment/securetrading_ws";i:120;s:14:"payment/skrill";i:121;s:19:"payment/twocheckout";i:122;s:28:"payment/web_payment_software";i:123;s:16:"payment/worldpay";i:124;s:16:"report/affiliate";i:125;s:25:"report/affiliate_activity";i:126;s:22:"report/affiliate_login";i:127;s:24:"report/customer_activity";i:128;s:22:"report/customer_credit";i:129;s:21:"report/customer_login";i:130;s:22:"report/customer_online";i:131;s:21:"report/customer_order";i:132;s:22:"report/customer_reward";i:133;s:16:"report/marketing";i:134;s:24:"report/product_purchased";i:135;s:21:"report/product_viewed";i:136;s:18:"report/sale_coupon";i:137;s:17:"report/sale_order";i:138;s:18:"report/sale_return";i:139;s:20:"report/sale_shipping";i:140;s:15:"report/sale_tax";i:141;s:17:"sale/custom_field";i:142;s:13:"sale/customer";i:143;s:20:"sale/customer_ban_ip";i:144;s:19:"sale/customer_group";i:145;s:10:"sale/order";i:146;s:14:"sale/recurring";i:147;s:11:"sale/return";i:148;s:12:"sale/voucher";i:149;s:18:"sale/voucher_theme";i:150;s:15:"setting/setting";i:151;s:13:"setting/store";i:152;s:16:"shipping/auspost";i:153;s:17:"shipping/citylink";i:154;s:14:"shipping/fedex";i:155;s:13:"shipping/flat";i:156;s:13:"shipping/free";i:157;s:13:"shipping/item";i:158;s:23:"shipping/parcelforce_48";i:159;s:15:"shipping/pickup";i:160;s:19:"shipping/royal_mail";i:161;s:12:"shipping/ups";i:162;s:13:"shipping/usps";i:163;s:15:"shipping/weight";i:164;s:11:"tool/backup";i:165;s:14:"tool/error_log";i:166;s:11:"tool/upload";i:167;s:12:"total/coupon";i:168;s:12:"total/credit";i:169;s:14:"total/handling";i:170;s:16:"total/klarna_fee";i:171;s:19:"total/low_order_fee";i:172;s:12:"total/reward";i:173;s:14:"total/shipping";i:174;s:15:"total/sub_total";i:175;s:9:"total/tax";i:176;s:11:"total/total";i:177;s:13:"total/voucher";i:178;s:8:"user/api";i:179;s:9:"user/user";i:180;s:20:"user/user_permission";i:181;s:15:"module/parallax";i:182;s:11:"module/html";i:183;s:18:"module/tm_category";i:184;s:15:"module/tm_fbbox";i:185;s:15:"module/tm_fbbox";i:186;s:17:"module/bestseller";i:187;s:13:"module/latest";i:188;s:14:"module/special";i:189;s:16:"module/affiliate";i:190;s:18:"module/information";i:191;s:19:"module/tm_slideshow";i:192;s:20:"module/tm_google_map";i:193;s:12:"module/olark";i:194;s:23:"module/tm_cookie_policy";i:195;s:20:"module/tm_google_map";i:196;s:19:"module/tm_instagram";i:197;s:20:"module/tm_module_tab";i:198;s:11:"module/html";}}'),
+(1, 'Administrator', 'a:2:{s:6:"access";a:206:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:14:"module/account";i:57;s:16:"module/affiliate";i:58;s:20:"module/amazon_button";i:59;s:13:"module/banner";i:60;s:17:"module/bestseller";i:61;s:15:"module/carousel";i:62;s:15:"module/category";i:63;s:11:"module/ebay";i:64;s:15:"module/featured";i:65;s:13:"module/filter";i:66;s:22:"module/google_hangouts";i:67;s:11:"module/html";i:68;s:18:"module/information";i:69;s:13:"module/latest";i:70;s:16:"module/pp_button";i:71;s:15:"module/pp_login";i:72;s:16:"module/slideshow";i:73;s:14:"module/special";i:74;s:12:"module/store";i:75;s:14:"openbay/amazon";i:76;s:22:"openbay/amazon_listing";i:77;s:22:"openbay/amazon_product";i:78;s:16:"openbay/amazonus";i:79;s:24:"openbay/amazonus_listing";i:80;s:24:"openbay/amazonus_product";i:81;s:12:"openbay/ebay";i:82;s:20:"openbay/ebay_profile";i:83;s:21:"openbay/ebay_template";i:84;s:12:"openbay/etsy";i:85;s:20:"openbay/etsy_product";i:86;s:21:"openbay/etsy_shipping";i:87;s:17:"openbay/etsy_shop";i:88;s:23:"payment/amazon_checkout";i:89;s:24:"payment/authorizenet_aim";i:90;s:24:"payment/authorizenet_sim";i:91;s:21:"payment/bank_transfer";i:92;s:22:"payment/bluepay_hosted";i:93;s:24:"payment/bluepay_redirect";i:94;s:14:"payment/cheque";i:95;s:11:"payment/cod";i:96;s:17:"payment/firstdata";i:97;s:24:"payment/firstdata_remote";i:98;s:21:"payment/free_checkout";i:99;s:22:"payment/klarna_account";i:100;s:22:"payment/klarna_invoice";i:101;s:14:"payment/liqpay";i:102;s:14:"payment/nochex";i:103;s:15:"payment/paymate";i:104;s:16:"payment/paypoint";i:105;s:13:"payment/payza";i:106;s:26:"payment/perpetual_payments";i:107;s:18:"payment/pp_express";i:108;s:18:"payment/pp_payflow";i:109;s:25:"payment/pp_payflow_iframe";i:110;s:14:"payment/pp_pro";i:111;s:21:"payment/pp_pro_iframe";i:112;s:19:"payment/pp_standard";i:113;s:14:"payment/realex";i:114;s:21:"payment/realex_remote";i:115;s:22:"payment/sagepay_direct";i:116;s:22:"payment/sagepay_server";i:117;s:18:"payment/sagepay_us";i:118;s:24:"payment/securetrading_pp";i:119;s:24:"payment/securetrading_ws";i:120;s:14:"payment/skrill";i:121;s:19:"payment/twocheckout";i:122;s:28:"payment/web_payment_software";i:123;s:16:"payment/worldpay";i:124;s:16:"report/affiliate";i:125;s:25:"report/affiliate_activity";i:126;s:22:"report/affiliate_login";i:127;s:24:"report/customer_activity";i:128;s:22:"report/customer_credit";i:129;s:21:"report/customer_login";i:130;s:22:"report/customer_online";i:131;s:21:"report/customer_order";i:132;s:22:"report/customer_reward";i:133;s:16:"report/marketing";i:134;s:24:"report/product_purchased";i:135;s:21:"report/product_viewed";i:136;s:18:"report/sale_coupon";i:137;s:17:"report/sale_order";i:138;s:18:"report/sale_return";i:139;s:20:"report/sale_shipping";i:140;s:15:"report/sale_tax";i:141;s:17:"sale/custom_field";i:142;s:13:"sale/customer";i:143;s:20:"sale/customer_ban_ip";i:144;s:19:"sale/customer_group";i:145;s:10:"sale/order";i:146;s:14:"sale/recurring";i:147;s:11:"sale/return";i:148;s:12:"sale/voucher";i:149;s:18:"sale/voucher_theme";i:150;s:15:"setting/setting";i:151;s:13:"setting/store";i:152;s:16:"shipping/auspost";i:153;s:17:"shipping/citylink";i:154;s:14:"shipping/fedex";i:155;s:13:"shipping/flat";i:156;s:13:"shipping/free";i:157;s:13:"shipping/item";i:158;s:23:"shipping/parcelforce_48";i:159;s:15:"shipping/pickup";i:160;s:19:"shipping/royal_mail";i:161;s:12:"shipping/ups";i:162;s:13:"shipping/usps";i:163;s:15:"shipping/weight";i:164;s:11:"tool/backup";i:165;s:14:"tool/error_log";i:166;s:11:"tool/upload";i:167;s:12:"total/coupon";i:168;s:12:"total/credit";i:169;s:14:"total/handling";i:170;s:16:"total/klarna_fee";i:171;s:19:"total/low_order_fee";i:172;s:12:"total/reward";i:173;s:14:"total/shipping";i:174;s:15:"total/sub_total";i:175;s:9:"total/tax";i:176;s:11:"total/total";i:177;s:13:"total/voucher";i:178;s:8:"user/api";i:179;s:9:"user/user";i:180;s:20:"user/user_permission";i:181;s:15:"module/parallax";i:182;s:11:"module/html";i:183;s:18:"module/tm_category";i:184;s:15:"module/tm_fbbox";i:185;s:15:"module/tm_fbbox";i:186;s:17:"module/bestseller";i:187;s:13:"module/latest";i:188;s:14:"module/special";i:189;s:16:"module/affiliate";i:190;s:18:"module/information";i:191;s:19:"module/tm_slideshow";i:192;s:20:"module/tm_google_map";i:193;s:12:"module/olark";i:194;s:23:"module/tm_cookie_policy";i:195;s:20:"module/tm_google_map";i:196;s:19:"module/tm_instagram";i:197;s:20:"module/tm_module_tab";i:198;s:11:"module/html";i:199;s:17:"shipping/correios";i:200;s:17:"payment/pagseguro";i:201;s:22:"payment/bancosantander";i:202;s:13:"shipping/free";i:203;s:12:"payment/payu";i:204;s:15:"shipping/pickup";i:205;s:24:"module/category_password";}s:6:"modify";a:206:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:14:"module/account";i:57;s:16:"module/affiliate";i:58;s:20:"module/amazon_button";i:59;s:13:"module/banner";i:60;s:17:"module/bestseller";i:61;s:15:"module/carousel";i:62;s:15:"module/category";i:63;s:11:"module/ebay";i:64;s:15:"module/featured";i:65;s:13:"module/filter";i:66;s:22:"module/google_hangouts";i:67;s:11:"module/html";i:68;s:18:"module/information";i:69;s:13:"module/latest";i:70;s:16:"module/pp_button";i:71;s:15:"module/pp_login";i:72;s:16:"module/slideshow";i:73;s:14:"module/special";i:74;s:12:"module/store";i:75;s:14:"openbay/amazon";i:76;s:22:"openbay/amazon_listing";i:77;s:22:"openbay/amazon_product";i:78;s:16:"openbay/amazonus";i:79;s:24:"openbay/amazonus_listing";i:80;s:24:"openbay/amazonus_product";i:81;s:12:"openbay/ebay";i:82;s:20:"openbay/ebay_profile";i:83;s:21:"openbay/ebay_template";i:84;s:12:"openbay/etsy";i:85;s:20:"openbay/etsy_product";i:86;s:21:"openbay/etsy_shipping";i:87;s:17:"openbay/etsy_shop";i:88;s:23:"payment/amazon_checkout";i:89;s:24:"payment/authorizenet_aim";i:90;s:24:"payment/authorizenet_sim";i:91;s:21:"payment/bank_transfer";i:92;s:22:"payment/bluepay_hosted";i:93;s:24:"payment/bluepay_redirect";i:94;s:14:"payment/cheque";i:95;s:11:"payment/cod";i:96;s:17:"payment/firstdata";i:97;s:24:"payment/firstdata_remote";i:98;s:21:"payment/free_checkout";i:99;s:22:"payment/klarna_account";i:100;s:22:"payment/klarna_invoice";i:101;s:14:"payment/liqpay";i:102;s:14:"payment/nochex";i:103;s:15:"payment/paymate";i:104;s:16:"payment/paypoint";i:105;s:13:"payment/payza";i:106;s:26:"payment/perpetual_payments";i:107;s:18:"payment/pp_express";i:108;s:18:"payment/pp_payflow";i:109;s:25:"payment/pp_payflow_iframe";i:110;s:14:"payment/pp_pro";i:111;s:21:"payment/pp_pro_iframe";i:112;s:19:"payment/pp_standard";i:113;s:14:"payment/realex";i:114;s:21:"payment/realex_remote";i:115;s:22:"payment/sagepay_direct";i:116;s:22:"payment/sagepay_server";i:117;s:18:"payment/sagepay_us";i:118;s:24:"payment/securetrading_pp";i:119;s:24:"payment/securetrading_ws";i:120;s:14:"payment/skrill";i:121;s:19:"payment/twocheckout";i:122;s:28:"payment/web_payment_software";i:123;s:16:"payment/worldpay";i:124;s:16:"report/affiliate";i:125;s:25:"report/affiliate_activity";i:126;s:22:"report/affiliate_login";i:127;s:24:"report/customer_activity";i:128;s:22:"report/customer_credit";i:129;s:21:"report/customer_login";i:130;s:22:"report/customer_online";i:131;s:21:"report/customer_order";i:132;s:22:"report/customer_reward";i:133;s:16:"report/marketing";i:134;s:24:"report/product_purchased";i:135;s:21:"report/product_viewed";i:136;s:18:"report/sale_coupon";i:137;s:17:"report/sale_order";i:138;s:18:"report/sale_return";i:139;s:20:"report/sale_shipping";i:140;s:15:"report/sale_tax";i:141;s:17:"sale/custom_field";i:142;s:13:"sale/customer";i:143;s:20:"sale/customer_ban_ip";i:144;s:19:"sale/customer_group";i:145;s:10:"sale/order";i:146;s:14:"sale/recurring";i:147;s:11:"sale/return";i:148;s:12:"sale/voucher";i:149;s:18:"sale/voucher_theme";i:150;s:15:"setting/setting";i:151;s:13:"setting/store";i:152;s:16:"shipping/auspost";i:153;s:17:"shipping/citylink";i:154;s:14:"shipping/fedex";i:155;s:13:"shipping/flat";i:156;s:13:"shipping/free";i:157;s:13:"shipping/item";i:158;s:23:"shipping/parcelforce_48";i:159;s:15:"shipping/pickup";i:160;s:19:"shipping/royal_mail";i:161;s:12:"shipping/ups";i:162;s:13:"shipping/usps";i:163;s:15:"shipping/weight";i:164;s:11:"tool/backup";i:165;s:14:"tool/error_log";i:166;s:11:"tool/upload";i:167;s:12:"total/coupon";i:168;s:12:"total/credit";i:169;s:14:"total/handling";i:170;s:16:"total/klarna_fee";i:171;s:19:"total/low_order_fee";i:172;s:12:"total/reward";i:173;s:14:"total/shipping";i:174;s:15:"total/sub_total";i:175;s:9:"total/tax";i:176;s:11:"total/total";i:177;s:13:"total/voucher";i:178;s:8:"user/api";i:179;s:9:"user/user";i:180;s:20:"user/user_permission";i:181;s:15:"module/parallax";i:182;s:11:"module/html";i:183;s:18:"module/tm_category";i:184;s:15:"module/tm_fbbox";i:185;s:15:"module/tm_fbbox";i:186;s:17:"module/bestseller";i:187;s:13:"module/latest";i:188;s:14:"module/special";i:189;s:16:"module/affiliate";i:190;s:18:"module/information";i:191;s:19:"module/tm_slideshow";i:192;s:20:"module/tm_google_map";i:193;s:12:"module/olark";i:194;s:23:"module/tm_cookie_policy";i:195;s:20:"module/tm_google_map";i:196;s:19:"module/tm_instagram";i:197;s:20:"module/tm_module_tab";i:198;s:11:"module/html";i:199;s:17:"shipping/correios";i:200;s:17:"payment/pagseguro";i:201;s:22:"payment/bancosantander";i:202;s:13:"shipping/free";i:203;s:12:"payment/payu";i:204;s:15:"shipping/pickup";i:205;s:24:"module/category_password";}}'),
 (10, 'Demonstration', '');
 
 -- --------------------------------------------------------
@@ -4807,15 +3658,9 @@ CREATE TABLE `oc_voucher_theme_description` (
 --
 
 INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
-(6, 1, 'Christmas'),
-(7, 1, 'Birthday'),
-(8, 1, 'General'),
-(6, 2, 'Christmas'),
-(7, 2, 'Birthday'),
-(8, 2, 'General'),
-(6, 3, 'Christmas'),
-(7, 3, 'Birthday'),
-(8, 3, 'General');
+(6, 4, 'Christmas'),
+(7, 4, 'Birthday'),
+(8, 4, 'General');
 
 -- --------------------------------------------------------
 
@@ -4856,18 +3701,10 @@ CREATE TABLE `oc_weight_class_description` (
 --
 
 INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
-(1, 1, 'Kilogram', 'kg'),
-(2, 1, 'Gram', 'g'),
-(5, 1, 'Pound ', 'lb'),
-(6, 1, 'Ounce', 'oz'),
-(1, 2, 'Kilogram', 'kg'),
-(2, 2, 'Gram', 'g'),
-(5, 2, 'Pound ', 'lb'),
-(6, 2, 'Ounce', 'oz'),
-(1, 3, 'Kilogram', 'kg'),
-(2, 3, 'Gram', 'g'),
-(5, 3, 'Pound ', 'lb'),
-(6, 3, 'Ounce', 'oz');
+(1, 4, 'Kilogram', 'kg'),
+(2, 4, 'Gram', 'g'),
+(5, 4, 'Pound ', 'lb'),
+(6, 4, 'Ounce', 'oz');
 
 -- --------------------------------------------------------
 
@@ -9221,6 +8058,12 @@ ALTER TABLE `oc_category_filter`
  ADD PRIMARY KEY (`category_id`,`filter_id`);
 
 --
+-- Indexes for table `oc_category_password`
+--
+ALTER TABLE `oc_category_password`
+ ADD PRIMARY KEY (`category_password_id`);
+
+--
 -- Indexes for table `oc_category_path`
 --
 ALTER TABLE `oc_category_path`
@@ -9611,6 +8454,12 @@ ALTER TABLE `oc_order_voucher`
  ADD PRIMARY KEY (`order_voucher_id`);
 
 --
+-- Indexes for table `oc_payu_order_transaction`
+--
+ALTER TABLE `oc_payu_order_transaction`
+ ADD PRIMARY KEY (`payu_order_transaction_id`);
+
+--
 -- Indexes for table `oc_product`
 --
 ALTER TABLE `oc_product`
@@ -9657,6 +8506,12 @@ ALTER TABLE `oc_product_option`
 --
 ALTER TABLE `oc_product_option_value`
  ADD PRIMARY KEY (`product_option_value_id`);
+
+--
+-- Indexes for table `oc_product_password`
+--
+ALTER TABLE `oc_product_password`
+ ADD PRIMARY KEY (`product_password_id`);
 
 --
 -- Indexes for table `oc_product_recurring`
@@ -9876,7 +8731,7 @@ ALTER TABLE `oc_zone_to_geo_zone`
 -- AUTO_INCREMENT for table `oc_address`
 --
 ALTER TABLE `oc_address`
-MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `oc_affiliate`
 --
@@ -9926,7 +8781,12 @@ MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=162;
 -- AUTO_INCREMENT for table `oc_category`
 --
 ALTER TABLE `oc_category`
-MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=71;
+MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=87;
+--
+-- AUTO_INCREMENT for table `oc_category_password`
+--
+ALTER TABLE `oc_category_password`
+MODIFY `category_password_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `oc_country`
 --
@@ -9936,7 +8796,7 @@ MODIFY `country_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=258;
 -- AUTO_INCREMENT for table `oc_coupon`
 --
 ALTER TABLE `oc_coupon`
-MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `oc_coupon_history`
 --
@@ -9946,22 +8806,22 @@ MODIFY `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_coupon_product`
 --
 ALTER TABLE `oc_coupon_product`
-MODIFY `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `oc_currency`
 --
 ALTER TABLE `oc_currency`
-MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
-MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
-MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `oc_customer_ban_ip`
 --
@@ -9981,7 +8841,7 @@ MODIFY `customer_history_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
-MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `oc_customer_login`
 --
@@ -10021,7 +8881,7 @@ MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_extension`
 --
 ALTER TABLE `oc_extension`
-MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=446;
+MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=453;
 --
 -- AUTO_INCREMENT for table `oc_filter`
 --
@@ -10046,7 +8906,7 @@ MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 -- AUTO_INCREMENT for table `oc_language`
 --
 ALTER TABLE `oc_language`
-MODIFY `language_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `language_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `oc_layout`
 --
@@ -10101,17 +8961,17 @@ MODIFY `module_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
 -- AUTO_INCREMENT for table `oc_option`
 --
 ALTER TABLE `oc_option`
-MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
-MODIFY `option_value_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
+MODIFY `option_value_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT for table `oc_order`
 --
 ALTER TABLE `oc_order`
-MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `oc_order_custom_field`
 --
@@ -10121,7 +8981,7 @@ MODIFY `order_custom_field_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
-MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `oc_order_option`
 --
@@ -10131,7 +8991,7 @@ MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 -- AUTO_INCREMENT for table `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
-MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `oc_order_recurring`
 --
@@ -10151,12 +9011,17 @@ MODIFY `order_status_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 -- AUTO_INCREMENT for table `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
-MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT for table `oc_order_voucher`
 --
 ALTER TABLE `oc_order_voucher`
 MODIFY `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `oc_payu_order_transaction`
+--
+ALTER TABLE `oc_payu_order_transaction`
+MODIFY `payu_order_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `oc_product`
 --
@@ -10166,32 +9031,37 @@ MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=50;
 -- AUTO_INCREMENT for table `oc_product_discount`
 --
 ALTER TABLE `oc_product_discount`
-MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=489;
+MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=492;
 --
 -- AUTO_INCREMENT for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
-MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3342;
+MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3376;
 --
 -- AUTO_INCREMENT for table `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
-MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=267;
+MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=269;
 --
 -- AUTO_INCREMENT for table `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
-MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=125;
+MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=129;
+--
+-- AUTO_INCREMENT for table `oc_product_password`
+--
+ALTER TABLE `oc_product_password`
+MODIFY `product_password_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `oc_product_reward`
 --
 ALTER TABLE `oc_product_reward`
-MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=809;
+MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=826;
 --
 -- AUTO_INCREMENT for table `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
-MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=566;
+MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=574;
 --
 -- AUTO_INCREMENT for table `oc_recurring`
 --
@@ -10231,7 +9101,7 @@ MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
 -- AUTO_INCREMENT for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
-MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5042;
+MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6377;
 --
 -- AUTO_INCREMENT for table `oc_stock_status`
 --
@@ -10266,7 +9136,7 @@ MODIFY `upload_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_url_alias`
 --
 ALTER TABLE `oc_url_alias`
-MODIFY `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1199;
+MODIFY `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1238;
 --
 -- AUTO_INCREMENT for table `oc_user`
 --
