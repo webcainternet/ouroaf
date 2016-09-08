@@ -152,7 +152,6 @@
 </div>
 
 
-<?php /*
 <hr>
 
 
@@ -199,10 +198,7 @@
 									</div>
 									<div class="cart-button">
 										<button class="btn btn-icon btn-add" data-toggle="tooltip" title="<?php echo $button_cart; ?>" type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="material-design-shopping231"></i></button>
-										<?php /*
-										<button class="btn btn-icon" type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="material-design-favorite22"></i></button>
-										<button class="btn btn-icon" type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="material-design-shuffle24"></i></button>
-										/ ?>
+
 									</div>
 									<div class="clear"></div>
 									<div class="rating">
@@ -265,11 +261,7 @@
 				<button class="product-btn-add" type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');">
 					<i class="material-design-shopping231"></i> <span class="hidden-sm"><?php echo $button_cart; ?></span>
 				</button>
-				<?php /* <div class="row">
-				<button class="product-btn" type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="material-design-favorite22"></i></button>
-				<button class="product-btn" type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="material-design-shuffle24"></i></button>
-				<a class="quickview product-btn" data-rel="details" data-toggle="tooltip" href="#quickview_<?php echo $f?>"  title="<?php echo $text_quick; ?>"><i class="material-design-tick7"></i></a>
-				</div> / ?>
+
 
 				<div class="rating">
 				<?php for ($i = 1; $i <= 5; $i++) { ?>
@@ -288,4 +280,3 @@
 		</div>
 	</div>
 </div>
- */ ?>
