@@ -189,7 +189,7 @@
 	  <?php } ?>
 	  <?php if (!$categories && !$products) { ?>
 	  <p><?php echo $text_empty; ?></p>
-	  <div class="buttons">
+	  <div class="buttons" style="display: none;">
 		<div class="pull-right"><a href="<?php echo $continue; ?>" class="btn"><?php echo $button_continue; ?></a></div>
 	  </div>
 	  <?php } ?>
