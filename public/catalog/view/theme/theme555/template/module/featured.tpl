@@ -29,7 +29,7 @@
 .home-banner-2 {
 	height: 460px;
 	float: right;
-	background: url('/image/pingente.jpg');
+	background: url('/image/banner2.jpg');
 	background-size: cover;
 	opacity:0.7;
 	transition: opacity .2s ease-in-out;
@@ -115,7 +115,7 @@
 	    margin-top: 260px;
 	    font-size: 24px;
 	    color: #333;
-	    text-transform: uppercase;">Linha University</div>
+	    text-transform: uppercase;">Coleção University</div>
 	</div>
 
 	<div class="home-banner home-banner-3">
@@ -158,7 +158,7 @@
 <hr>
 
 
-<div class="box featured" style="margin-top: 700px;">
+<div class="box featured" style="margin-top: 465px;">
 	<div class="box-heading"><h3><?php echo $heading_title; ?></h3></div>
 	<div class="box-content">
 		<div class="row">
