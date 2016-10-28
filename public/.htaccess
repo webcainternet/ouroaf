@@ -1,4 +1,4 @@
-AuthUserFile /srv/httpd/ouroaf.com/ouroaf/public/.htpasswd
+AuthUserFile /var/www/html/public/.htpasswd
 AuthType Basic
 AuthName "Restrito"
 Require valid-user
@@ -6,6 +6,13 @@ Require valid-user
 
 RewriteEngine On
 RewriteBase /
+
+RewriteCond $1 !^(webmail|cpanel|painel)
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)\?*$ index.php?_route_=$1 [L,QSA]
+
+RedirectMatch 301 /webmail https://cpanel0063.hospedagemdesites.ws:2096/
+RedirectMatch 301 /cpanel https://cpanel0063.hospedagemdesites.ws:2083/
+RedirectMatch 301 /painel https://cpanel0063.hospedagemdesites.ws:2083/

@@ -1,0 +1,10 @@
+[Fri Oct 14 02:27:22.386144 2016] [authn_file:error] [pid 9] (2)No such file or directory: [client 172.17.0.1:40418] AH01620: Could not open password file: /srv/httpd/ouroaf.com/ouroaf/public/.htpasswd
+[Fri Oct 14 02:27:23.394538 2016] [authn_file:error] [pid 10] (2)No such file or directory: [client 172.17.0.1:40450] AH01620: Could not open password file: /srv/httpd/ouroaf.com/ouroaf/public/.htpasswd, referer: http://ouroaf.homolog.lojavirtual.digital/
+[Fri Oct 14 02:27:44.536031 2016] [auth_basic:error] [pid 11] [client 172.17.0.1:40612] AH01617: user ouroaf: authentication failure for "/": Password Mismatch
+[Fri Oct 14 02:27:45.125923 2016] [auth_basic:error] [pid 12] [client 172.17.0.1:40614] AH01618: user  not found: /
+[Wed Oct 19 09:40:15.763029 2016] [auth_basic:error] [pid 10] [client 172.17.0.1:42902] AH01618: user admin not found: /
+[Wed Oct 19 09:41:01.502416 2016] [auth_basic:error] [pid 13] [client 172.17.0.1:43230] AH01618: user adminlojaouroaf not found: /
+[Wed Oct 19 09:44:09.198874 2016] [auth_basic:error] [pid 15] [client 172.17.0.1:43748] AH01618: user admin not found: /
+[Wed Oct 19 09:44:15.940467 2016] [auth_basic:error] [pid 11] [client 172.17.0.1:43762] AH01618: user admin not found: /
+[Wed Oct 19 12:48:45.350445 2016] [auth_basic:error] [pid 11] [client 172.17.0.1:50058] AH01617: user ouroaf: authentication failure for "/": Password Mismatch
+[Fri Oct 28 01:18:28.507713 2016] [auth_basic:error] [pid 8] [client 172.17.0.1:34284] AH01617: user ouroaf: authentication failure for "/": Password Mismatch
