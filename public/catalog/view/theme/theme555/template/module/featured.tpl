@@ -42,7 +42,7 @@
 
 .home-banner-3 {
 	height: 200px;
-  background: #bef2ff;
+  	background: #e1e2dd;
 	color: #333;
 	opacity:0.7;
 	transition: color .2s ease-in-out;
