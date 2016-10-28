@@ -1098,10 +1098,10 @@ div.required .control-label:before {
       color: #fff;
       vertical-align: top; }
   .cart > button:hover, .cart.active > button {
-    background: #fff;
+    /* background: #fff;
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.11); }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.11); */ }
     .cart > button:hover i, .cart.active > button i {
       color: #FBCA47; }
 
