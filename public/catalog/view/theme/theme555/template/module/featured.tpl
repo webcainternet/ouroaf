@@ -97,65 +97,68 @@
 }
 </style>
 
-<div class="home-banner home-banner-1">
-	<div style="	color: #D1A32D;
-		text-transform: uppercase;
-		text-align: left;
-		margin-top: 20px;
-		margin-left: 20px;
-		font-size: 24px;">Aneis e Alianças</div>
+<div>
+
+	<div class="home-banner home-banner-1">
+		<div style="	color: #D1A32D;
+			text-transform: uppercase;
+			text-align: left;
+			margin-top: 20px;
+			margin-left: 20px;
+			font-size: 24px;">Aneis e Alianças</div>
+	</div>
+
+	<div class="home-banner home-banner-2">
+		<div style="    padding: 30px;
+	    text-align: center;
+	    background: #e1e2dd;
+	    margin-top: 260px;
+	    font-size: 24px;
+	    color: #333;
+	    text-transform: uppercase;">Linha University</div>
+	</div>
+
+	<div class="home-banner home-banner-3">
+		<div style="text-transform: uppercase;
+	    text-align: center;
+	    margin-top: 79px;
+	    font-size: 24px;">Comissão de Formatura</div>
+	</div>
+
+	<div class="home-banner home-banner-4">
+		<div style="    color: #FFF;
+	    text-transform: uppercase;
+	    text-align: right;
+	    margin-top: 160px;
+	    margin-right: 20px;
+	    font-size: 24px;">Relógios</div>
+	</div>
+
+	<div class="home-banner home-banner-5">
+		<div style="color: #FFF;
+	    text-transform: uppercase;
+	    text-align: center;
+	    margin-top: 75px;
+	    font-size: 24px;"><i class="fa fa-user" style="font-size: 60px;" aria-hidden="true"></i>
+
+				<br><br>Acesso Restrito</div>
+	</div>
+
+	<div class="home-banner home-banner-6">
+		<div style="	color: #FFF;
+	    text-transform: uppercase;
+	    text-align: left;
+	    margin-top: 20px;
+	    margin-left: 20px;
+	    font-size: 24px;">Pingentes</div>
+	</div>
+
 </div>
-
-<div class="home-banner home-banner-2">
-	<div style="    padding: 30px;
-    text-align: center;
-    background: #e1e2dd;
-    margin-top: 260px;
-    font-size: 24px;
-    color: #333;
-    text-transform: uppercase;">Linha University</div>
-</div>
-
-<div class="home-banner home-banner-3">
-	<div style="text-transform: uppercase;
-    text-align: center;
-    margin-top: 79px;
-    font-size: 24px;">Comissão de Formatura</div>
-</div>
-
-<div class="home-banner home-banner-4">
-	<div style="    color: #FFF;
-    text-transform: uppercase;
-    text-align: right;
-    margin-top: 160px;
-    margin-right: 20px;
-    font-size: 24px;">Relógios</div>
-</div>
-
-<div class="home-banner home-banner-5">
-	<div style="color: #FFF;
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 75px;
-    font-size: 24px;"><i class="fa fa-user" style="font-size: 60px;" aria-hidden="true"></i>
-
-			<br><br>Acesso Restrito</div>
-</div>
-
-<div class="home-banner home-banner-6">
-	<div style="	color: #FFF;
-    text-transform: uppercase;
-    text-align: left;
-    margin-top: 20px;
-    margin-left: 20px;
-    font-size: 24px;">Pingentes</div>
-</div>
-
 
 <hr>
 
 
-<div class="box featured">
+<div class="box featured" style="margin-top: 700px;">
 	<div class="box-heading"><h3><?php echo $heading_title; ?></h3></div>
 	<div class="box-content">
 		<div class="row">
