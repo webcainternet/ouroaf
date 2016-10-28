@@ -13,11 +13,11 @@
 }
 .home-banner-1 {
 	height: 250px;
-	background: url('image/aliancas.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #f0efed;
-  background-position: -460px 25px;
+	background: url(image/pingente.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #f0efed;
+    background-position: 0px -326px;
 	opacity:0.7;
 	transition: opacity .2s ease-in-out;
 	-webkit-transition: opacity .2s ease-in-out;
@@ -29,7 +29,7 @@
 .home-banner-2 {
 	height: 460px;
 	float: right;
-	background: url('/image/banner2.jpg');
+	background: url('/image/pingente.jpg');
 	background-size: cover;
 	opacity:0.7;
 	transition: opacity .2s ease-in-out;
@@ -105,7 +105,7 @@
 			text-align: left;
 			margin-top: 20px;
 			margin-left: 20px;
-			font-size: 24px;">Aneis e Alianças</div>
+			font-size: 24px;">Pingentes</div>
 	</div>
 
 	<div class="home-banner home-banner-2">
@@ -125,7 +125,7 @@
 	    font-size: 24px;">Comissão de Formatura</div>
 	</div>
 
-	<div class="home-banner home-banner-4">
+<?php /*	<div class="home-banner home-banner-4">
 		<div style="    color: #FFF;
 	    text-transform: uppercase;
 	    text-align: right;
@@ -151,7 +151,7 @@
 	    margin-top: 20px;
 	    margin-left: 20px;
 	    font-size: 24px;">Pingentes</div>
-	</div>
+	</div> */ ?>
 
 </div>
 
