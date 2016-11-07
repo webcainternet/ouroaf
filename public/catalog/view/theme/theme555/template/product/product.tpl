@@ -1,4 +1,8 @@
 <?php echo $header; ?>
+<?php
+$_SESSION['use_category_password'] = 1;
+$_SESSION['use_product_password'] = 1;
+?>
 <div class="container">
 	<ul class="breadcrumb">
 		<?php foreach ($breadcrumbs as $breadcrumb) { ?>
