@@ -99,31 +99,38 @@
 
 <div>
 
-	<div class="home-banner home-banner-1">
-		<div style="	color: #D1A32D;
-			text-transform: uppercase;
-			text-align: left;
-			margin-top: 20px;
-			margin-left: 20px;
-			font-size: 24px;">Pingentes</div>
-	</div>
+	<a href="/pingentes">
+		<div class="home-banner home-banner-1">
+			<div style="	color: #D1A32D;
+				text-transform: uppercase;
+				text-align: left;
+				margin-top: 20px;
+				margin-left: 20px;
+				font-size: 24px;">Pingentes</div>
+		</div>
+	</a>
 
-	<div class="home-banner home-banner-2">
-		<div style="    padding: 30px;
-	    text-align: center;
-	    background: #e1e2dd;
-	    margin-top: 260px;
-	    font-size: 24px;
-	    color: #333;
-	    text-transform: uppercase;">Coleção University</div>
-	</div>
 
-	<div class="home-banner home-banner-3">
-		<div style="text-transform: uppercase;
-	    text-align: center;
-	    margin-top: 79px;
-	    font-size: 24px;">Comissão de Formatura</div>
-	</div>
+	<a href="/area-restrita">
+		<div class="home-banner home-banner-2">
+			<div style="    padding: 30px;
+		    text-align: center;
+		    background: #e1e2dd;
+		    margin-top: 260px;
+		    font-size: 24px;
+		    color: #333;
+		    text-transform: uppercase;">Coleção University</div>
+		</div>
+	</a>
+
+	<a href="/comissao">
+		<div class="home-banner home-banner-3">
+			<div style="text-transform: uppercase;
+		    text-align: center;
+		    margin-top: 79px;
+		    font-size: 24px;">Comissão de Formatura</div>
+		</div>
+	</a>
 
 <?php /*	<div class="home-banner home-banner-4">
 		<div style="    color: #FFF;
@@ -144,13 +151,13 @@
 				<br><br>Acesso Restrito</div>
 	</div>
 
-	<div class="home-banner home-banner-6">
+	<a href="/pingentes"><div class="home-banner home-banner-6">
 		<div style="	color: #FFF;
 	    text-transform: uppercase;
 	    text-align: left;
 	    margin-top: 20px;
 	    margin-left: 20px;
-	    font-size: 24px;">Pingentes</div>
+	    font-size: 24px;">Pingentes</div></a>
 	</div> */ ?>
 
 </div>

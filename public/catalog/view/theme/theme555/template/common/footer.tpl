@@ -23,27 +23,27 @@
 	<div style="margin: auto; padding: 30px 30px 15px 30px; width:1170px;max-width:100%;list-style:none; transition: none;overflow:hidden;color: #444;">
     <div class="header-bottom-item">
   		<i style="font-size: 36px; float: left; position: absolute; margin-top: 10px;" class="fa fa-credit-card" aria-hidden="true"></i>
-  		<div style="float: left; min-height: 60px; margin-left: 50px; width: 74px; text-align: center; font-size: 44px; font-weight: bold; padding-top: 8px;">6x</div>
+  		<div style="float: left; min-height: 60px; margin-left: 50px; width: 74px; text-align: center; font-size: 44px; font-weight: bold; padding-top: 8px;">12x</div>
   		<div style="float: left; margin-left: 10px; font-weight: bold;">Sem Juros</div>
   		<div style="float: left; margin-left: 10px; ">No cartão</div>
   	</div>
   	<div class="header-bottom-item">
   		<i style="font-size: 36px; float: left; position: absolute; margin-top: 10px;" class="fa fa-barcode" aria-hidden="true"></i>
-  		<div style="float: left; min-height: 60px; margin-left: 50px; width: 74px; text-align: center; font-size: 44px; font-weight: bold; padding-top: 8px;">5%</div>
-  		<div style="float: left; margin-left: 10px; font-weight: bold;">De Desconto</div>
-  		<div style="float: left; margin-left: 10px; ">No boleto</div>
+  		<div style="float: left; min-height: 60px; margin-left: 45px; width: 74px; text-align: center; font-size: 44px; font-weight: bold; padding-top: 8px;">10%</div>
+  		<div style="float: left; margin-left: 20px; font-weight: bold;">De Desconto</div>
+  		<div style="float: left; margin-left: 20px; ">No boleto</div>
   	</div>
 		<div class="header-bottom-item">
-  		<i style="font-size: 36px; float: left; position: absolute; margin-top: 10px;" class="fa fa-usd" aria-hidden="true"></i>
-  		<div style="float: left; min-height: 60px; margin-left: 50px; width: 55px; text-align: center; font-weight: bold;">FRETE GRÁTIS</div>
-  		<div style="float: left; min-width: 120px; margin-left: 10px; ">Nas compras acima</div>
-  		<div style="float: left; min-width: 120px; margin-left: 10px; font-weight: bold;">de R$ 129,90</div>
+  		<i style="font-size: 36px; float: left; position: absolute; margin-top: 10px;" class="fa fa-shield" aria-hidden="true"></i>
+  		<div style="float: left; min-height: 60px; margin-left: 35px; width: 55px; text-align: center; font-weight: bold;">COMPRA SEGURA</div>
+  		<div style="float: left; min-width: 120px; margin-left: 10px; ">Segurança com:</div>
+  		<div style="float: left; min-width: 120px; margin-left: 10px; font-weight: bold;">Certificado SSL</div>
   	</div>
   	<div class="header-bottom-item">
   		<i style="font-size: 36px; float: left; position: absolute; margin-top: 10px;" class="fa fa-truck" aria-hidden="true"></i>
   		<div style="float: left; min-height: 60px; margin-left: 50px; width: 55px; text-align: center; font-weight: bold;">FRETE GRÁTIS</div>
   		<div style="float: left; min-width: 120px; margin-left: 10px; ">Nas compras acima</div>
-  		<div style="float: left; min-width: 120px; margin-left: 10px; font-weight: bold;">de R$ 129,90</div>
+  		<div style="float: left; min-width: 120px; margin-left: 10px; font-weight: bold;">de R$ 400,00</div>
   	</div>
 	</div>
 
