@@ -33,10 +33,10 @@
             <div class="col-sm-3"><strong><?php echo $text_telephone; ?></strong><br>
               <?php echo $telephone; ?><br />
               <br />
-<?php /*              <?php if ($fax) { ?>
-              <strong><?php echo $text_fax; ?></strong><br>
+              <?php if ($fax) { ?>
+              <strong>Whatsapp</strong><br>
               <?php echo $fax; ?>
-              <?php } ?> */ ?>
+              <?php } ?>
             </div>
             <div class="col-sm-3">
               <?php if ($open) { ?>
