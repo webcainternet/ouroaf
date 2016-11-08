@@ -111,7 +111,7 @@
 	</a>
 
 
-	<a href="/area-restrita">
+	<a href="/comissao">
 		<div class="home-banner home-banner-2">
 			<div style="    padding: 30px;
 		    text-align: center;
@@ -119,16 +119,17 @@
 		    margin-top: 260px;
 		    font-size: 24px;
 		    color: #333;
-		    text-transform: uppercase;">Coleção University</div>
+		    text-transform: uppercase;">Comissão de Formatura</div>
 		</div>
 	</a>
 
-	<a href="/comissao">
+	
+	<a href="/area-restrita">
 		<div class="home-banner home-banner-3">
 			<div style="text-transform: uppercase;
 		    text-align: center;
 		    margin-top: 79px;
-		    font-size: 24px;">Comissão de Formatura</div>
+		    font-size: 24px;">Coleção University</div>
 		</div>
 	</a>
 
