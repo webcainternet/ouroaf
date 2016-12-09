@@ -133,8 +133,8 @@
 					</a>
 					*/ ?>
 
-					<a href="https://www.payu.com.br/" target="_blank">
-						<img src="/image/payu2.png" alt="PayU" height="26" style="border: 0px; margin-right: 20px; height: 26px;">
+					<a href="#" target="_blank">
+						<img src="/image/bandeiras.png" height="32" style="border: 0px; margin-right: 20px; height: 32px;">
 					</a>
 
 					<a href="http://pagseguro.uol.com.br" target="_blank">

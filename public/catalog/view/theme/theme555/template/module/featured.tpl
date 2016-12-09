@@ -16,8 +16,7 @@
 	background: url(image/pingente.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
-    background-color: #f0efed;
-    background-position: 0px -326px;
+    background-color: #FFF;
 	opacity:0.7;
 	transition: opacity .2s ease-in-out;
 	-webkit-transition: opacity .2s ease-in-out;

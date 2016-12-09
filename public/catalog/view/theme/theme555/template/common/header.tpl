@@ -28,6 +28,8 @@
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,700' rel='stylesheet' type='text/css'>
+<link href="//fonts.googleapis.com/css?family=Julius+Sans+One:400,300,700|Old+Standard+TT:400,300,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Arimo:400,300,700|Julius+Sans+One:400,300,700|Noto+Sans:400,300,700|Old+Standard+TT:400,300,700|Oswald:400,300,700|PT+Sans+Narrow:400,300,700" rel="stylesheet">
 
 <link rel="stylesheet"  href="catalog/view/theme/<?php echo $theme_path; ?>/js/fancybox/jquery.fancybox.css" media="screen" />
 <link href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.css" rel="stylesheet">
