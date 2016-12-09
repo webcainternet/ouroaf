@@ -8,3 +8,42 @@
 [Wed Oct 19 09:44:15.940467 2016] [auth_basic:error] [pid 11] [client 172.17.0.1:43762] AH01618: user admin not found: /
 [Wed Oct 19 12:48:45.350445 2016] [auth_basic:error] [pid 11] [client 172.17.0.1:50058] AH01617: user ouroaf: authentication failure for "/": Password Mismatch
 [Fri Oct 28 01:18:28.507713 2016] [auth_basic:error] [pid 8] [client 172.17.0.1:34284] AH01617: user ouroaf: authentication failure for "/": Password Mismatch
+[Fri Oct 28 17:12:13.108411 2016] [auth_basic:error] [pid 10] [client 172.17.0.1:57470] AH01617: user ouroaf: authentication failure for "/": Password Mismatch
+[Sun Oct 30 07:19:16.747230 2016] [auth_basic:error] [pid 12] [client 172.17.0.1:34390] AH01618: user  not found: /
+[Tue Nov 01 09:50:04.679802 2016] [auth_basic:error] [pid 9] [client 172.17.0.1:50072] AH01618: user  not found: /
+[Tue Nov 01 09:50:04.768024 2016] [auth_basic:error] [pid 13] [client 172.17.0.1:50074] AH01618: user  not found: /
+[Sun Nov 06 01:46:46.305006 2016] [auth_basic:error] [pid 11] [client 172.17.0.1:36214] AH01618: user ouroaf not found: /
+[Sun Nov 06 01:46:47.322919 2016] [auth_basic:error] [pid 7] [client 172.17.0.1:36218] AH01618: user ouroaf not found: /
+[Sun Nov 06 01:46:48.797878 2016] [auth_basic:error] [pid 15] [client 172.17.0.1:36232] AH01618: user ouroaf not found: /
+[Sun Nov 06 01:46:49.663565 2016] [auth_basic:error] [pid 10] [client 172.17.0.1:36240] AH01618: user ouroaf not found: /
+[Sun Nov 06 01:46:57.820245 2016] [auth_basic:error] [pid 30] [client 172.17.0.1:36316] AH01618: user ouroaf not found: /
+[Sun Nov 06 13:23:29.295755 2016] [auth_basic:error] [pid 30] [client 172.17.0.1:42020] AH01618: user ouroaf not found: /
+[Sun Nov 06 13:23:30.190329 2016] [auth_basic:error] [pid 8] [client 172.17.0.1:42084] AH01618: user ouroaf not found: /
+[Sun Nov 06 13:23:30.565760 2016] [auth_basic:error] [pid 28] [client 172.17.0.1:42106] AH01618: user ouroaf not found: /
+[Sun Nov 06 20:00:04.383532 2016] [auth_basic:error] [pid 30] [client 172.17.0.1:42288] AH01618: user a not found: /admin
+[Sun Nov 06 20:00:41.580346 2016] [auth_basic:error] [pid 8] [client 172.17.0.1:42860] AH01617: user a1ouroaf: authentication failure for "/admin": Password Mismatch
+[Sun Nov 06 20:03:02.247583 2016] [auth_basic:error] [pid 30] [client 172.17.0.1:46500] AH01618: user ouroaf not found: /admin/
+[Sun Nov 06 21:11:34.493222 2016] [auth_basic:error] [pid 30] [client 172.17.0.1:50720] AH01618: user ouroaf not found: /
+[Sun Nov 06 21:11:36.066332 2016] [auth_basic:error] [pid 11] [client 172.17.0.1:50748] AH01618: user ouroaf not found: /
+[Sun Nov 06 21:11:37.292854 2016] [auth_basic:error] [pid 15] [client 172.17.0.1:50776] AH01618: user ouroaf not found: /
+[Sun Nov 06 21:12:00.587169 2016] [auth_basic:error] [pid 17] [client 172.17.0.1:51170] AH01618: user ouroaf not found: /
+[Sun Nov 06 21:12:02.285782 2016] [auth_basic:error] [pid 10] [client 172.17.0.1:51206] AH01618: user ouroaf not found: /
+[Sun Nov 06 21:48:04.313902 2016] [auth_basic:error] [pid 7] [client 172.17.0.1:55308] AH01618: user ouroaf not found: /
+[Sun Nov 06 21:48:06.133183 2016] [auth_basic:error] [pid 17] [client 172.17.0.1:55356] AH01618: user ouroaf not found: /
+[Sun Nov 06 21:49:00.854639 2016] [auth_basic:error] [pid 10] [client 172.17.0.1:56218] AH01618: user ouroaf not found: /
+[Mon Nov 07 09:25:34.648958 2016] [auth_basic:error] [pid 9] [client 172.17.0.1:36914] AH01618: user ouroaf not found: /
+[Mon Nov 07 09:25:35.899763 2016] [auth_basic:error] [pid 30] [client 172.17.0.1:36940] AH01618: user ouroaf not found: /
+[Mon Nov 07 13:18:49.693794 2016] [auth_basic:error] [pid 9] [client 172.17.0.1:54028] AH01618: user ouroaf not found: /
+[Mon Nov 07 13:18:51.749947 2016] [auth_basic:error] [pid 30] [client 172.17.0.1:54068] AH01618: user ouroaf not found: /
+[Mon Nov 07 14:31:03.499159 2016] [auth_basic:error] [pid 17] [client 172.17.0.1:57662] AH01618: user ouroaf not found: /
+[Mon Nov 07 15:05:53.960375 2016] [auth_basic:error] [pid 10] [client 172.17.0.1:50188] AH01618: user ouroaf not found: /
+[Mon Nov 07 15:37:44.296746 2016] [auth_basic:error] [pid 11] [client 172.17.0.1:36530] AH01618: user ouroaf not found: /
+[Mon Nov 07 15:37:46.995005 2016] [auth_basic:error] [pid 15] [client 172.17.0.1:36594] AH01618: user ouroaf not found: /
+[Mon Nov 07 16:27:59.443034 2016] [auth_basic:error] [pid 10] [client 172.17.0.1:40250] AH01618: user ouroaf not found: /
+[Mon Nov 07 17:47:34.853213 2016] [auth_basic:error] [pid 11] [client 172.17.0.1:56342] AH01618: user a not found: /catalog/view/javascript/common.js, referer: http://localhost/
+[Mon Nov 07 17:47:34.860086 2016] [auth_basic:error] [pid 15] [client 172.17.0.1:56344] AH01618: user a not found: /catalog/view/theme/default/stylesheet/stylesheet.css, referer: http://localhost/
+[Mon Nov 07 20:17:21.953280 2016] [auth_basic:error] [pid 8] [client 172.17.0.1:49090] AH01618: user a not found: /
+[Mon Nov 07 21:53:21.831917 2016] [auth_basic:error] [pid 9] [client 172.17.0.1:53250] AH01618: user ouroaf not found: /
+[Mon Nov 07 21:58:41.671119 2016] [auth_basic:error] [pid 7] [client 172.17.0.1:33802] AH01618: user Claudio not found: /
+[Mon Nov 07 22:03:53.829544 2016] [auth_basic:error] [pid 30] [client 172.17.0.1:42806] AH01618: user a not found: /area-restrita
+[Mon Nov 07 22:04:31.270616 2016] [auth_basic:error] [pid 8] [client 172.17.0.1:43878] AH01618: user a not found: /

@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://ouroaf.homolog.lojavirtual.digital/');
+define('HTTP_SERVER', 'http://'.$_SERVER["HTTP_HOST"].'/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://ouroaf.homolog.lojavirtual.digital/');
+define('HTTPS_SERVER', 'http://'.$_SERVER["HTTP_HOST"].'/');
 
 // DIR
 define('DIR_APPLICATION', '/var/www/html/public/catalog/');

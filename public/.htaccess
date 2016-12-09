@@ -1,7 +1,7 @@
-AuthUserFile /var/www/html/public/.htpasswd
-AuthType Basic
-AuthName "Restrito"
-Require valid-user
+#AuthUserFile /var/www/html/public/.htpasswd
+#AuthType Basic
+#AuthName "Restrito"
+#Require valid-user
 
 
 RewriteEngine On

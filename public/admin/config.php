@@ -1,11 +1,15 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://ouroaf.homolog.lojavirtual.digital/admin/');
-define('HTTP_CATALOG', 'http://ouroaf.homolog.lojavirtual.digital/');
+define('HTTP_SERVER', 'http://'.$_SERVER["HTTP_HOST"].'/admin/');
+define('HTTP_CATALOG', 'http://'.$_SERVER["HTTP_HOST"].'/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://ouroaf.homolog.lojavirtual.digital/admin/');
-define('HTTPS_CATALOG', 'http://ouroaf.homolog.lojavirtual.digital/');
+define('HTTPS_SERVER', 'http://'.$_SERVER["HTTP_HOST"].'/admin/');
+define('HTTPS_CATALOG', 'http://'.$_SERVER["HTTP_HOST"].'/');
+
+//SETTINGS
+ini_set("memory_limit",-1);
+ini_set("max_execution_time", 600);
 
 // DIR
 define('DIR_APPLICATION', '/var/www/html/public/admin/');

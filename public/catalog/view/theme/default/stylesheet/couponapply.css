@@ -1,0 +1,32 @@
+.cart-module > div {
+	display: block;
+}
+
+#content .cart-module > div {
+background: #e7e7e7;
+color:#474747;
+display:block;
+}
+
+.cart-module .cart-heading {
+	border: 1px solid #DBDEE1;
+	padding: 8px 8px 8px 22px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #555555;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+
+.cart-module .cart-content {
+	padding: 15px 0px 15px 0px;
+	display: none;
+	overflow: auto;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+.cart-content label {
+	color: #4b4b4b;
+}

@@ -1,7 +1,4 @@
-2016-10-28 2:17:21 - Another VQmod 2.4.0 or later is already installed.
-The files from vqmod/xml/*.xml are processed by the other VQmod!
-----------------------------------------------------------------
-MOD: Modification Default
+2016-11-07 23:26:44 - MOD: Modification Default
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
 LINE: 58
@@ -18,6 +15,118 @@ FILE: system/library/language.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
 LINE: 21
 LINE: 27
+----------------------------------------------------------------
+VQmod - Processing 'Category Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Category Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+VQmod - Processing 'Product Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Product Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+MOD: <font color="#00a99d"><b>Code Market - PagSeguro Lightbox com Segunda Via</b></font>
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/theme555/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/default/template/payment/pagseguro.tpl
+CODE: location = '<?php echo $url; ?>';
+LINE: 18
+FILE: catalog/language/english/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+FILE: catalog/language/portuguese-br/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+----------------------------------------------------------------
+MOD: Auto Completar Endereço Brasil
+FILE: catalog/model/localisation/zone.php
+CODE: public function getZone($zone_id) {
+LINE: 13
+FILE: catalog/controller/account/register.php
+CODE: public function customfield() {
+LINE: 446
+FILE: catalog/view/theme/theme555/template/account/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 761
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 274
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 284
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 260
+FILE: catalog/view/theme/theme555/template/affiliate/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 394
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 108
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 118
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 94
+FILE: catalog/view/theme/theme555/template/account/address_form.tpl
+CODE: <?php echo $footer; ?>
+LINE: 474
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 69
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 79
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 55
+FILE: catalog/view/theme/theme555/template/affiliate/edit.tpl
+CODE: <?php echo $footer; ?>
+LINE: 259
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 106
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 92
+FILE: catalog/view/theme/theme555/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 474
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 169
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 162
+FILE: catalog/view/theme/theme555/template/checkout/guest.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 485
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 179
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 167
+FILE: catalog/view/theme/theme555/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 341
+CODE: <label class="col-sm-2 control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
+FILE: catalog/view/theme/theme555/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 320
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 39
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 46
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 28
+FILE: catalog/view/theme/theme555/template/checkout/shipping_address.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 340
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
 ----------------------------------------------------------------
 MOD: Export/Import Tool (V3.5) for OpenCart 2.x
 FILE: admin/controller/common/menu.php
@@ -255,11 +364,10 @@ CODE: $_['text_content_top']    = 'Content Top';
 LINE: 10
 ----------------------------------------------------------------
 MOD: TM latest 
-FILE: catalog/controller/module/latest.php
 CODE: $data['products'][] = array(
-LINE: 68
+LINE: 86
 CODE: 'rating'      => $rating,
-LINE: 76
+LINE: 96
 CODE: $this->load->model('tool/image');
 LINE: 15
 CODE: $data['button_cart'] = $this->language->get('button_cart');
@@ -290,7 +398,7 @@ LINE: 95
 CODE: 'thumb'       => $image,
 LINE: 89
 CODE: 'thumb'       => $image,
-LINE: 95
+LINE: 115
 FILE: catalog/controller/module/special.php
 CODE: 'thumb'       => $image,
 LINE: 62
@@ -300,19 +408,15 @@ LINE: 71
 LINE: 132
 LINE: 186
 LINE: 246
-FILE: catalog/controller/product/category.php
 CODE: 'thumb'       => $image,
 LINE: 215
 FILE: catalog/controller/product/compare.php
 CODE: 'thumb'       => $image,
 NOT FOUND!
-FILE: catalog/controller/product/manufacturer.php
 CODE: 'thumb'       => $image,
-LINE: 216
-FILE: catalog/controller/product/product.php
+LINE: 236
 CODE: 'thumb'       => $image,
-LINE: 431
-FILE: catalog/controller/product/search.php
+LINE: 514
 CODE: 'thumb'       => $image,
 LINE: 248
 FILE: catalog/controller/product/special.php
@@ -440,9 +544,10 @@ LINE: 53
 LINE: 61
 CODE: $data['button_continue']
 LINE: 119
-LINE: 423
+LINE: 471
 CODE: $data['products'] = array();
 LINE: 175
+LINE: 418
 CODE: 'tax'         => $tax,
 LINE: 248
 CODE: $_['text_limit']
@@ -480,7 +585,7 @@ LINE: 165
 CODE: $data['products'] = array();
 LINE: 175
 CODE: 'tax'         => $tax,
-LINE: 247
+LINE: 267
 CODE: $_['text_limit']
 LINE: 31
 CODE: $_['text_limit']
@@ -525,7 +630,2635 @@ LINE: 8
 CODE: $data['products'] = array();
 LINE: 42
 CODE: 'tax'         => $tax,
+LINE: 142
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+----------------------------------------------------------------
+MOD: TM Top Menu All Levels
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 178
+----------------------------------------------------------------
+2016-11-07 23:34:17 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+VQmod - Processing 'Category Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Category Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+VQmod - Processing 'Product Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Product Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+MOD: <font color="#00a99d"><b>Code Market - PagSeguro Lightbox com Segunda Via</b></font>
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/theme555/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/default/template/payment/pagseguro.tpl
+CODE: location = '<?php echo $url; ?>';
+LINE: 18
+FILE: catalog/language/english/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+FILE: catalog/language/portuguese-br/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+----------------------------------------------------------------
+MOD: Auto Completar Endereço Brasil
+FILE: catalog/model/localisation/zone.php
+CODE: public function getZone($zone_id) {
+LINE: 13
+FILE: catalog/controller/account/register.php
+CODE: public function customfield() {
+LINE: 446
+FILE: catalog/view/theme/theme555/template/account/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 761
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 274
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 284
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 260
+FILE: catalog/view/theme/theme555/template/affiliate/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 394
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 108
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 118
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 94
+FILE: catalog/view/theme/theme555/template/account/address_form.tpl
+CODE: <?php echo $footer; ?>
+LINE: 474
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 69
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 79
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 55
+FILE: catalog/view/theme/theme555/template/affiliate/edit.tpl
+CODE: <?php echo $footer; ?>
+LINE: 259
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 106
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 92
+FILE: catalog/view/theme/theme555/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 474
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 169
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 162
+FILE: catalog/view/theme/theme555/template/checkout/guest.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 485
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 179
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 167
+FILE: catalog/view/theme/theme555/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 341
+CODE: <label class="col-sm-2 control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
+FILE: catalog/view/theme/theme555/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 320
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 39
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 46
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 28
+FILE: catalog/view/theme/theme555/template/checkout/shipping_address.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 340
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
+----------------------------------------------------------------
+MOD: Export/Import Tool (V3.5) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 9
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 115
+FILE: admin/language/de-DE/common/menu.php
+CODE: $_['text_backup']
+LINE: 15
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 6
+FILE: admin/language/portuguese-br/common/menu.php
+CODE: $_['text_backup']
+LINE: 6
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 7
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+NOT FOUND!
+----------------------------------------------------------------
+MOD: TM Bestseller
+FILE: catalog/controller/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: 'rating'      => $rating,
+LINE: 70
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 44
+FILE: catalog/language/de-DE/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 25
+FILE: catalog/language/english/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+FILE: catalog/language/portuguese-br/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+FILE: catalog/language/russian/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 27
+CODE: $_['text_tax']      = 'Без НДС:';
+LINE: 20
+----------------------------------------------------------------
+MOD: TM Description fo banners
+FILE: admin/controller/design/banner.php
+CODE: $data['button_remove'] = $this->language->get('button_remove');
+LINE: 279
+CODE: $data['banner_images'][] = array(
+LINE: 385
+FILE: admin/model/design/banner.php
+CODE: $this->db->escape($banner_image_description['title']) . "'");
+LINE: 16
+LINE: 41
+CODE: $banner_image_description_data[$banner_image_description['language_id']] = array('title' => $banner_image_description['title']);
+LINE: 113
+CODE: 'banner_image_description' => $banner_image_description_data,
+LINE: 120
+FILE: admin/language/de-DE/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/language/english/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+LINE: 22
+FILE: admin/language/portuguese-br/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/language/russian/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <td class="text-left"><?php echo $entry_title; ?></td>
+LINE: 53
+CODE: <input type="text" name="banner_image[<?php echo $image_row; ?>][link]" value="<?php echo $banner_image['link']; ?>" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>
+LINE: 83
+CODE: html += '  <td class="text-left"><input type="text" name="banner_image[' + image_row + '][link]" value="" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>';
 LINE: 122
+FILE: catalog/controller/module/banner.php
+CODE: 'title' => $result['title'],
+LINE: 22
+FILE: catalog/controller/module/tm_slideshow.php
+CODE: 'title' => $result['title'],
+LINE: 21
+FILE: catalog/controller/module/parallax.php
+CODE: 'title' => $result['title'],
+LINE: 25
+----------------------------------------------------------------
+MOD: TM Featured 
+FILE: catalog/controller/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 68
+CODE: 'rating'      => $rating,
+LINE: 76
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 48
+FILE: catalog/language/de-DE/module/featured.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['heading_title'] = 'Featured';
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Footer
+FILE: catalog/controller/common/footer.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 18
+FILE: catalog/language/de-DE/common/footer.php
+CODE: $_['text_information']
+LINE: 15
+FILE: catalog/language/english/common/footer.php
+CODE: $_['text_information']
+LINE: 7
+FILE: catalog/language/portuguese-br/common/footer.php
+CODE: $_['text_information']
+LINE: 7
+FILE: catalog/language/russian/common/footer.php
+CODE: $_['text_information']
+LINE: 9
+----------------------------------------------------------------
+MOD: TM Footer Position
+CODE: $data['text_information'] = $this->language->get('text_information');
+LINE: 8
+CODE: $data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+LINE: 66
+FILE: catalog/view/theme/default/template/common/footer.tpl
+CODE: <div class="col-sm-4">
+NOT FOUND!
+FILE: catalog/view/theme/theme555/template/common/footer.tpl
+CODE: <div class="col-sm-4">
+NOT FOUND!
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <?php if ($layout_module['position'] == 'content_top') { ?>
+LINE: 113
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 189
+FILE: admin/controller/design/layout.php
+CODE: $data['text_content_top'] = $this->language->get('text_content_top');
+LINE: 265
+FILE: admin/language/english/design/layout.php
+CODE: $_['text_content_top']    = 'Content Top';
+LINE: 10
+----------------------------------------------------------------
+MOD: TM Header
+FILE: catalog/controller/common/header.php
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 20
+CODE: $data['text_all'] = $this->language->get('text_all');
+LINE: 75
+CODE: $data['telephone'] = $this->config->get('config_telephone');
+LINE: 90
+CODE: $this->load->language('common/header');
+LINE: 52
+FILE: catalog/language/english/common/header.php
+CODE: $_['text_checkout']       = 'Checkout';
+NOT FOUND!
+----------------------------------------------------------------
+MOD: TM Header Cart
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_loading'] = $this->language->get('text_loading');
+LINE: 46
+FILE: catalog/language/de-DE/common/cart.php
+CODE: $_['text_items']
+LINE: 14
+FILE: catalog/language/english/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/portuguese-br/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/russian/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/de-DE/checkout/cart.php
+CODE: $_['text_items']
+LINE: 20
+FILE: catalog/language/english/checkout/cart.php
+CODE: $_['text_items']
+LINE: 12
+FILE: catalog/language/portuguese-br/checkout/cart.php
+CODE: $_['text_items']
+LINE: 12
+FILE: catalog/language/russian/checkout/cart.php
+CODE: $_['text_items']
+LINE: 20
+CODE: $_['text_recurring']
+LINE: 21
+CODE: $_['text_recurring']
+LINE: 13
+----------------------------------------------------------------
+MOD: TM Header Top Position on Home page
+FILE: catalog/controller/common/home.php
+CODE: $data['content_top'] = $this->load->controller('common/content_top');
+LINE: 13
+FILE: catalog/view/theme/default/template/common/home.tpl
+CODE: <?php echo $header; ?>
+LINE: 0
+FILE: catalog/view/theme/theme555/template/common/home.tpl
+CODE: <?php echo $header; ?>
+LINE: 0
+CODE: <?php if ($layout_module['position'] == 'content_top') { ?>
+LINE: 120
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 196
+CODE: $data['text_content_top'] = $this->language->get('text_content_top');
+LINE: 265
+CODE: $_['text_content_top']    = 'Content Top';
+LINE: 10
+----------------------------------------------------------------
+MOD: TM latest 
+CODE: $data['products'][] = array(
+LINE: 86
+CODE: 'rating'      => $rating,
+LINE: 96
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 51
+FILE: catalog/language/de-DE/module/latest.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Lazy load
+CODE: 'thumb'       => $image,
+LINE: 95
+CODE: 'thumb'       => $image,
+LINE: 89
+CODE: 'thumb'       => $image,
+LINE: 115
+FILE: catalog/controller/module/special.php
+CODE: 'thumb'       => $image,
+LINE: 62
+FILE: catalog/controller/module/tm_module_tab.php
+CODE: 'thumb'       => $image,
+LINE: 71
+LINE: 132
+LINE: 186
+LINE: 246
+CODE: 'thumb'       => $image,
+LINE: 215
+FILE: catalog/controller/product/compare.php
+CODE: 'thumb'       => $image,
+NOT FOUND!
+CODE: 'thumb'       => $image,
+LINE: 236
+CODE: 'thumb'       => $image,
+LINE: 514
+CODE: 'thumb'       => $image,
+LINE: 248
+FILE: catalog/controller/product/special.php
+CODE: 'thumb'       => $image,
+LINE: 133
+----------------------------------------------------------------
+MOD: TM Live search
+CODE: class ControllerProductSearch extends Controller {
+LINE: 1
+FILE: catalog/language/english/common/search.php
+CODE: $_['text_search'] = 'Search';
+LINE: 2
+FILE: catalog/language/de-DE/common/search.php
+CODE: $_['text_search']	= 'Suche';
+LINE: 10
+FILE: catalog/language/russian/common/search.php
+CODE: $_['text_search'] = 'Поиск';
+LINE: 2
+----------------------------------------------------------------
+MOD: Tm PathTheme
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 20
+CODE: $this->load->language('common/footer');
+LINE: 3
+FILE: catalog/controller/account/recurring.php
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 46
+----------------------------------------------------------------
+MOD: TM Product Category image
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+LINE: 163
+CODE: $data['categories'][] = array(
+LINE: 162
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 116
+FILE: catalog/language/english/product/category.php
+CODE: $_['text_limit']
+LINE: 24
+FILE: catalog/language/de-DE/product/category.php
+CODE: $_['text_limit']
+LINE: 32
+FILE: catalog/language/russian/product/category.php
+CODE: $_['text_limit']
+LINE: 24
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 82
+FILE: catalog/language/english/product/special.php
+CODE: $_['text_limit']
+LINE: 24
+FILE: catalog/language/de-DE/product/special.php
+CODE: $_['text_limit']
+LINE: 32
+FILE: catalog/language/russian/product/special.php
+CODE: $_['text_limit']
+LINE: 24
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 205
+FILE: catalog/language/english/product/search.php
+CODE: $_['text_limit']
+LINE: 30
+FILE: catalog/language/de-DE/product/search.php
+CODE: $_['text_limit']
+LINE: 37
+FILE: catalog/language/russian/product/search.php
+CODE: $_['text_limit']
+NOT FOUND!
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 165
+FILE: catalog/language/english/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 27
+FILE: catalog/language/de-DE/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 35
+FILE: catalog/language/russian/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 53
+----------------------------------------------------------------
+MOD: TM Special 
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: 'rating'      => $rating,
+LINE: 81
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 51
+FILE: catalog/language/de-DE/module/special.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Stickers
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 122
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+CODE: $data['button_continue']
+LINE: 119
+LINE: 471
+CODE: $data['products'] = array();
+LINE: 175
+LINE: 418
+CODE: 'tax'         => $tax,
+LINE: 248
+CODE: $_['text_limit']
+LINE: 28
+CODE: $_['text_limit']
+LINE: 37
+CODE: $_['text_limit']
+LINE: 29
+CODE: $data['button_cart']
+LINE: 83
+CODE: $data['products'] = array();
+LINE: 93
+CODE: 'tax'         => $tax,
+LINE: 164
+CODE: $_['text_limit']
+LINE: 28
+CODE: $_['text_limit']
+LINE: 37
+CODE: $_['text_limit']
+LINE: 29
+CODE: $data['button_cart']
+LINE: 206
+CODE: $data['products'] = array();
+LINE: 253
+CODE: 'tax'         => $tax,
+LINE: 330
+CODE: $_['text_limit']
+LINE: 34
+CODE: $_['text_limit']
+LINE: 42
+CODE: $_['text_limit']
+NOT FOUND!
+CODE: $data['button_cart']
+LINE: 165
+CODE: $data['products'] = array();
+LINE: 175
+CODE: 'tax'         => $tax,
+LINE: 267
+CODE: $_['text_limit']
+LINE: 31
+CODE: $_['text_limit']
+LINE: 40
+CODE: $_['text_limit']
+LINE: 58
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 123
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 116
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 20
+CODE: $_['text_tax']
+LINE: 22
+LINE: 35
+LINE: 49
+CODE: $_['text_tax']
+LINE: 14
+LINE: 28
+LINE: 42
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 142
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+----------------------------------------------------------------
+MOD: TM Top Menu All Levels
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 178
+----------------------------------------------------------------
+2016-11-07 23:39:24 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+VQmod - Processing 'Category Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Category Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+VQmod - Processing 'Product Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Product Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+MOD: <font color="#00a99d"><b>Code Market - PagSeguro Lightbox com Segunda Via</b></font>
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/theme555/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/default/template/payment/pagseguro.tpl
+CODE: location = '<?php echo $url; ?>';
+LINE: 18
+FILE: catalog/language/english/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+FILE: catalog/language/portuguese-br/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+----------------------------------------------------------------
+MOD: Auto Completar Endereço Brasil
+FILE: catalog/model/localisation/zone.php
+CODE: public function getZone($zone_id) {
+LINE: 13
+FILE: catalog/controller/account/register.php
+CODE: public function customfield() {
+LINE: 446
+FILE: catalog/view/theme/theme555/template/account/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 761
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 274
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 284
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 260
+FILE: catalog/view/theme/theme555/template/affiliate/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 394
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 108
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 118
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 94
+FILE: catalog/view/theme/theme555/template/account/address_form.tpl
+CODE: <?php echo $footer; ?>
+LINE: 474
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 69
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 79
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 55
+FILE: catalog/view/theme/theme555/template/affiliate/edit.tpl
+CODE: <?php echo $footer; ?>
+LINE: 259
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 106
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 92
+FILE: catalog/view/theme/theme555/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 474
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 169
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 162
+FILE: catalog/view/theme/theme555/template/checkout/guest.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 485
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 179
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 167
+FILE: catalog/view/theme/theme555/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 341
+CODE: <label class="col-sm-2 control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
+FILE: catalog/view/theme/theme555/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 320
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 39
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 46
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 28
+FILE: catalog/view/theme/theme555/template/checkout/shipping_address.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 340
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
+----------------------------------------------------------------
+MOD: Export/Import Tool (V3.5) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 9
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 115
+FILE: admin/language/de-DE/common/menu.php
+CODE: $_['text_backup']
+LINE: 15
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 6
+FILE: admin/language/portuguese-br/common/menu.php
+CODE: $_['text_backup']
+LINE: 6
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 7
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+NOT FOUND!
+----------------------------------------------------------------
+MOD: TM Bestseller
+FILE: catalog/controller/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: 'rating'      => $rating,
+LINE: 70
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 44
+FILE: catalog/language/de-DE/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 25
+FILE: catalog/language/english/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+FILE: catalog/language/portuguese-br/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+FILE: catalog/language/russian/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 27
+CODE: $_['text_tax']      = 'Без НДС:';
+LINE: 20
+----------------------------------------------------------------
+MOD: TM Description fo banners
+FILE: admin/controller/design/banner.php
+CODE: $data['button_remove'] = $this->language->get('button_remove');
+LINE: 279
+CODE: $data['banner_images'][] = array(
+LINE: 385
+FILE: admin/model/design/banner.php
+CODE: $this->db->escape($banner_image_description['title']) . "'");
+LINE: 16
+LINE: 41
+CODE: $banner_image_description_data[$banner_image_description['language_id']] = array('title' => $banner_image_description['title']);
+LINE: 113
+CODE: 'banner_image_description' => $banner_image_description_data,
+LINE: 120
+FILE: admin/language/de-DE/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/language/english/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+LINE: 22
+FILE: admin/language/portuguese-br/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/language/russian/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <td class="text-left"><?php echo $entry_title; ?></td>
+LINE: 53
+CODE: <input type="text" name="banner_image[<?php echo $image_row; ?>][link]" value="<?php echo $banner_image['link']; ?>" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>
+LINE: 83
+CODE: html += '  <td class="text-left"><input type="text" name="banner_image[' + image_row + '][link]" value="" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>';
+LINE: 122
+FILE: catalog/controller/module/banner.php
+CODE: 'title' => $result['title'],
+LINE: 22
+FILE: catalog/controller/module/tm_slideshow.php
+CODE: 'title' => $result['title'],
+LINE: 21
+FILE: catalog/controller/module/parallax.php
+CODE: 'title' => $result['title'],
+LINE: 25
+----------------------------------------------------------------
+MOD: TM Featured 
+FILE: catalog/controller/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 68
+CODE: 'rating'      => $rating,
+LINE: 76
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 48
+FILE: catalog/language/de-DE/module/featured.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['heading_title'] = 'Featured';
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Footer
+FILE: catalog/controller/common/footer.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 18
+FILE: catalog/language/de-DE/common/footer.php
+CODE: $_['text_information']
+LINE: 15
+FILE: catalog/language/english/common/footer.php
+CODE: $_['text_information']
+LINE: 7
+FILE: catalog/language/portuguese-br/common/footer.php
+CODE: $_['text_information']
+LINE: 7
+FILE: catalog/language/russian/common/footer.php
+CODE: $_['text_information']
+LINE: 9
+----------------------------------------------------------------
+MOD: TM Footer Position
+CODE: $data['text_information'] = $this->language->get('text_information');
+LINE: 8
+CODE: $data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+LINE: 66
+FILE: catalog/view/theme/default/template/common/footer.tpl
+CODE: <div class="col-sm-4">
+NOT FOUND!
+FILE: catalog/view/theme/theme555/template/common/footer.tpl
+CODE: <div class="col-sm-4">
+NOT FOUND!
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <?php if ($layout_module['position'] == 'content_top') { ?>
+LINE: 113
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 189
+FILE: admin/controller/design/layout.php
+CODE: $data['text_content_top'] = $this->language->get('text_content_top');
+LINE: 265
+FILE: admin/language/english/design/layout.php
+CODE: $_['text_content_top']    = 'Content Top';
+LINE: 10
+----------------------------------------------------------------
+MOD: TM Header
+FILE: catalog/controller/common/header.php
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 20
+CODE: $data['text_all'] = $this->language->get('text_all');
+LINE: 75
+CODE: $data['telephone'] = $this->config->get('config_telephone');
+LINE: 90
+CODE: $this->load->language('common/header');
+LINE: 52
+FILE: catalog/language/english/common/header.php
+CODE: $_['text_checkout']       = 'Checkout';
+NOT FOUND!
+----------------------------------------------------------------
+MOD: TM Header Cart
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_loading'] = $this->language->get('text_loading');
+LINE: 46
+FILE: catalog/language/de-DE/common/cart.php
+CODE: $_['text_items']
+LINE: 14
+FILE: catalog/language/english/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/portuguese-br/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/russian/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/de-DE/checkout/cart.php
+CODE: $_['text_items']
+LINE: 20
+FILE: catalog/language/english/checkout/cart.php
+CODE: $_['text_items']
+LINE: 12
+FILE: catalog/language/portuguese-br/checkout/cart.php
+CODE: $_['text_items']
+LINE: 12
+FILE: catalog/language/russian/checkout/cart.php
+CODE: $_['text_items']
+LINE: 20
+CODE: $_['text_recurring']
+LINE: 21
+CODE: $_['text_recurring']
+LINE: 13
+----------------------------------------------------------------
+MOD: TM Header Top Position on Home page
+FILE: catalog/controller/common/home.php
+CODE: $data['content_top'] = $this->load->controller('common/content_top');
+LINE: 13
+FILE: catalog/view/theme/default/template/common/home.tpl
+CODE: <?php echo $header; ?>
+LINE: 0
+FILE: catalog/view/theme/theme555/template/common/home.tpl
+CODE: <?php echo $header; ?>
+LINE: 0
+CODE: <?php if ($layout_module['position'] == 'content_top') { ?>
+LINE: 120
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 196
+CODE: $data['text_content_top'] = $this->language->get('text_content_top');
+LINE: 265
+CODE: $_['text_content_top']    = 'Content Top';
+LINE: 10
+----------------------------------------------------------------
+MOD: TM latest 
+CODE: $data['products'][] = array(
+LINE: 86
+CODE: 'rating'      => $rating,
+LINE: 96
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 51
+FILE: catalog/language/de-DE/module/latest.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Lazy load
+CODE: 'thumb'       => $image,
+LINE: 95
+CODE: 'thumb'       => $image,
+LINE: 89
+CODE: 'thumb'       => $image,
+LINE: 115
+FILE: catalog/controller/module/special.php
+CODE: 'thumb'       => $image,
+LINE: 62
+FILE: catalog/controller/module/tm_module_tab.php
+CODE: 'thumb'       => $image,
+LINE: 71
+LINE: 132
+LINE: 186
+LINE: 246
+CODE: 'thumb'       => $image,
+LINE: 215
+FILE: catalog/controller/product/compare.php
+CODE: 'thumb'       => $image,
+NOT FOUND!
+CODE: 'thumb'       => $image,
+LINE: 236
+CODE: 'thumb'       => $image,
+LINE: 514
+CODE: 'thumb'       => $image,
+LINE: 248
+FILE: catalog/controller/product/special.php
+CODE: 'thumb'       => $image,
+LINE: 133
+----------------------------------------------------------------
+MOD: TM Live search
+CODE: class ControllerProductSearch extends Controller {
+LINE: 1
+FILE: catalog/language/english/common/search.php
+CODE: $_['text_search'] = 'Search';
+LINE: 2
+FILE: catalog/language/de-DE/common/search.php
+CODE: $_['text_search']	= 'Suche';
+LINE: 10
+FILE: catalog/language/russian/common/search.php
+CODE: $_['text_search'] = 'Поиск';
+LINE: 2
+----------------------------------------------------------------
+MOD: Tm PathTheme
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 20
+CODE: $this->load->language('common/footer');
+LINE: 3
+FILE: catalog/controller/account/recurring.php
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 46
+----------------------------------------------------------------
+MOD: TM Product Category image
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+LINE: 163
+CODE: $data['categories'][] = array(
+LINE: 162
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 116
+FILE: catalog/language/english/product/category.php
+CODE: $_['text_limit']
+LINE: 24
+FILE: catalog/language/de-DE/product/category.php
+CODE: $_['text_limit']
+LINE: 32
+FILE: catalog/language/russian/product/category.php
+CODE: $_['text_limit']
+LINE: 24
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 82
+FILE: catalog/language/english/product/special.php
+CODE: $_['text_limit']
+LINE: 24
+FILE: catalog/language/de-DE/product/special.php
+CODE: $_['text_limit']
+LINE: 32
+FILE: catalog/language/russian/product/special.php
+CODE: $_['text_limit']
+LINE: 24
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 205
+FILE: catalog/language/english/product/search.php
+CODE: $_['text_limit']
+LINE: 30
+FILE: catalog/language/de-DE/product/search.php
+CODE: $_['text_limit']
+LINE: 37
+FILE: catalog/language/russian/product/search.php
+CODE: $_['text_limit']
+NOT FOUND!
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 165
+FILE: catalog/language/english/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 27
+FILE: catalog/language/de-DE/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 35
+FILE: catalog/language/russian/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 53
+----------------------------------------------------------------
+MOD: TM Special 
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: 'rating'      => $rating,
+LINE: 81
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 51
+FILE: catalog/language/de-DE/module/special.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Stickers
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 122
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+CODE: $data['button_continue']
+LINE: 119
+LINE: 471
+CODE: $data['products'] = array();
+LINE: 175
+LINE: 418
+CODE: 'tax'         => $tax,
+LINE: 248
+CODE: $_['text_limit']
+LINE: 28
+CODE: $_['text_limit']
+LINE: 37
+CODE: $_['text_limit']
+LINE: 29
+CODE: $data['button_cart']
+LINE: 83
+CODE: $data['products'] = array();
+LINE: 93
+CODE: 'tax'         => $tax,
+LINE: 164
+CODE: $_['text_limit']
+LINE: 28
+CODE: $_['text_limit']
+LINE: 37
+CODE: $_['text_limit']
+LINE: 29
+CODE: $data['button_cart']
+LINE: 206
+CODE: $data['products'] = array();
+LINE: 253
+CODE: 'tax'         => $tax,
+LINE: 330
+CODE: $_['text_limit']
+LINE: 34
+CODE: $_['text_limit']
+LINE: 42
+CODE: $_['text_limit']
+NOT FOUND!
+CODE: $data['button_cart']
+LINE: 165
+CODE: $data['products'] = array();
+LINE: 175
+CODE: 'tax'         => $tax,
+LINE: 267
+CODE: $_['text_limit']
+LINE: 31
+CODE: $_['text_limit']
+LINE: 40
+CODE: $_['text_limit']
+LINE: 58
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 123
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 116
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 20
+CODE: $_['text_tax']
+LINE: 22
+LINE: 35
+LINE: 49
+CODE: $_['text_tax']
+LINE: 14
+LINE: 28
+LINE: 42
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 142
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+----------------------------------------------------------------
+MOD: TM Top Menu All Levels
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 178
+----------------------------------------------------------------
+2016-11-24 3:12:16 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+VQmod - Processing 'Category Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Category Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+VQmod - Processing 'Product Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Product Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+MOD: <font color="#00a99d"><b>Code Market - PagSeguro Lightbox com Segunda Via</b></font>
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/theme555/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/default/template/payment/pagseguro.tpl
+CODE: location = '<?php echo $url; ?>';
+LINE: 18
+FILE: catalog/language/english/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+FILE: catalog/language/portuguese-br/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+----------------------------------------------------------------
+MOD: Auto Completar Endereço Brasil
+FILE: catalog/model/localisation/zone.php
+CODE: public function getZone($zone_id) {
+LINE: 13
+FILE: catalog/controller/account/register.php
+CODE: public function customfield() {
+LINE: 446
+FILE: catalog/view/theme/theme555/template/account/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 761
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 274
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 284
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 260
+FILE: catalog/view/theme/theme555/template/affiliate/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 394
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 108
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 118
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 94
+FILE: catalog/view/theme/theme555/template/account/address_form.tpl
+CODE: <?php echo $footer; ?>
+LINE: 474
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 69
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 79
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 55
+FILE: catalog/view/theme/theme555/template/affiliate/edit.tpl
+CODE: <?php echo $footer; ?>
+LINE: 259
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 106
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 92
+FILE: catalog/view/theme/theme555/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 474
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 169
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 162
+FILE: catalog/view/theme/theme555/template/checkout/guest.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 485
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 179
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 167
+FILE: catalog/view/theme/theme555/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 341
+CODE: <label class="col-sm-2 control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
+FILE: catalog/view/theme/theme555/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 320
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 39
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 46
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 28
+FILE: catalog/view/theme/theme555/template/checkout/shipping_address.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 340
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
+----------------------------------------------------------------
+MOD: Coupon Checkout Page
+FILE: catalog/controller/checkout/checkout.php
+CODE: $this->load->language('checkout/checkout');
+LINE: 25
+FILE: catalog/controller/checkout/shipping_method.php
+CODE: if (empty($this->session->data['shipping_methods'])) {
+LINE: 61
+CODE: public function index() {
+LINE: 67
+FILE: catalog/view/theme/default/template/checkout/shipping_method.tpl
+CODE: <div class="buttons">
+LINE: 78
+FILE: catalog/view/theme/theme555/template/checkout/shipping_method.tpl
+CODE: <div class="buttons">
+LINE: 78
+----------------------------------------------------------------
+MOD: Export/Import Tool (V3.5) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 9
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 115
+FILE: admin/language/de-DE/common/menu.php
+CODE: $_['text_backup']
+LINE: 15
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 6
+FILE: admin/language/portuguese-br/common/menu.php
+CODE: $_['text_backup']
+LINE: 6
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 7
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+NOT FOUND!
+----------------------------------------------------------------
+MOD: TM Bestseller
+FILE: catalog/controller/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: 'rating'      => $rating,
+LINE: 70
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 44
+FILE: catalog/language/de-DE/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 25
+FILE: catalog/language/english/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+FILE: catalog/language/portuguese-br/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+FILE: catalog/language/russian/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 27
+CODE: $_['text_tax']      = 'Без НДС:';
+LINE: 20
+----------------------------------------------------------------
+MOD: TM Description fo banners
+FILE: admin/controller/design/banner.php
+CODE: $data['button_remove'] = $this->language->get('button_remove');
+LINE: 279
+CODE: $data['banner_images'][] = array(
+LINE: 385
+FILE: admin/model/design/banner.php
+CODE: $this->db->escape($banner_image_description['title']) . "'");
+LINE: 16
+LINE: 41
+CODE: $banner_image_description_data[$banner_image_description['language_id']] = array('title' => $banner_image_description['title']);
+LINE: 113
+CODE: 'banner_image_description' => $banner_image_description_data,
+LINE: 120
+FILE: admin/language/de-DE/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/language/english/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+LINE: 22
+FILE: admin/language/portuguese-br/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/language/russian/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <td class="text-left"><?php echo $entry_title; ?></td>
+LINE: 53
+CODE: <input type="text" name="banner_image[<?php echo $image_row; ?>][link]" value="<?php echo $banner_image['link']; ?>" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>
+LINE: 83
+CODE: html += '  <td class="text-left"><input type="text" name="banner_image[' + image_row + '][link]" value="" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>';
+LINE: 122
+FILE: catalog/controller/module/banner.php
+CODE: 'title' => $result['title'],
+LINE: 22
+FILE: catalog/controller/module/tm_slideshow.php
+CODE: 'title' => $result['title'],
+LINE: 21
+FILE: catalog/controller/module/parallax.php
+CODE: 'title' => $result['title'],
+LINE: 25
+----------------------------------------------------------------
+MOD: TM Featured 
+FILE: catalog/controller/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 68
+CODE: 'rating'      => $rating,
+LINE: 76
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 48
+FILE: catalog/language/de-DE/module/featured.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['heading_title'] = 'Featured';
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Footer
+FILE: catalog/controller/common/footer.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 18
+FILE: catalog/language/de-DE/common/footer.php
+CODE: $_['text_information']
+LINE: 15
+FILE: catalog/language/english/common/footer.php
+CODE: $_['text_information']
+LINE: 7
+FILE: catalog/language/portuguese-br/common/footer.php
+CODE: $_['text_information']
+LINE: 7
+FILE: catalog/language/russian/common/footer.php
+CODE: $_['text_information']
+LINE: 9
+----------------------------------------------------------------
+MOD: TM Footer Position
+CODE: $data['text_information'] = $this->language->get('text_information');
+LINE: 8
+CODE: $data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+LINE: 66
+FILE: catalog/view/theme/default/template/common/footer.tpl
+CODE: <div class="col-sm-4">
+NOT FOUND!
+FILE: catalog/view/theme/theme555/template/common/footer.tpl
+CODE: <div class="col-sm-4">
+NOT FOUND!
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <?php if ($layout_module['position'] == 'content_top') { ?>
+LINE: 113
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 189
+FILE: admin/controller/design/layout.php
+CODE: $data['text_content_top'] = $this->language->get('text_content_top');
+LINE: 265
+FILE: admin/language/english/design/layout.php
+CODE: $_['text_content_top']    = 'Content Top';
+LINE: 10
+----------------------------------------------------------------
+MOD: TM Header
+FILE: catalog/controller/common/header.php
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 20
+CODE: $data['text_all'] = $this->language->get('text_all');
+LINE: 75
+CODE: $data['telephone'] = $this->config->get('config_telephone');
+LINE: 90
+CODE: $this->load->language('common/header');
+LINE: 52
+FILE: catalog/language/english/common/header.php
+CODE: $_['text_checkout']       = 'Checkout';
+NOT FOUND!
+----------------------------------------------------------------
+MOD: TM Header Cart
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_loading'] = $this->language->get('text_loading');
+LINE: 46
+FILE: catalog/language/de-DE/common/cart.php
+CODE: $_['text_items']
+LINE: 14
+FILE: catalog/language/english/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/portuguese-br/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/russian/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/de-DE/checkout/cart.php
+CODE: $_['text_items']
+LINE: 20
+FILE: catalog/language/english/checkout/cart.php
+CODE: $_['text_items']
+LINE: 12
+FILE: catalog/language/portuguese-br/checkout/cart.php
+CODE: $_['text_items']
+LINE: 12
+FILE: catalog/language/russian/checkout/cart.php
+CODE: $_['text_items']
+LINE: 20
+CODE: $_['text_recurring']
+LINE: 21
+CODE: $_['text_recurring']
+LINE: 13
+----------------------------------------------------------------
+MOD: TM Header Top Position on Home page
+FILE: catalog/controller/common/home.php
+CODE: $data['content_top'] = $this->load->controller('common/content_top');
+LINE: 13
+FILE: catalog/view/theme/default/template/common/home.tpl
+CODE: <?php echo $header; ?>
+LINE: 0
+FILE: catalog/view/theme/theme555/template/common/home.tpl
+CODE: <?php echo $header; ?>
+LINE: 0
+CODE: <?php if ($layout_module['position'] == 'content_top') { ?>
+LINE: 120
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 196
+CODE: $data['text_content_top'] = $this->language->get('text_content_top');
+LINE: 265
+CODE: $_['text_content_top']    = 'Content Top';
+LINE: 10
+----------------------------------------------------------------
+MOD: TM latest 
+CODE: $data['products'][] = array(
+LINE: 86
+CODE: 'rating'      => $rating,
+LINE: 96
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 51
+FILE: catalog/language/de-DE/module/latest.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Lazy load
+CODE: 'thumb'       => $image,
+LINE: 95
+CODE: 'thumb'       => $image,
+LINE: 89
+CODE: 'thumb'       => $image,
+LINE: 115
+FILE: catalog/controller/module/special.php
+CODE: 'thumb'       => $image,
+LINE: 62
+FILE: catalog/controller/module/tm_module_tab.php
+CODE: 'thumb'       => $image,
+LINE: 71
+LINE: 132
+LINE: 186
+LINE: 246
+CODE: 'thumb'       => $image,
+LINE: 215
+FILE: catalog/controller/product/compare.php
+CODE: 'thumb'       => $image,
+NOT FOUND!
+CODE: 'thumb'       => $image,
+LINE: 236
+CODE: 'thumb'       => $image,
+LINE: 514
+CODE: 'thumb'       => $image,
+LINE: 248
+FILE: catalog/controller/product/special.php
+CODE: 'thumb'       => $image,
+LINE: 133
+----------------------------------------------------------------
+MOD: TM Live search
+CODE: class ControllerProductSearch extends Controller {
+LINE: 1
+FILE: catalog/language/english/common/search.php
+CODE: $_['text_search'] = 'Search';
+LINE: 2
+FILE: catalog/language/de-DE/common/search.php
+CODE: $_['text_search']	= 'Suche';
+LINE: 10
+FILE: catalog/language/russian/common/search.php
+CODE: $_['text_search'] = 'Поиск';
+LINE: 2
+----------------------------------------------------------------
+MOD: Tm PathTheme
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 20
+CODE: $this->load->language('common/footer');
+LINE: 3
+FILE: catalog/controller/account/recurring.php
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 46
+----------------------------------------------------------------
+MOD: TM Product Category image
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+LINE: 163
+CODE: $data['categories'][] = array(
+LINE: 162
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 116
+FILE: catalog/language/english/product/category.php
+CODE: $_['text_limit']
+LINE: 24
+FILE: catalog/language/de-DE/product/category.php
+CODE: $_['text_limit']
+LINE: 32
+FILE: catalog/language/russian/product/category.php
+CODE: $_['text_limit']
+LINE: 24
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 82
+FILE: catalog/language/english/product/special.php
+CODE: $_['text_limit']
+LINE: 24
+FILE: catalog/language/de-DE/product/special.php
+CODE: $_['text_limit']
+LINE: 32
+FILE: catalog/language/russian/product/special.php
+CODE: $_['text_limit']
+LINE: 24
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 205
+FILE: catalog/language/english/product/search.php
+CODE: $_['text_limit']
+LINE: 30
+FILE: catalog/language/de-DE/product/search.php
+CODE: $_['text_limit']
+LINE: 37
+FILE: catalog/language/russian/product/search.php
+CODE: $_['text_limit']
+NOT FOUND!
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 165
+FILE: catalog/language/english/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 27
+FILE: catalog/language/de-DE/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 35
+FILE: catalog/language/russian/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 53
+----------------------------------------------------------------
+MOD: TM Special 
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: 'rating'      => $rating,
+LINE: 81
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 51
+FILE: catalog/language/de-DE/module/special.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Stickers
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 122
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+CODE: $data['button_continue']
+LINE: 119
+LINE: 471
+CODE: $data['products'] = array();
+LINE: 175
+LINE: 418
+CODE: 'tax'         => $tax,
+LINE: 248
+CODE: $_['text_limit']
+LINE: 28
+CODE: $_['text_limit']
+LINE: 37
+CODE: $_['text_limit']
+LINE: 29
+CODE: $data['button_cart']
+LINE: 83
+CODE: $data['products'] = array();
+LINE: 93
+CODE: 'tax'         => $tax,
+LINE: 164
+CODE: $_['text_limit']
+LINE: 28
+CODE: $_['text_limit']
+LINE: 37
+CODE: $_['text_limit']
+LINE: 29
+CODE: $data['button_cart']
+LINE: 206
+CODE: $data['products'] = array();
+LINE: 253
+CODE: 'tax'         => $tax,
+LINE: 330
+CODE: $_['text_limit']
+LINE: 34
+CODE: $_['text_limit']
+LINE: 42
+CODE: $_['text_limit']
+NOT FOUND!
+CODE: $data['button_cart']
+LINE: 165
+CODE: $data['products'] = array();
+LINE: 175
+CODE: 'tax'         => $tax,
+LINE: 267
+CODE: $_['text_limit']
+LINE: 31
+CODE: $_['text_limit']
+LINE: 40
+CODE: $_['text_limit']
+LINE: 58
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 123
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 116
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 20
+CODE: $_['text_tax']
+LINE: 22
+LINE: 35
+LINE: 49
+CODE: $_['text_tax']
+LINE: 14
+LINE: 28
+LINE: 42
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 142
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+----------------------------------------------------------------
+MOD: TM Top Menu All Levels
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 178
+----------------------------------------------------------------
+2016-11-24 3:16:16 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+VQmod - Processing 'Category Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Category Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+VQmod - Processing 'Product Password - OpenCart 2.x core file modifications'
+VQmod - Done 'Product Password - OpenCart 2.x core file modifications'
+----------------------------------------------------------------
+MOD: <font color="#00a99d"><b>Code Market - PagSeguro Lightbox com Segunda Via</b></font>
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/theme555/template/checkout/checkout.tpl
+CODE: <?php echo $footer; ?>
+LINE: 779
+FILE: catalog/view/theme/default/template/payment/pagseguro.tpl
+CODE: location = '<?php echo $url; ?>';
+LINE: 18
+FILE: catalog/language/english/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+FILE: catalog/language/portuguese-br/payment/pagseguro.php
+CODE: $_['button_confirm_pagseguro'] 	= 'Confirmar e ir para o PagSeguro';
+LINE: 2
+----------------------------------------------------------------
+MOD: Auto Completar Endereço Brasil
+FILE: catalog/model/localisation/zone.php
+CODE: public function getZone($zone_id) {
+LINE: 13
+FILE: catalog/controller/account/register.php
+CODE: public function customfield() {
+LINE: 446
+FILE: catalog/view/theme/theme555/template/account/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 761
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 274
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 284
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 260
+FILE: catalog/view/theme/theme555/template/affiliate/register.tpl
+CODE: <?php echo $footer; ?>
+LINE: 394
+CODE: <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 108
+CODE: <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 118
+CODE: <label class="col-sm-3 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 94
+FILE: catalog/view/theme/theme555/template/account/address_form.tpl
+CODE: <?php echo $footer; ?>
+LINE: 474
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 69
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 79
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 55
+FILE: catalog/view/theme/theme555/template/affiliate/edit.tpl
+CODE: <?php echo $footer; ?>
+LINE: 259
+CODE: <label class="col-sm-2 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 106
+CODE: <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 92
+FILE: catalog/view/theme/theme555/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 474
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 169
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 162
+FILE: catalog/view/theme/theme555/template/checkout/guest.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 485
+CODE: <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 174
+CODE: <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 179
+CODE: <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 167
+FILE: catalog/view/theme/theme555/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 341
+CODE: <label class="col-sm-2 control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
+FILE: catalog/view/theme/theme555/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 320
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 39
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 46
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 28
+FILE: catalog/view/theme/theme555/template/checkout/shipping_address.tpl
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 340
+CODE: <label class="col-sm-2 control-label" for="input-shipping-postcode"><?php echo $entry_postcode; ?></label>
+LINE: 64
+CODE: <label class="col-sm-2 control-label" for="input-shipping-country"><?php echo $entry_country; ?></label>
+LINE: 71
+CODE: <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
+LINE: 53
+----------------------------------------------------------------
+MOD: Coupon Checkout Page
+FILE: catalog/controller/checkout/checkout.php
+CODE: $this->load->language('checkout/checkout');
+LINE: 25
+FILE: catalog/controller/checkout/shipping_method.php
+CODE: if (empty($this->session->data['shipping_methods'])) {
+LINE: 61
+CODE: public function index() {
+LINE: 67
+FILE: catalog/view/theme/default/template/checkout/shipping_method.tpl
+CODE: <div class="buttons">
+LINE: 78
+FILE: catalog/view/theme/theme555/template/checkout/shipping_method.tpl
+CODE: <div class="buttons">
+LINE: 78
+----------------------------------------------------------------
+MOD: Export/Import Tool (V3.5) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 9
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 115
+FILE: admin/language/de-DE/common/menu.php
+CODE: $_['text_backup']
+LINE: 15
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 6
+FILE: admin/language/portuguese-br/common/menu.php
+CODE: $_['text_backup']
+LINE: 6
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 7
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+NOT FOUND!
+----------------------------------------------------------------
+MOD: TM Bestseller
+FILE: catalog/controller/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: 'rating'      => $rating,
+LINE: 70
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 44
+FILE: catalog/language/de-DE/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 25
+FILE: catalog/language/english/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+FILE: catalog/language/portuguese-br/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+FILE: catalog/language/russian/module/bestseller.php
+CODE: $_['heading_title']
+LINE: 17
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 27
+CODE: $_['text_tax']      = 'Без НДС:';
+LINE: 20
+----------------------------------------------------------------
+MOD: TM Description fo banners
+FILE: admin/controller/design/banner.php
+CODE: $data['button_remove'] = $this->language->get('button_remove');
+LINE: 279
+CODE: $data['banner_images'][] = array(
+LINE: 385
+FILE: admin/model/design/banner.php
+CODE: $this->db->escape($banner_image_description['title']) . "'");
+LINE: 16
+LINE: 41
+CODE: $banner_image_description_data[$banner_image_description['language_id']] = array('title' => $banner_image_description['title']);
+LINE: 113
+CODE: 'banner_image_description' => $banner_image_description_data,
+LINE: 120
+FILE: admin/language/de-DE/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/language/english/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+LINE: 22
+FILE: admin/language/portuguese-br/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/language/russian/design/banner.php
+CODE: $_['entry_sort_order']   = 'Sort Order';
+NOT FOUND!
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <td class="text-left"><?php echo $entry_title; ?></td>
+LINE: 53
+CODE: <input type="text" name="banner_image[<?php echo $image_row; ?>][link]" value="<?php echo $banner_image['link']; ?>" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>
+LINE: 83
+CODE: html += '  <td class="text-left"><input type="text" name="banner_image[' + image_row + '][link]" value="" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>';
+LINE: 122
+FILE: catalog/controller/module/banner.php
+CODE: 'title' => $result['title'],
+LINE: 22
+FILE: catalog/controller/module/tm_slideshow.php
+CODE: 'title' => $result['title'],
+LINE: 21
+FILE: catalog/controller/module/parallax.php
+CODE: 'title' => $result['title'],
+LINE: 25
+----------------------------------------------------------------
+MOD: TM Featured 
+FILE: catalog/controller/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 68
+CODE: 'rating'      => $rating,
+LINE: 76
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 48
+FILE: catalog/language/de-DE/module/featured.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/featured.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['heading_title'] = 'Featured';
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Footer
+FILE: catalog/controller/common/footer.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 18
+FILE: catalog/language/de-DE/common/footer.php
+CODE: $_['text_information']
+LINE: 15
+FILE: catalog/language/english/common/footer.php
+CODE: $_['text_information']
+LINE: 7
+FILE: catalog/language/portuguese-br/common/footer.php
+CODE: $_['text_information']
+LINE: 7
+FILE: catalog/language/russian/common/footer.php
+CODE: $_['text_information']
+LINE: 9
+----------------------------------------------------------------
+MOD: TM Footer Position
+CODE: $data['text_information'] = $this->language->get('text_information');
+LINE: 8
+CODE: $data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+LINE: 66
+FILE: catalog/view/theme/default/template/common/footer.tpl
+CODE: <div class="col-sm-4">
+NOT FOUND!
+FILE: catalog/view/theme/theme555/template/common/footer.tpl
+CODE: <div class="col-sm-4">
+NOT FOUND!
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <?php if ($layout_module['position'] == 'content_top') { ?>
+LINE: 113
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 189
+FILE: admin/controller/design/layout.php
+CODE: $data['text_content_top'] = $this->language->get('text_content_top');
+LINE: 265
+FILE: admin/language/english/design/layout.php
+CODE: $_['text_content_top']    = 'Content Top';
+LINE: 10
+----------------------------------------------------------------
+MOD: TM Header
+FILE: catalog/controller/common/header.php
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 20
+CODE: $data['text_all'] = $this->language->get('text_all');
+LINE: 75
+CODE: $data['telephone'] = $this->config->get('config_telephone');
+LINE: 90
+CODE: $this->load->language('common/header');
+LINE: 52
+FILE: catalog/language/english/common/header.php
+CODE: $_['text_checkout']       = 'Checkout';
+NOT FOUND!
+----------------------------------------------------------------
+MOD: TM Header Cart
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_loading'] = $this->language->get('text_loading');
+LINE: 46
+FILE: catalog/language/de-DE/common/cart.php
+CODE: $_['text_items']
+LINE: 14
+FILE: catalog/language/english/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/portuguese-br/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/russian/common/cart.php
+CODE: $_['text_items']
+LINE: 6
+FILE: catalog/language/de-DE/checkout/cart.php
+CODE: $_['text_items']
+LINE: 20
+FILE: catalog/language/english/checkout/cart.php
+CODE: $_['text_items']
+LINE: 12
+FILE: catalog/language/portuguese-br/checkout/cart.php
+CODE: $_['text_items']
+LINE: 12
+FILE: catalog/language/russian/checkout/cart.php
+CODE: $_['text_items']
+LINE: 20
+CODE: $_['text_recurring']
+LINE: 21
+CODE: $_['text_recurring']
+LINE: 13
+----------------------------------------------------------------
+MOD: TM Header Top Position on Home page
+FILE: catalog/controller/common/home.php
+CODE: $data['content_top'] = $this->load->controller('common/content_top');
+LINE: 13
+FILE: catalog/view/theme/default/template/common/home.tpl
+CODE: <?php echo $header; ?>
+LINE: 0
+FILE: catalog/view/theme/theme555/template/common/home.tpl
+CODE: <?php echo $header; ?>
+LINE: 0
+CODE: <?php if ($layout_module['position'] == 'content_top') { ?>
+LINE: 120
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 196
+CODE: $data['text_content_top'] = $this->language->get('text_content_top');
+LINE: 265
+CODE: $_['text_content_top']    = 'Content Top';
+LINE: 10
+----------------------------------------------------------------
+MOD: TM latest 
+CODE: $data['products'][] = array(
+LINE: 86
+CODE: 'rating'      => $rating,
+LINE: 96
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 51
+FILE: catalog/language/de-DE/module/latest.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/latest.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Lazy load
+CODE: 'thumb'       => $image,
+LINE: 95
+CODE: 'thumb'       => $image,
+LINE: 89
+CODE: 'thumb'       => $image,
+LINE: 115
+FILE: catalog/controller/module/special.php
+CODE: 'thumb'       => $image,
+LINE: 62
+FILE: catalog/controller/module/tm_module_tab.php
+CODE: 'thumb'       => $image,
+LINE: 71
+LINE: 132
+LINE: 186
+LINE: 246
+CODE: 'thumb'       => $image,
+LINE: 215
+FILE: catalog/controller/product/compare.php
+CODE: 'thumb'       => $image,
+NOT FOUND!
+CODE: 'thumb'       => $image,
+LINE: 236
+CODE: 'thumb'       => $image,
+LINE: 514
+CODE: 'thumb'       => $image,
+LINE: 248
+FILE: catalog/controller/product/special.php
+CODE: 'thumb'       => $image,
+LINE: 133
+----------------------------------------------------------------
+MOD: TM Live search
+CODE: class ControllerProductSearch extends Controller {
+LINE: 1
+FILE: catalog/language/english/common/search.php
+CODE: $_['text_search'] = 'Search';
+LINE: 2
+FILE: catalog/language/de-DE/common/search.php
+CODE: $_['text_search']	= 'Suche';
+LINE: 10
+FILE: catalog/language/russian/common/search.php
+CODE: $_['text_search'] = 'Поиск';
+LINE: 2
+----------------------------------------------------------------
+MOD: Tm PathTheme
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 20
+CODE: $this->load->language('common/footer');
+LINE: 3
+FILE: catalog/controller/account/recurring.php
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 46
+----------------------------------------------------------------
+MOD: TM Product Category image
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+LINE: 163
+CODE: $data['categories'][] = array(
+LINE: 162
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 116
+FILE: catalog/language/english/product/category.php
+CODE: $_['text_limit']
+LINE: 24
+FILE: catalog/language/de-DE/product/category.php
+CODE: $_['text_limit']
+LINE: 32
+FILE: catalog/language/russian/product/category.php
+CODE: $_['text_limit']
+LINE: 24
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 82
+FILE: catalog/language/english/product/special.php
+CODE: $_['text_limit']
+LINE: 24
+FILE: catalog/language/de-DE/product/special.php
+CODE: $_['text_limit']
+LINE: 32
+FILE: catalog/language/russian/product/special.php
+CODE: $_['text_limit']
+LINE: 24
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 205
+FILE: catalog/language/english/product/search.php
+CODE: $_['text_limit']
+LINE: 30
+FILE: catalog/language/de-DE/product/search.php
+CODE: $_['text_limit']
+LINE: 37
+FILE: catalog/language/russian/product/search.php
+CODE: $_['text_limit']
+NOT FOUND!
+CODE: $data['button_grid'] = $this->language->get('button_grid');
+LINE: 165
+FILE: catalog/language/english/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 27
+FILE: catalog/language/de-DE/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 35
+FILE: catalog/language/russian/product/manufacturer.php
+CODE: $_['text_limit']
+LINE: 53
+----------------------------------------------------------------
+MOD: TM Special 
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: 'rating'      => $rating,
+LINE: 81
+CODE: $this->load->model('tool/image');
+LINE: 15
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 9
+CODE: foreach ($results as $result) {
+LINE: 51
+FILE: catalog/language/de-DE/module/special.php
+CODE: $_['heading_title']
+LINE: 24
+FILE: catalog/language/english/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/portuguese-br/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+FILE: catalog/language/russian/module/special.php
+CODE: $_['heading_title']
+LINE: 16
+CODE: $_['text_tax']		= 'ohne Steuer';
+LINE: 26
+CODE: $_['text_tax']
+LINE: 23
+LINE: 45
+----------------------------------------------------------------
+MOD: TM Stickers
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 122
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+CODE: $data['button_continue']
+LINE: 119
+LINE: 471
+CODE: $data['products'] = array();
+LINE: 175
+LINE: 418
+CODE: 'tax'         => $tax,
+LINE: 248
+CODE: $_['text_limit']
+LINE: 28
+CODE: $_['text_limit']
+LINE: 37
+CODE: $_['text_limit']
+LINE: 29
+CODE: $data['button_cart']
+LINE: 83
+CODE: $data['products'] = array();
+LINE: 93
+CODE: 'tax'         => $tax,
+LINE: 164
+CODE: $_['text_limit']
+LINE: 28
+CODE: $_['text_limit']
+LINE: 37
+CODE: $_['text_limit']
+LINE: 29
+CODE: $data['button_cart']
+LINE: 206
+CODE: $data['products'] = array();
+LINE: 253
+CODE: 'tax'         => $tax,
+LINE: 330
+CODE: $_['text_limit']
+LINE: 34
+CODE: $_['text_limit']
+LINE: 42
+CODE: $_['text_limit']
+NOT FOUND!
+CODE: $data['button_cart']
+LINE: 165
+CODE: $data['products'] = array();
+LINE: 175
+CODE: 'tax'         => $tax,
+LINE: 267
+CODE: $_['text_limit']
+LINE: 31
+CODE: $_['text_limit']
+LINE: 40
+CODE: $_['text_limit']
+LINE: 58
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 123
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 19
+CODE: $_['text_tax']
+LINE: 22
+LINE: 34
+LINE: 48
+CODE: $_['text_tax']
+LINE: 23
+LINE: 31
+LINE: 53
+LINE: 61
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 116
+CODE: $_['text_tax']      = 'Ex Tax:';
+LINE: 20
+CODE: $_['text_tax']
+LINE: 22
+LINE: 35
+LINE: 49
+CODE: $_['text_tax']
+LINE: 14
+LINE: 28
+LINE: 42
+CODE: $data['heading_title']
+LINE: 8
+CODE: $data['products'] = array();
+LINE: 42
+CODE: 'tax'         => $tax,
+LINE: 142
 CODE: $_['text_tax']      = 'Ex Tax:';
 LINE: 19
 CODE: $_['text_tax']
