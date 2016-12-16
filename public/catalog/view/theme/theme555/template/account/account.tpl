@@ -27,6 +27,7 @@ h2 {
 .icongrande {
   font-size: 64px;
   margin-bottom: 15px;
+  height: 35px;
 }
 a, a:visited {
     color: #131622;
