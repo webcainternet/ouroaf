@@ -29,7 +29,7 @@ h2 {
   margin-bottom: 15px;
   height: 35px;
 }
-a, a:visited {
+#content a, a:visited {
     color: #131622;
     outline: none;
 }
