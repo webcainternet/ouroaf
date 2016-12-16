@@ -144,7 +144,8 @@
       	<?php if ($logged) { ?>
 
         <div style="float: right; text-align: right;">
-          Olá <a href="/index.php?route=account/account">{NOME}</a> (<a href="">Sair</a>)</a> | 
+          Olá <a href="/index.php?route=account/account"><?php echo $this->customer->getFirstName(); ?></a> (<a href="">Sair</a>)</a> | 
+          <a href="/index.php?route=account/account">Minha Conta</a> | 
           <a href="/index.php?route=information/information&information_id=4">Quem Somos</a> | 
           <a href="/index.php?route=information/contact">Contato</a>
         </div>
@@ -152,7 +153,7 @@
         <?php } else { ?>
 
         <div style="float: right; text-align: right;">
-          <a href="/index.php?route=account/account">Minha Conta</a> | 
+          <a href="/index.php?route=account/account">Acessar Minha Conta</a> | 
           <a href="/index.php?route=information/information&information_id=4">Quem Somos</a> | 
           <a href="/index.php?route=information/contact">Contato</a>
         </div>
