@@ -1330,7 +1330,7 @@ div.required .control-label:before {
 .nav__primary {
   margin: 11px 0 5px;
   font: 300 14px/16px "Ubuntu", sans-serif;
-  background: #e1e2dd;
+  background: #dedede;
   /* background: rgba(254,254,254,1); */
   background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 50%, rgba(226,226,226,1) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,254,254,1)), color-stop(49%, rgba(209,209,209,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(100%, rgba(226,226,226,1)));

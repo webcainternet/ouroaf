@@ -18,7 +18,7 @@
 	height: 60px;
 }
 </style>
-<div style="background-color: #e1e2dd; margin-top: 10px;">
+<div style="background-color: #dedede; margin-top: 10px;">
 
 	<div style="margin: auto; padding: 30px 30px 15px 30px; width:1170px;max-width:100%;list-style:none; transition: none;overflow:hidden;color: #444;">
     <div class="header-bottom-item">

@@ -41,7 +41,7 @@
 
 .home-banner-3 {
 	height: 200px;
-  	background: #e1e2dd;
+  	background: #dedede;
 	color: #333;
 	opacity:0.7;
 	transition: color .2s ease-in-out;
@@ -114,7 +114,7 @@
 		<div class="home-banner home-banner-2">
 			<div style="    padding: 30px;
 		    text-align: center;
-		    background: #e1e2dd;
+		    background: #dedede;
 		    margin-top: 260px;
 		    font-size: 24px;
 		    color: #333;
