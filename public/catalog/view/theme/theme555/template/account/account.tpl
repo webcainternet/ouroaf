@@ -69,6 +69,7 @@ h2 {
         <a href="<?php echo $order; ?>"><div class="account-cubo">
           <i class="fa fa-history icongrande"></i><br>
           <?php echo $text_order; ?></div></a>
+    <?php /* 
         <a href="<?php echo $download; ?>"><div class="account-cubo">
           <i class="fa fa-download icongrande"></i><br>
           <?php echo $text_download; ?></div></a>
@@ -77,6 +78,7 @@ h2 {
           <i class="fa fa-bookmark icongrande"></i><br>
           <?php echo $text_reward; ?></div></a>
         <?php } ?>
+    */ ?>
         <a href="<?php echo $return; ?>"><div class="account-cubo">
           <i class="fa fa-ban icongrande"></i><br>
           <?php echo $text_return; ?></div></a>
@@ -85,7 +87,7 @@ h2 {
           <?php echo $text_transaction; ?></div></a>
         <a href="<?php echo $recurring; ?>"><div class="account-cubo">
           <i class="fa fa-circle-o-notch icongrande"></i><br>
-          <?php echo $text_recurring; ?></div></a>
+          Pagamentos parcelados</div></a>
 
       <h2 style="margin-top: 30px;"><?php echo $text_my_newsletter; ?></h2>
 
