@@ -1,7 +1,7 @@
 <?php echo $header; ?>
 <style>
 h2 {
-    border-left: solid 10px #f7b04a;
+    border-left: solid 10px #dedede;
     padding: 10px;
 }
 .account-cubo {
