@@ -29,10 +29,6 @@ h2 {
   margin-bottom: 15px;
   height: 35px;
 }
-#content a, a:visited {
-    color: #131622;
-    outline: none;
-}
 </style>
 
 <div class="container">
