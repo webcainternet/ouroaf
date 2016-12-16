@@ -144,7 +144,10 @@
       	<?php if ($logged) { ?>
 
         <div style="float: right; text-align: right;">
-          Olá <a href="/index.php?route=account/account"><?php echo $this->customer->getFirstName(); ?></a> (<a href="">Sair</a>)</a> | 
+          Olá <a href="/index.php?route=account/account">{}</a> (<a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>)</a> | 
+
+
+
           <a href="/index.php?route=account/account">Minha Conta</a> | 
           <a href="/index.php?route=information/information&information_id=4">Quem Somos</a> | 
           <a href="/index.php?route=information/contact">Contato</a>
