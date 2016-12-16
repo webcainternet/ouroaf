@@ -144,7 +144,7 @@
       	<?php if ($logged) { ?>
 
         <div style="float: right; text-align: right;">
-          Olá <a href="/index.php?route=account/account">{}</a> (<a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>)</a> | 
+          Olá <a href="/index.php?route=account/account"><?php echo $welcome_message; ?></a> (<a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>)</a> | 
 
 
 
