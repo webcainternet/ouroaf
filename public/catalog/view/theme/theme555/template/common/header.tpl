@@ -141,9 +141,24 @@
 
     <div class="pull-right" style="min-width:700px;">
       <div class="topmenu1">
+      	<?php if ($logged) { ?>
+
         <div style="float: right; text-align: right;">
-          <a href="/index.php?route=information/information&information_id=4">Quem Somos</a> | <a href="/index.php?route=account/account">Minha Conta</a> | <a href="/index.php?route=account/account">Área do Cliente</a> | <a href="/index.php?route=information/contact">Contato</a>
+          Olá <a href="/index.php?route=account/account">{NOME}</a> (<a href="">Sair</a>)</a> | 
+          <a href="/index.php?route=information/information&information_id=4">Quem Somos</a> | 
+          <a href="/index.php?route=information/contact">Contato</a>
         </div>
+
+        <?php } else { ?>
+
+        <div style="float: right; text-align: right;">
+          <a href="/index.php?route=account/account">Minha Conta</a> | 
+          <a href="/index.php?route=information/information&information_id=4">Quem Somos</a> | 
+          <a href="/index.php?route=information/contact">Contato</a>
+        </div>
+
+        <?php } ?>
+
       </div>
     </div>
 
