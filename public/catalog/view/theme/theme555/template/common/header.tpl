@@ -142,6 +142,10 @@
     <div class="pull-right" style="min-width:700px;">
       <div class="topmenu1">
       	<?php if ($logged) { ?>
+      		<?php
+      			$this->load->model('account/customer'); 
+      			$customer_firstname = $this->model_account_customer->getCustomer($this->customer->getId());
+  			?>
 
         <div style="float: right; text-align: right;">
           Olá <a href="/index.php?route=account/account"><?php echo $customer_firstname; ?></a> (<a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>)</a> | 
