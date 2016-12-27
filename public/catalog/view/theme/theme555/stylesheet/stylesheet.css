@@ -4016,3 +4016,16 @@ input#input-coupon {
 .rating {
   display: none;
 }
+
+
+@media (max-width: 1200px) {
+  .home-banner-1 {
+    width: 100% !important;
+  }
+  .home-banner-2 {
+    width: 100% !important;
+  }
+  .home-banner-3 {
+    width: 100% !important;
+  }
+}
