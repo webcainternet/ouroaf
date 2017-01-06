@@ -81,6 +81,29 @@ class ControllerProductSearch extends Controller {
 		);
 
 		$url = '';
+		/*sunflowerbiz start*/
+		if(isset($_SESSION['use_product_password'])){
+			$newp=array();
+			if(!isset($_SESSION['passed_product'])) $_SESSION['passed_product']=array();
+			foreach($data['products'] as $k=>$sp){
+				$newpid = $sp['product_id'];
+				$protected = true;
+				$pquery = $this->db->query("SELECT product_id,password FROM " . DB_PREFIX . "product_password WHERE product_id = '" . $newpid . "'");
+				
+				foreach($pquery->rows as $caterow){
+					if($caterow['password']=='' || in_array($caterow['product_id'],$_SESSION['passed_product'])){
+					$protected = false;
+					break;
+					}
+					
+				}
+				if(!$protected)
+				$newp[$k]=$sp;
+			}
+			$data['products'] = $newp;
+				
+		}
+		/*sunflowerbiz end*/
 
 		if (isset($this->request->get['search'])) {
 			$url .= '&search=' . urlencode(html_entity_decode($this->request->get['search'], ENT_QUOTES, 'UTF-8'));
