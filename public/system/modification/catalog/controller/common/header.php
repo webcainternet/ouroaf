@@ -120,6 +120,8 @@ class ControllerCommonHeader extends Controller {
 			$data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');		
 			
 
+		$data['customer_firstname'] = $this->customer->getFirstName();
+
 		$status = true;
 
 		if (isset($this->request->server['HTTP_USER_AGENT'])) {
@@ -180,6 +182,7 @@ class ControllerCommonHeader extends Controller {
 		$data['currency'] = $this->load->controller('common/currency');
 		$data['search'] = $this->load->controller('common/search');
 		$data['cart'] = $this->load->controller('common/cart');
+		$data['customer_firstname'] = $this->customer->getFirstName();
 
 		// For page specific css
 		if (isset($this->request->get['route'])) {
