@@ -26,3 +26,6 @@ define('DB_USERNAME', 'ouroaf');
 define('DB_PASSWORD', 'nqwhuf7w36d');
 define('DB_DATABASE', 'ouroaf');
 define('DB_PREFIX', 'oc_');
+
+$_SESSION['use_category_password'] = 1;
+$_SESSION['use_product_password'] = 1;
