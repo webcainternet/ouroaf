@@ -3,6 +3,19 @@
 $_SESSION['use_category_password'] = 1;
 $_SESSION['use_product_password'] = 1;
 ?>
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+    	$('#input-option50').on('change', function() {
+	  		//alert( $( "#input-option50 option:selected" ).text() );
+			var urlimagem = "/image/catalog/simbolos/" + $( "#input-option50 option:selected" ).text() + ".jpg";
+			urlimagem = urlimagem.replace(" ","");
+			//alert(urlimagem);
+	  		$("#imgthumb1").attr("src", urlimagem);
+		})
+	});
+</script>
+
 <div class="container">
 	<ul class="breadcrumb">
 		<?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -168,8 +181,14 @@ $_SESSION['use_product_password'] = 1;
 				</div>
 				
 				<div id="product">
+					<!-- Thumb simpolo -->
+					<div class="form-horizontal">
+						<img src="about:blank" id="imgthumb1" name="imgthumb1" style="max-width: 200px; margin-left: 160px;">
+					</div>
+					<!-- FIM - Thumb simpolo -->
 
-					<!-- Product options -->
+
+					<!-- Product options -->				
 					<div class="product-options form-horizontal">
 						<?php if ($options) { ?>
 							<h3><?php echo $text_option; ?></h3>
