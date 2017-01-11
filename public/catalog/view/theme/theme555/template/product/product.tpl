@@ -4,17 +4,39 @@ $_SESSION['use_category_password'] = 1;
 $_SESSION['use_product_password'] = 1;
 ?>
 
+<?php
+//Conexão com o banco
+$mysqli = new mysqli(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+
+$sql = "select * from oc_product_option WHERE option_id = 15 AND product_id = ".$product['product_id'];
+
+if ($result = $mysqli->query($sql)) { 
+	$row_cnt = $result->num_rows;
+	if ($row_cnt > 0) {
+		while($obj = $result->fetch_object()){ 
+			$optionidcustom = utf8_encode($obj->product_option_id);
+		}
+	}
+} ?>
+
 <script type="text/javascript">
 	$( document ).ready(function() {
-    	$('#input-option50').on('change', function() {
+    	$('#input-option<?php echo $optionidcustom; ?>').on('change', function() {
 	  		//alert( $( "#input-option50 option:selected" ).text() );
 			var urlimagem = "/image/catalog/simbolos/" + $( "#input-option50 option:selected" ).text() + ".jpg";
 			urlimagem = urlimagem.replace(" ","");
 			//alert(urlimagem);
 	  		$("#imgthumb1").attr("src", urlimagem);
+	  		$("#imgthumb1").show();
 		})
 	});
 </script>
+
+<style type="text/css">
+	#imgthumb1 {
+		display: none;
+	}
+</style>
 
 <div class="container">
 	<ul class="breadcrumb">
