@@ -4006,12 +4006,12 @@ input#input-coupon {
     padding: 6px; } }
 
 .logoouroaf {
-  -webkit-filter: grayscale(1) contrast(1.5);
-  filter: grayscale(1) contrast(1.5);
-}
-.logoouroaf:hover {
   -webkit-filter: none;
   filter: none;
+}
+.logoouroaf:hover {
+  -webkit-filter: grayscale(1) contrast(1.5);
+  filter: grayscale(1) contrast(1.5);
 }
 .rating {
   display: none;
